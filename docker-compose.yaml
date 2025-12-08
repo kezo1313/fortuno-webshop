@@ -3,12 +3,12 @@ services:
     build: .
     container_name: shop
     ports:
-      - "8083:80"
-      - "8084:443"
-      - "3306:3306"
-      - "1025:1025"
-      - "9999:9999"
-      - "9998:9998"
+      - "80"
+      - "443"
+      - "3306"
+      - "1025"
+      - "9999"
+      - "9998"
     volumes:
       - "db_volume_guide:/var/lib/mysql"
       # Keep live sync for your Shopware apps
