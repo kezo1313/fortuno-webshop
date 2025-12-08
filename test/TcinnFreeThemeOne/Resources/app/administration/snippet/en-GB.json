@@ -1,0 +1,813 @@
+{
+    "sw-theme": {
+        "TcinnFreeThemeOne": {
+            "default": {
+                "themeColors": {
+                    "label": "Theme colours",
+                    "default": {
+                        "sw-color-brand-primary": {
+                            "label": "Primary colour",
+                            "helpText": "Select the primary colour for your shop. <br><br>This does not necessarily have to be your corporate colour if it does not provide sufficient contrast or harmonise with the design."
+                        },
+                        "sw-color-brand-secondary": {
+                            "label": "Secondary colour",
+                            "helpText": "Select the secondary colour for your shop."
+                        },
+                        "sw-border-color": {
+                            "label": "Border colour",
+                            "helpText": "Select the border colour for elements in your shop."
+                        },
+                        "sw-background-color": {
+                            "label": "Background colour",
+                            "helpText": "Select the background colour for your shop."
+                        }
+                    },
+                    "sectionColorShades": {
+                        "label": "Colour shades",
+                        "ft-color-brand-primary-light": {
+                            "label": "Primary colour (light)",
+                            "helpText": ""
+                        },
+                        "ft-color-brand-primary-dark": {
+                            "label": "Primary colour (dark)",
+                            "helpText": ""
+                        }
+                    },
+                    "sectionOtherColors": {
+                        "label": "Other colours",
+                        "ft-background-color": {
+                            "label": "Background colour",
+                            "helpText": "Select the background colour for colour accents in your shop. <br><br><b>Tip</b>: This should be a very light colour to ensure sufficient contrast with the text colour."
+                        }
+                    }
+                },
+                "statusColors": {
+                    "label": "Status messages",
+                    "default": {
+                        "sw-color-success": {
+                            "label": "Success",
+                            "helpText": ""
+                        },
+                        "sw-color-danger": {
+                            "label": "Error",
+                            "helpText": ""
+                        },
+                        "sw-color-warning": {
+                            "label": "Notice",
+                            "helpText": ""
+                        },
+                        "sw-color-info": {
+                            "label": "Information",
+                            "helpText": ""
+                        }
+                    }
+                },
+                "typography": {
+                    "label": "Typography",
+                    "default": {
+                        "sw-font-family-base": {
+                            "label": "Text font",
+                            "helpText": "Enter the font family for body text. <br><br>You can choose between 'Inter' and 'Sen'."
+                        },
+                        "sw-text-color": {
+                            "label": "Text colour",
+                            "helpText": "Select the colour for body text."
+                        },
+                        "sw-font-family-headline": {
+                            "label": "Headline font",
+                            "helpText": "Enter the font family for headlines. <br><br>You can choose between 'Inter' and 'Sen'."
+                        },
+                        "sw-headline-color": {
+                            "label": "Headline colour",
+                            "helpText": "Select the colour for headlines."
+                        }
+                    },
+                    "sectionTypographyLinks": {
+                        "label": "Links",
+                        "ft-link-color": {
+                            "label": "Link colour",
+                            "helpText": "Select the colour for links in body text."
+                        },
+                        "ft-link-color-hover": {
+                            "label": "Link colour (Hover)",
+                            "helpText": "Select the colour for links in body text when hovering over them."
+                        }
+                    }
+                },
+                "blockFreeThemeIcons": {
+                    "label": "FreeTheme 'Icons'",
+                    "default": {
+                        "label": "Icons",
+                        "ft-icon-set": {
+                            "label": "Icon set",
+                            "helpText": "Select your preferred icon set. <br><br>You can choose between 'Default' and 'Feather' icons.",
+                            "0": {
+                                "label": "Default (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "Feather"
+                            }
+                        }
+                    }
+                },
+                "eCommerce": {
+                    "label": "E-Commerce",
+                    "default": {
+                        "sw-color-price": {
+                            "label": "Price"
+                        },
+                        "ft-discounted-price-color": {
+                            "label": "Price"
+                        },
+                        "ft-list-price-color": {
+                            "label": "Price"
+                        }
+                    },
+                    "sectionBuyButton": {
+                        "label": "Buy button",
+                        "sw-color-buy-button": {
+                            "label": "Colour"
+                        },
+                        "sw-color-buy-button-text": {
+                            "label": "Text colour"
+                        }
+                    }
+                },
+                "media": {
+                    "label": "Media",
+                    "default": {
+                        "sw-logo-desktop": {
+                            "label": "Desktop",
+                            "helpText": "Displayed on viewports above 991px and as a fallback on smaller viewports, if no other logo is set."
+                        },
+                        "sw-logo-tablet": {
+                            "label": "Tablet",
+                            "helpText": "Displayed on viewports between 767px and 991px."
+                        },
+                        "sw-logo-mobile": {
+                            "label": "Mobile",
+                            "helpText": "Displayed on viewports up to 767px."
+                        },
+                        "sw-logo-share": {
+                            "label": "App & share icon"
+                        },
+                        "sw-logo-favicon": {
+                            "label": "Favicon"
+                        }
+                    }
+                }
+            },
+            "tabHeader": {
+                "label": "Header",
+                "blockHeaderLayout": {
+                    "label": "Layout",
+                    "default": {
+                        "ft-header-layout-type": {
+                            "label": "Layout type",
+                            "helpText": "Select your preferred layout type for the header. <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, choose the 'Standard' layout.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Header'"
+                            }
+                        }
+                    }
+                },
+                "blockHeaderTopBar": {
+                    "label": "Top bar",
+                    "default": {
+                        "ft-top-bar-layout-type": {
+                            "label": "Layout type",
+                            "helpText": "Select your preferred layout type for the top bar. <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, choose the 'Standard' layout.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Top Bar'"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeTopBar": {
+                    "label": "FreeTheme 'Top Bar'",
+                    "sectionColors": {
+                        "label": "Colours",
+                        "ft-top-bar-color": {
+                            "label": "Text colour",
+                            "helpText": "Select the text colour for the top bar. <br><br><b>Tip</b>: Make sure the text colour has enough contrast with the background colour."
+                        },
+                        "ft-top-bar-background-color": {
+                            "label": "Background colour",
+                            "helpText": "Select the background colour for the top bar."
+                        }
+                    },
+                    "sectionTopBarColumns": {
+                        "label": "Columns",
+                        "ft-top-bar-column-1": {
+                            "label": "Column 1",
+                            "helpText": "Select the content of column 1. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Top Bar'\".",
+                            "0": {
+                                "label": "Do not show"
+                            },
+                            "1": {
+                                "label": "Show Claim"
+                            },
+                            "2": {
+                                "label": "Show Service Hotline"
+                            },
+                            "3": {
+                                "label": "Show Service Email"
+                            },
+                            "4": {
+                                "label": "Show Contact (Phone + Email)"
+                            },
+                            "5": {
+                                "label": "Show Social Icons"
+                            }
+                        },
+                        "ft-top-bar-column-2": {
+                            "label": "Column 2",
+                            "helpText": "Select the content of column 2. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Top Bar'\".",
+                            "0": {
+                                "label": "Do not show"
+                            },
+                            "1": {
+                                "label": "Show Claim"
+                            },
+                            "2": {
+                                "label": "Show Text Message"
+                            },
+                            "3": {
+                                "label": "Show USPs"
+                            },
+                            "4": {
+                                "label": "Show Service Hotline"
+                            },
+                            "5": {
+                                "label": "Show Service Email"
+                            },
+                            "6": {
+                                "label": "Show Contact (Phone + Email)"
+                            }
+                        },
+                        "ft-top-bar-column-3": {
+                            "label": "Column 3",
+                            "helpText": "Select the content of column 3. <br><br><b>Tip</b>: The language/currency selection is shown if you have configured more than one language or currency in your Sales Channel. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Top Bar'\".",
+                            "0": {
+                                "label": "Show 'Language/Currency selection'"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-claim": {
+                            "label": "Claim",
+                            "helpText": "Enter your 'Claim' here."
+                        },
+                        "ft-snippet-field-mail": {
+                            "label": "Contact: Email",
+                            "helpText": "Enter the email address for the contact element."
+                        },
+                        "ft-snippet-field-phone": {
+                            "label": "Contact: Phone",
+                            "helpText": "Enter the phone number for the contact element."
+                        },
+                        "ft-snippet-field-service-mail": {
+                            "label": "Service Email",
+                            "helpText": "Enter the service email address."
+                        },
+                        "ft-snippet-field-service-hotline": {
+                            "label": "Service Hotline",
+                            "helpText": "Enter the service hotline number."
+                        },
+                        "ft-snippet-field-message": {
+                            "label": "Text Message",
+                            "helpText": "Enter your text message here."
+                        }
+                    }
+                }
+            },
+            "tabFooter": {
+                "label": "Footer",
+                "blockFooterLayout": {
+                    "label": "Layout",
+                    "default": {
+                        "ft-footer-layout-type": {
+                            "label": "Layout type",
+                            "helpText": "Select your preferred layout type for the footer. <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, choose the 'Standard' layout.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Footer'"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeFooter": {
+                    "label": "FreeTheme 'Footer'",
+                    "sectionColors": {
+                        "label": "Colours",
+                        "ft-footer-color": {
+                            "label": "Text colour",
+                            "helpText": "Select the text colour for the footer. <br><br><b>Tip</b>: Make sure the text colour has enough contrast with the background colour."
+                        },
+                        "ft-footer-background-color": {
+                            "label": "Background colour",
+                            "helpText": "Select the background colour for the footer."
+                        },
+                        "ft-footer-link-color": {
+                            "label": "Link colour",
+                            "helpText": "Select the colour for links in the footer. <br><br><b>Tip</b>: Make sure the link colour has enough contrast with the background colour."
+                        },
+                        "ft-footer-link-color-hover": {
+                            "label": "Link colour (Hover)",
+                            "helpText": "Select the colour for links in the footer when hovering over them."
+                        }
+                    },
+                    "sectionFooterLogo": {
+                        "label": "Media",
+                        "ft-footer-logo": {
+                            "label": "Footer logo",
+                            "helpText": "Select the logo for the footer. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Footer'\"."
+                        }
+                    },
+                    "sectionFooterSocialIcons": {
+                        "label": "Social icons",
+                        "ft-footer-social-icons-show": {
+                            "label": "Show social icons",
+                            "helpText": "Select whether the social icons should be displayed in the 'Contact' section of the footer.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    },
+                    "sectionFooterNavigation": {
+                        "label": "Footer Navigation",
+                        "ft-footer-navigation-columns": {
+                            "label": "Columns",
+                            "helpText": "Select the number of columns for the footer navigation.",
+                            "0": {
+                                "label": "2 Columns"
+                            },
+                            "1": {
+                                "label": "3 Columns"
+                            },
+                            "2": {
+                                "label": "4 Columns"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeFooterNewsletter": {
+                    "label": "FreeTheme 'Footer Newsletter'",
+                    "default": {
+                        "ft-footer-newsletter-show": {
+                            "label": "Show footer newsletter",
+                            "helpText": "Select whether the \"FreeTheme 'Footer Newsletter'\" subscription should be displayed above the footer. <br><br><b>Note</b>: Assign your 'layout for newsletter pages' in the Shopware settings (Settings > General > Basic information) so that registration can be opened.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    },
+                    "sectionColors": {
+                        "label": "Colours",
+                        "ft-footer-newsletter-color": {
+                            "label": "Text colour",
+                            "helpText": "Select the text colour for the footer newsletter. <br><br><b>Tip</b>: Make sure the text colour has enough contrast with the background colour. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Footer Newsletter'\"."
+                        },
+                        "ft-footer-newsletter-background-color": {
+                            "label": "Background colour",
+                            "helpText": "Select the background colour for the footer newsletter. <br><br><b>Note</b>: This configuration refers to the \"FreeTheme 'Footer Newsletter'\"."
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-newsletter-headline": {
+                            "label": "Newsletter Headline",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-newsletter-text": {
+                            "label": "Newsletter Text",
+                            "helpText": ""
+                        }
+                    }
+                },
+                "blockFooterPaymentShipping": {
+                    "label": "Payment and Shipping Logos",
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-payment-shipping-headline": {
+                            "label": "Payment and Shipping Headline",
+                            "helpText": "Enter the headline for the payment and shipping logos in the footer."
+                        }
+                    }
+                },
+                "blockFooterCopyright": {
+                    "label": "Copyright Footer",
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-copyright": {
+                            "label": "Copyright",
+                            "helpText": "Enter the copyright text."
+                        }
+                    },
+                    "sectionBranding": {
+                        "label": "FreeTheme 'Branding'",
+                        "ft-branding-lizenzkey": {
+                            "label": "License key for branding removal",
+                            "helpText": "If you would like to remove the FreeTheme Branding, you can purchase a licence from us. If you are interested, please contact us at: <a href=\"https://shopware-free-theme.de/en/\" class=\"sw-internal-link sw-internal-link--inline\" target=\"_blank\" rel=\"noopener\">https://shopware-free-theme.de/</a>."
+                        }
+                    }
+                }
+            },
+            "tabProductListing": {
+                "label": "Product listing",
+                "blockSidebar": {
+                    "label": "Sidebar",
+                    "sectionSidebarNavigation": {
+                        "label": "Sidebar navigation",
+                        "ft-sidebar-navigation-headline-show": {
+                            "label": "Show headline",
+                            "helpText": "Select whether the headline for the sidebar navigation should be displayed.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    },
+                    "sectionSidebarFilter": {
+                        "label": "Sidebar filter",
+                        "ft-sidebar-filter-headline-show": {
+                            "label": "Show headline",
+                            "helpText": "Select whether the headline for the sidebar filter should be displayed.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    }
+                }
+            },
+            "tabProductPage": {
+                "label": "Product page",
+                "blockProductPageLayout": {
+                    "label": "Layout",
+                    "sectionproductHeading": {
+                        "label": "Product name + manufacturer logo",
+                        "ft-product-heading-position": {
+                            "label": "Position 'Product name'",
+                            "helpText": "Select whether the product name should be displayed above the \"Image gallery and buy box\" (default) or in the \"buy box\". <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, choose the 'Standard' layout.",
+                            "0": {
+                                "label": "Default (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "Buy box"
+                            }
+                        },
+                        "ft-product-detail-manufacturer-logo-show": {
+                            "label": "Show manufacturer logo",
+                            "helpText": "Select whether the manufacturer logo should be displayed.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    },
+                    "sectionBuybox": {
+                        "label": "Buy box",
+                        "ft-product-detail-ordernumber-show": {
+                            "label": "Show product number",
+                            "helpText": "Select whether the product number should be displayed.",
+                            "0": {
+                                "label": "No"
+                            },
+                            "1": {
+                                "label": "Yes"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeProductSpecifications": {
+                    "label": "FreeTheme 'Product Specifications'",
+                    "default": {
+                        "ft-product-specifications": {
+                            "label": "Product specifications",
+                            "helpText": "Select which product specifications should be displayed in the buy box.",
+                            "0": {
+                                "label": "Manufacturer"
+                            },
+                            "1": {
+                                "label": "EAN"
+                            },
+                            "2": {
+                                "label": "Manufacturer product number"
+                            },
+                            "3": {
+                                "label": "Weight"
+                            },
+                            "4": {
+                                "label": "Height"
+                            },
+                            "5": {
+                                "label": "Width"
+                            },
+                            "6": {
+                                "label": "Length"
+                            },
+                            "7": {
+                                "label": "Size"
+                            },
+                            "8": {
+                                "label": "Stock"
+                            },
+                            "9": {
+                                "label": "Available stock"
+                            },
+                            "10": {
+                                "label": "Delivery time"
+                            },
+                            "11": {
+                                "label": "Min. order quantity"
+                            },
+                            "12": {
+                                "label": "Max. order quantity"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-available-stock-label": {
+                            "label": "Available stock",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-delivery-time-label": {
+                            "label": "Delivery time",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-ean-label": {
+                            "label": "EAN",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-height-label": {
+                            "label": "Height",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-length-label": {
+                            "label": "Length",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-manufacturer-label": {
+                            "label": "Manufacturer",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-manufacturer-number-label": {
+                            "label": "Manufacturer product number",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-maxpurchase-label": {
+                            "label": "Max. order quantity",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-minpurchase-label": {
+                            "label": "Min. order quantity",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-stock-label": {
+                            "label": "Stock",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-weight-label": {
+                            "label": "Weight",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-width-label": {
+                            "label": "Width",
+                            "helpText": ""
+                        }
+                    }
+                }
+            },
+            "tabExtensions": {
+                "label": "Add-ons",
+                "blockExtensionsSocialIcons": {
+                    "label": "FreeTheme 'Social Icons'",
+                    "default": {
+                        "ft-social-icons": {
+                            "label": "Social icons",
+                            "helpText": "Select whether social icons should be displayed in the footer contact area.",
+                            "0": {
+                                "label": "Blogger"
+                            },
+                            "1": {
+                                "label": "Facebook"
+                            },
+                            "2": {
+                                "label": "Flickr"
+                            },
+                            "3": {
+                                "label": "Instagram"
+                            },
+                            "4": {
+                                "label": "LinkedIn"
+                            },
+                            "5": {
+                                "label": "Pinterest"
+                            },
+                            "6": {
+                                "label": "TikTok"
+                            },
+                            "7": {
+                                "label": "Twitch"
+                            },
+                            "8": {
+                                "label": "Vimeo"
+                            },
+                            "9": {
+                                "label": "WhatsApp"
+                            },
+                            "10": {
+                                "label": "WordPress"
+                            },
+                            "11": {
+                                "label": "X / Twitter"
+                            },
+                            "12": {
+                                "label": "Xing"
+                            },
+                            "13": {
+                                "label": "YouTube"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-blogger-link": {
+                            "label": "Blogger: Link",
+                            "helpText": "Enter the url to your Blogger profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.blogger'."
+                        },
+                        "ft-snippet-field-facebook-link": {
+                            "label": "Facebook: Link",
+                            "helpText": "Enter the url to your Facebook profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.facebook'."
+                        },
+                        "ft-snippet-field-flickr-link": {
+                            "label": "Flickr: Link",
+                            "helpText": "Enter the url to your Flickr profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.flickr'."
+                        },
+                        "ft-snippet-field-instagram-link": {
+                            "label": "Instagram: Link",
+                            "helpText": "Enter the url to your Instagram profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.instagram'."
+                        },
+                        "ft-snippet-field-linkedin-link": {
+                            "label": "LinkedIn: Link",
+                            "helpText": "Enter the url to your LinkedIn profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.linkedin'."
+                        },
+                        "ft-snippet-field-pinterest-link": {
+                            "label": "Pinterest: Link",
+                            "helpText": "Enter the url to your Pinterest profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.pinterest'."
+                        },
+                        "ft-snippet-field-tiktok-link": {
+                            "label": "TikTok: Link",
+                            "helpText": "Enter the url to your TikTok profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.tiktok'."
+                        },
+                        "ft-snippet-field-twitch-link": {
+                            "label": "Twitch: Link",
+                            "helpText": "Enter the url to your Twitch profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.twitch'."
+                        },
+                        "ft-snippet-field-vimeo-link": {
+                            "label": "Vimeo: Link",
+                            "helpText": "Enter the url to your Vimeo profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.vimeo'."
+                        },
+                        "ft-snippet-field-whatsapp-link": {
+                            "label": "WhatsApp: Link",
+                            "helpText": "Enter the url to your WhatsApp profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.whatsapp'."
+                        },
+                        "ft-snippet-field-wordpress-link": {
+                            "label": "WordPress: Link",
+                            "helpText": "Enter the url to your WordPress profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.wordpress'."
+                        },
+                        "ft-snippet-field-x-link": {
+                            "label": "X: Link",
+                            "helpText": "Enter the url to your X profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.x'."
+                        },
+                        "ft-snippet-field-xing-link": {
+                            "label": "Xing: Link",
+                            "helpText": "Enter the url to your Xing profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.xing'."
+                        },
+                        "ft-snippet-field-youtube-link": {
+                            "label": "YouTube: Link",
+                            "helpText": "Enter the url to your YouTube profile. <br><br><b>Note</b>: You can edit title of the link in the snippet management (Settings > Regional > Snippets) by searching for 'freeThemeOne.socialIcons.youtube'."
+                        }
+                    }
+                },
+                "blockFreeThemeUsps": {
+                    "label": "FreeTheme 'USPs'",
+                    "sectionSnippets": {
+                        "label": "Snippets",
+                        "ft-snippet-field-usp1-label": {
+                            "label": "USP 1",
+                            "helpText": "Enter the text for USP 1."
+                        },
+                        "ft-snippet-field-usp2-label": {
+                            "label": "USP 2",
+                            "helpText": "Enter the text for USP 2."
+                        },
+                        "ft-snippet-field-usp3-label": {
+                            "label": "USP 3",
+                            "helpText": "Enter the text for USP 3."
+                        },
+                        "ft-snippet-field-usp4-label": {
+                            "label": "USP 4",
+                            "helpText": "Enter the text for USP 4."
+                        }
+                    }
+                }
+            },
+            "tabOthers": {
+                "label": "Others",
+                "blockFreeThemeEssentials": {
+                    "label": "🎁 FreeTheme Essentials - Free extras for more design and conversion",
+                    "default": {
+                        "ft-essentials-teaser": {
+                            "label": "Get professional Shopping Experiences, guides and tools - 100% free!",
+                            "helpText": "Unlock exclusive extras: Import plugin with storytelling elements, step-by-step implementation guides, all graphics as editable PSD files, 100+ pagespeed-optimized shipping and payment logos, plus customizing plugins for individual adjustments (Self-hosted and Cloud). Perfect for more design quality, faster implementation and higher conversion rates."
+                        }
+                    }
+                },
+                "blockFreeThemeAdvancedSettings": {
+                    "label": "Advanced Settings",
+                    "default": {
+                        "ft-cms-styling": {
+                            "label": "FreeTheme 'CMS Styling'",
+                            "helpText": "This configuration enables/disables the \"CMS Styling\". <br><br>If this configuration is active, CMS sections and blocks in default CMS layouts from Shopware are styled accordingly. <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, disable this configuration.",
+                            "0": {
+                                "label": "disabled"
+                            },
+                            "1": {
+                                "label": "enabled"
+                            }
+                        },
+                        "ft-responsive-gutter": {
+                            "label": "FreeTheme 'Responsive Gutter'",
+                            "helpText": "This configuration enables/disables the \"Responsive Gutter\". <br><br>If this configuration is active, the spacing in CMS sections/blocks (--bs-gutter) is reduced in smaller viewports. <br><br><b>Note</b>: If you experience compatibility issues with third-party extensions, disable this configuration.",
+                            "0": {
+                                "label": "disabled"
+                            },
+                            "1": {
+                                "label": "enabled"
+                            }
+                        }
+                    },
+                    "sectionFreeThemeLandingpage": {
+                        "label": "FreeTheme 'Landingpage'",
+                        "ft-landingpage-styling": {
+                            "label": "FreeTheme 'Landingpage Styling'",
+                            "helpText": "This configuration enables/disables CSS styles for the FreeTheme Landingpage. <br><br><b>Note</b>: You can disable this configuration if you do not use the FreeTheme Landingpage.",
+                            "0": {
+                                "label": "disabled"
+                            },
+                            "1": {
+                                "label": "enabled"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeExpertSettings": {
+                    "label": "Expert Settings",
+                    "default": {
+                        "ft-expert-mode": {
+                            "label": "Expert mode",
+                            "helpText": "This configuration enables/disables the \"Expert mode\". <br><br><b>Tip</b>: Deactivate the \"Expert mode\" to rule out errors in your custom code."
+                        }
+                    },
+                    "sectionExpertSettingsCode": {
+                        "label": "Custom code",
+                        "ft-custom-css-code": {
+                            "label": "Custom CSS code",
+                            "helpText": "These CSS code is loaded directly in the head area and should be minimized with a CSS minifier tool. <br><br>Ideally, you should add CSS code via a SCSS file, e.g. with our 'Customizing Plugin'. <br><br><b>Caution:</b> This configuration can lead to errors if you enter a wrong value! Only use this if you are absolutely sure.",
+                            "placeholder": ".my-class { color: #000000; }"
+                        },
+                        "ft-custom-css-code-load": {
+                            "label": "Load CSS code",
+                            "helpText": "This configuration enables/disables the loading of your individual CSS code. <br><br>Deactivate this configuration if you do not want to include any CSS code or if you want to prevent your CSS code from being loaded."
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

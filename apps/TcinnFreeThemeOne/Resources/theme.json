@@ -1,0 +1,1318 @@
+{
+    "name": "FreeTheme One",
+    "author": "TC-Innovations GmbH",
+    "description": {
+        "en-GB": "FreeTheme One | free and reliable",
+        "de-DE": "FreeTheme One | kostenlos und zuverlässig"
+    },
+    "previewMedia": "app/one-preview.png",
+    "views": [
+        "@Storefront",
+        "@TcinnFreeThemeOne",
+        "@Plugins"
+    ],
+    "style": [
+        "app/storefront/src/scss/preload-variables.scss",
+        "app/storefront/src/scss/overrides.scss",
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront"
+    ],
+    "asset": [
+        "@Storefront",
+        "app/storefront/src/assets",
+        "app/storefront/dist/assets"
+    ],
+    "config": {
+        "fields": {
+            "sw-color-brand-primary": {
+                "value": "#6919e1",
+                "order": 100
+            },
+            "sw-color-brand-secondary": {
+                "value": "#222222",
+                "order": 200
+            },
+            "sw-border-color": {
+                "value": "#ced4da",
+                "order": 300
+            },
+            "sw-background-color": {
+                "value": "#ffffff",
+                "order": 400
+            },
+            "ft-color-brand-primary-light": {
+                "type": "color",
+                "value": "#b288f2",
+                "editable": true,
+                "block": "themeColors",
+                "section": "sectionColorShades",
+                "order": 500
+            },
+            "ft-color-brand-primary-dark": {
+                "type": "color",
+                "value": "#2b1e3e",
+                "editable": true,
+                "block": "themeColors",
+                "section": "sectionColorShades",
+                "order": 600
+            },
+            "ft-background-color": {
+                "type": "color",
+                "value": "#f8f9fa",
+                "editable": true,
+                "block": "themeColors",
+                "section": "sectionOtherColors",
+                "order": 700
+            },
+
+            "sw-color-success": {
+                "value": "#00663f",
+                "order": 100
+            },
+            "sw-color-info": {
+                "value": "#005b99",
+                "order": 200
+            },
+            "sw-color-warning": {
+                "value": "#924000",
+                "order": 300
+            },
+            "sw-color-danger": {
+                "value": "#b40015",
+                "order": 400
+            },
+
+            "sw-font-family-base": {
+                "value": "'Sen', sans-serif",
+                "order": 100
+            },
+            "sw-text-color": {
+                "value": "#161616",
+                "order": 200
+            },
+            "sw-font-family-headline": {
+                "value": "'Sen', sans-serif",
+                "order": 300
+            },
+            "sw-headline-color": {
+                "value": "#161616",
+                "order": 400
+            },
+            "ft-link-color": {
+                "type": "color",
+                "value": "#6919e1",
+                "editable": true,
+                "block": "typography",
+                "section": "sectionTypographyLinks",
+                "order": 500
+            },
+            "ft-link-color-hover": {
+                "type": "color",
+                "value": "#161616",
+                "editable": true,
+                "block": "typography",
+                "section": "sectionTypographyLinks",
+                "order": 600
+            },
+
+            "ft-icon-set": {
+                "type": "text",
+                "value": "feather",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "default"
+                        },
+                        {
+                            "value": "feather"
+                        }
+                    ]
+                },
+                "editable": true,
+                "block": "blockFreeThemeIcons",
+                "order": 100
+            },
+
+            "sw-color-price": {
+                "value": "#161616",
+                "order": 100
+            },
+            "ft-discounted-price-color": {
+                "type": "color",
+                "value": "#b40015",
+                "editable": true,
+                "block": "eCommerce",
+                "order": 200
+            },
+            "ft-list-price-color": {
+                "type": "color",
+                "value": "#555555",
+                "editable": true,
+                "block": "eCommerce",
+                "order": 300
+            },
+            "sw-color-buy-button": {
+                "value": "#00663f",
+                "section": "sectionBuyButton",
+                "order": 400
+            },
+            "sw-color-buy-button-text": {
+                "value": "#ffffff",
+                "section": "sectionBuyButton",
+                "order": 500
+            },
+
+            "sw-logo-desktop": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-logo.svg",
+                "order": 100
+            },
+            "sw-logo-tablet": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-logo.svg",
+                "order": 200
+            },
+            "sw-logo-mobile": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-logo-mobile.svg",
+                "order": 300
+            },
+            "sw-logo-share": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-share-icon.png",
+                "order": 400
+            },
+            "sw-logo-favicon": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-favicon.png",
+                "order": 500
+            },
+
+
+            "ft-header-layout-type": {
+                "type": "text",
+                "value": "one",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "default"
+                        },
+                        {
+                            "value": "one"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockHeaderLayout",
+                "order": 100
+            },
+
+            "ft-top-bar-layout-type": {
+                "type": "text",
+                "value": "one",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "default"
+                        },
+                        {
+                            "value": "one"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockHeaderTopBar",
+                "order": 100
+            },
+
+            "ft-top-bar-color": {
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionColors",
+                "order": 100
+            },
+            "ft-top-bar-background-color": {
+                "type": "color",
+                "value": "#161616",
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionColors",
+                "order": 200
+            },
+
+            "ft-top-bar-column-1": {
+                "type": "text",
+                "value": "claim",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "none"
+                        },
+                        {
+                            "value": "claim"
+                        },
+                        {
+                            "value": "hotline"
+                        },
+                        {
+                            "value": "ticket"
+                        },
+                        {
+                            "value": "contact"
+                        },
+                        {
+                            "value": "social-icons"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionTopBarColumns",
+                "order": 300
+            },
+            "ft-top-bar-column-2": {
+                "type": "text",
+                "value": "usps",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "none"
+                        },
+                        {
+                            "value": "claim"
+                        },
+                        {
+                            "value": "message"
+                        },
+                        {
+                            "value": "usps"
+                        },
+                        {
+                            "value": "hotline"
+                        },
+                        {
+                            "value": "ticket"
+                        },
+                        {
+                            "value": "contact"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionTopBarColumns",
+                "order": 400
+            },
+            "ft-top-bar-column-3": {
+                "type": "text",
+                "value": "selects",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "selects"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionTopBarColumns",
+                "order": 500
+            },
+
+            "ft-snippet-field-claim": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.claim"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-mail": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.mail"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-phone": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.phone"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-service-mail": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.serviceMail"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-service-hotline": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.serviceHotline"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-message": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.message"
+                },
+                "editable": true,
+                "tab": "tabHeader",
+                "block": "blockFreeThemeTopBar",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+
+
+            "ft-footer-layout-type": {
+                "type": "text",
+                "value": "one",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "default"
+                        },
+                        {
+                            "value": "one"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFooterLayout",
+                "order": 100
+            },
+
+            "ft-footer-color": {
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionColors",
+                "order": 100
+            },
+            "ft-footer-background-color": {
+                "type": "color",
+                "value": "#161616",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionColors",
+                "order": 200
+            },
+            "ft-footer-link-color": {
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionColors",
+                "order": 300
+            },
+            "ft-footer-link-color-hover": {
+                "type": "color",
+                "value": "#af7aff",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionColors",
+                "order": 400
+            },
+            "ft-footer-logo": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/one-logo-light.svg",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionFooterLogo",
+                "scss": false,
+                "order": 500
+            },
+            "ft-footer-social-icons-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionFooterSocialIcons",
+                "order": 700
+            },
+            "ft-footer-navigation-columns": {
+                "type": "text",
+                "value": "3",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "6"
+                        },
+                        {
+                            "value": "4"
+                        },
+                        {
+                            "value": "3"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooter",
+                "section": "sectionFooterNavigation",
+                "order": 100
+            },
+
+            "ft-footer-newsletter-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooterNewsletter",
+                "order": 100
+            },
+            "ft-footer-newsletter-color": {
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooterNewsletter",
+                "section": "sectionColors",
+                "order": 200
+            },
+            "ft-footer-newsletter-background-color": {
+                "type": "color",
+                "value": "#2b1e3e",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooterNewsletter",
+                "section": "sectionColors",
+                "order": 300
+            },
+
+            "ft-snippet-field-newsletter-headline": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.footer.newsletterHeadline"
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooterNewsletter",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-newsletter-text": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.footer.newsletterText"
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFreeThemeFooterNewsletter",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+
+            "ft-snippet-field-payment-shipping-headline": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.footer.paymentShippingHeadline"
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFooterPaymentShipping",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+
+            "ft-snippet-field-copyright": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.copyright"
+                },
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFooterCopyright",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-branding-lizenzkey": {
+                "type": "text",
+                "value": "",
+                "editable": true,
+                "tab": "tabFooter",
+                "block": "blockFooterCopyright",
+                "section": "sectionBranding",
+                "scss": false,
+                "fullWidth": true
+            },
+
+
+            "ft-sidebar-navigation-headline-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductListing",
+                "block": "blockSidebar",
+                "section": "sectionSidebarNavigation",
+                "order": 200
+            },
+            "ft-sidebar-filter-headline-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductListing",
+                "block": "blockSidebar",
+                "section": "sectionSidebarFilter",
+                "order": 200
+            },
+
+
+            "ft-product-heading-position": {
+                "type": "text",
+                "value": "buybox",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "default"
+                        },
+                        {
+                            "value": "buybox"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockProductPageLayout",
+                "section": "sectionproductHeading",
+                "order": 100
+            },
+            "ft-product-detail-manufacturer-logo-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockProductPageLayout",
+                "section": "sectionproductHeading",
+                "order": 200
+            },
+
+            "ft-product-detail-ordernumber-show": {
+                "type": "text",
+                "value": "yes",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "no"
+                        },
+                        {
+                            "value": "yes"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockProductPageLayout",
+                "section": "sectionBuybox",
+                "order": 100
+            },
+
+            "ft-product-specifications": {
+                "type": "text",
+                "value": [
+                    "weight",
+                    "height",
+                    "width",
+                    "length"
+                ],
+                "custom": {
+                    "componentName": "sw-multi-select",
+                    "options": [
+                        {
+                            "value": "manufacturer"
+                        },
+                        {
+                            "value": "ean"
+                        },
+                        {
+                            "value": "manufacturernumber"
+                        },
+                        {
+                            "value": "weight"
+                        },
+                        {
+                            "value": "height"
+                        },
+                        {
+                            "value": "width"
+                        },
+                        {
+                            "value": "length"
+                        },
+                        {
+                            "value": "size"
+                        },
+                        {
+                            "value": "stock"
+                        },
+                        {
+                            "value": "availablestock"
+                        },
+                        {
+                            "value": "deliverytime"
+                        },
+                        {
+                            "value": "minpurchase"
+                        },
+                        {
+                            "value": "maxpurchase"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "order": 100,
+                "scss": false
+            },
+
+            "ft-snippet-field-available-stock-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.availableStockLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-delivery-time-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.deliveryTimeLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-ean-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.eanLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-height-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.heightLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-length-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.lengthLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-manufacturer-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.manufacturerLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-manufacturer-number-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.manufacturerNumberLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-maxpurchase-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.maxpurchaseLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-minpurchase-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.minpurchaseLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-stock-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.stockLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-weight-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.weightLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-width-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.productSpecifications.widthLabel"
+                },
+                "editable": true,
+                "tab": "tabProductPage",
+                "block": "blockFreeThemeProductSpecifications",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            
+
+            "ft-social-icons": {
+                "type": "text",
+                "value": [
+                    "facebook",
+                    "instagram",
+                    "pinterest",
+                    "x"
+                ],
+                "custom": {
+                    "componentName": "sw-multi-select",
+                    "options": [
+                        {
+                            "value": "blogger"
+                        },
+                        {
+                            "value": "facebook"
+                        },
+                        {
+                            "value": "flickr"
+                        },
+                        {
+                            "value": "instagram"
+                        },
+                        {
+                            "value": "linkedin"
+                        },
+                        {
+                            "value": "pinterest"
+                        },
+                        {
+                            "value": "tiktok"
+                        },
+                        {
+                            "value": "twitch"
+                        },
+                        {
+                            "value": "vimeo"
+                        },
+                        {
+                            "value": "whatsapp"
+                        },
+                        {
+                            "value": "wordpress"
+                        },
+                        {
+                            "value": "x"
+                        },
+                        {
+                            "value": "xing"
+                        },
+                        {
+                            "value": "youtube"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "order": 100,
+                "scss": false
+            },
+            
+            "ft-snippet-field-blogger-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.blogger.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-facebook-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.facebook.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-flickr-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.flickr.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-instagram-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.instagram.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-linkedin-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.linkedin.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-pinterest-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.pinterest.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-tiktok-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.tiktok.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-twitch-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.twitch.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-vimeo-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.vimeo.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-whatsapp-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.whatsapp.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-wordpress-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.wordpress.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-x-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.x.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-xing-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.xing.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-youtube-link": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.socialIcons.youtube.link"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockExtensionsSocialIcons",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+
+
+            "ft-snippet-field-usp1-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.usps.usp1.label"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockFreeThemeUsps",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-usp2-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.usps.usp2.label"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockFreeThemeUsps",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-usp3-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.usps.usp3.label"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockFreeThemeUsps",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+            "ft-snippet-field-usp4-label": {
+                "type": "text",
+                "custom": {
+                    "componentName": "sw-snippet-field",
+                    "snippet": "freeThemeOne.usps.usp4.label"
+                },
+                "editable": true,
+                "tab": "tabExtensions",
+                "block": "blockFreeThemeUsps",
+                "section": "sectionSnippets",
+                "scss": false
+            },
+
+
+            "ft-essentials-teaser": {
+                "type": "text",
+                "value": "➡️ https://shopware-free-theme.de",
+                "editable": true,
+                "scss": false,
+                "fullWidth": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeEssentials",
+                "order": 10
+            },
+
+            "ft-cms-styling": {
+                "type": "text",
+                "value": "enabled",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "disabled"
+                        },
+                        {
+                            "value": "enabled"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeAdvancedSettings",
+                "fullWidth": true
+            },
+            "ft-responsive-gutter": {
+                "type": "text",
+                "value": "enabled",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "disabled"
+                        },
+                        {
+                            "value": "enabled"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeAdvancedSettings",
+                "fullWidth": true
+            },
+            "ft-landingpage-styling": {
+                "type": "text",
+                "value": "enabled",
+                "custom": {
+                    "componentName": "sw-single-select",
+                    "options": [
+                        {
+                            "value": "disabled"
+                        },
+                        {
+                            "value": "enabled"
+                        }
+                    ]
+                },
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeAdvancedSettings",
+                "section": "sectionFreeThemeLandingpage",
+                "fullWidth": true
+            },
+
+            "ft-expert-mode": {
+                "type": "switch",
+                "value": false,
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeExpertSettings",
+                "fullWidth": true,
+                "order": 100
+            },
+            "ft-custom-css-code": {
+                "type": "textarea",
+                "value": "",
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeExpertSettings",
+                "section": "sectionExpertSettingsCode",
+                "scss": false,
+                "fullWidth": true,
+                "order": 200
+            },
+            "ft-custom-css-code-load": {
+                "type": "switch",
+                "value": false,
+                "editable": true,
+                "tab": "tabOthers",
+                "block": "blockFreeThemeExpertSettings",
+                "section": "sectionExpertSettingsCode",
+                "fullWidth": true,
+                "order": 300
+            }
+
+        }
+    }
+}

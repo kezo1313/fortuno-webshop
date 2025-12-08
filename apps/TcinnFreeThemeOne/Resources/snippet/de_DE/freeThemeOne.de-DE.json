@@ -1,0 +1,146 @@
+{
+    "freeThemeOne": {
+        "account": {
+            "loginMailLabel": "E-Mail-Adresse",
+            "loginPasswordLabel": "Passwort",
+            "loginPasswordRecover": "Haben Sie Ihr Passwort vergessen?"
+        },
+        "captcha": {
+            "basicCaptchaInputPlaceholder": "Zeichen hier eingeben..."
+        },
+        "checkout": {
+            "addPromotionPlaceholder": "Rabatt-Code eingeben ...",
+            "shippingCosts": "Versanddetails konfigurieren",
+            "addressLoginToggleQuestion": "Haben Sie schon einen Account?",
+            "addressLoginToggle": "Klicken Sie hier, um sich anzumelden."
+        },
+        "claim": "ONE - Qualität seit 1980",
+        "copyright": "© %date% %shopname% – Alle Rechte vorbehalten.",
+        "footer": {
+            "paymentShippingHeadline": "Unsere Versand- und Zahlungsarten:",
+            "newsletterHeadline": "Unser Newsletter. <br>Jetzt abonnieren und nichts mehr verpassen!",
+            "newsletterText": "Abonniere den kostenlosen Newsletter und verpassen keine Neuigkeiten und Angebote von %shopname%."
+        },
+        "mail": "<a href=\"mailto:info@example.com\">info@example.com</a>",
+        "message": "KOSTENLOSE KOSTENLOSE RÜCKGABE ab einem Bestellwert von X Euro",
+        "phone": "<a href=\"tel:+49180000000\">0180 - 000000</a>",
+        "productSpecifications": {
+            "availableStockLabel": "Verfügbarer Bestand:",
+            "deliveryTimeLabel": "Lieferzeit:",
+            "eanLabel": "EAN:",
+            "heightLabel": "Höhe:",
+            "lengthLabel": "Länge:",
+            "manufacturerLabel": "Hersteller:",
+            "manufacturerNumberLabel": "Hersteller-Nr.:",
+            "maxpurchaseLabel": "Maximalabnahme:",
+            "minpurchaseLabel": "Mindestabnahme:",
+            "stockLabel": "Lagerbestand:",
+            "weightLabel": "Gewicht:",
+            "widthLabel": "Breite:"
+        },
+        "usps": {
+            "usp1": {
+                "label": "Kostenloser Versand ab 50 €",
+                "icon": "rocket"
+            },
+            "usp2": {
+                "label": "Versand innerhalb von 24h",
+                "icon": "clock"
+            },
+            "usp3": {
+                "label": "Geld-zurück-Garantie",
+                "icon": "thumb-up"
+            },
+            "usp4": {
+                "label": "Sichere Zahlungsmethoden",
+                "icon": "briefcase"
+            }
+        },
+        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr",
+        "serviceMail": "<a href=\"mailto:info@example.com\">info@example.com</a> Mo-Fr, 09:00 - 17:00 Uhr",
+        "sidebarFilter": {
+            "headline": "Filter"
+        },
+        "sidebarNavigation": {
+            "headline": "Kategorien"
+        },
+        "socialIcons": {
+            "headline": "Unsere Communities",
+            "text": "Über unsere Social Media Plattformen verpassen Sie keine Neuigkeiten mehr.",
+            "titleSuffix": "öffnet in neuem Tab (externer Link)",
+            "blogger": {
+                "name": "Blogger",
+                "link": "/#blogger",
+                "title": "Lies unseren Blog auf Blogger"
+            },
+            "facebook": {
+                "name": "Facebook",
+                "link": "/#facebook",
+                "title": "Besuche uns auf Facebook"
+            },
+            "flickr": {
+                "name": "Flickr",
+                "link": "/#flickr",
+                "title": "Entdecke unsere Bilder auf Flickr"
+            },
+            "instagram": {
+                "name": "Instagram",
+                "link": "/#instagram",
+                "title": "Schau auf Instagram vorbei"
+            },
+            "linkedin": {
+                "name": "LinkedIn",
+                "link": "/#linkedin",
+                "title": "Vernetze dich mit uns auf LinkedIn"
+            },
+            "pinterest": {
+                "name": "Pinterest",
+                "link": "/#pinterest",
+                "title": "Lass dich auf Pinterest inspirieren"
+            },
+            "tiktok": {
+                "name": "TikTok",
+                "link": "/#tiktok",
+                "title": "Sieh dir unsere TikTok-Videos an"
+            },
+            "twitch": {
+                "name": "Twitch",
+                "link": "/#twitch",
+                "title": "Sei live auf Twitch dabei"
+            },
+            "vimeo": {
+                "name": "Vimeo",
+                "link": "/#vimeo",
+                "title": "Sieh dir unsere Videos auf Vimeo an"
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "link": "/#whatsapp",
+                "title": "Schreib uns auf WhatsApp"
+            },
+            "wordpress": {
+                "name": "Wordpress",
+                "link": "/#blog",
+                "title": "Lies unseren Blog"
+            },
+            "x": {
+                "name": "X / Twitter",
+                "link": "/#x",
+                "title": "Folge uns auf X"
+            },
+            "xing": {
+                "name": "Xing",
+                "link": "/#xing",
+                "title": "Vernetze dich mit uns auf Xing"
+            },
+            "youtube": {
+                "name": "YouTube",
+                "link": "/#youtube",
+                "title": "Sieh dir unsere Videos auf YouTube an"
+            }
+        },
+        "alert": {
+            "newsletterConfig": "In den Shop-Einstellungen wurde keine Newsletter-Seite ausgewählt."
+        }
+    }
+}

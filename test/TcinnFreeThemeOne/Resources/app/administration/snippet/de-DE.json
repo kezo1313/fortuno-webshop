@@ -1,0 +1,814 @@
+{
+    "sw-theme": {
+        "TcinnFreeThemeOne": {
+            "default": {
+                "themeColors": {
+                    "label": "Theme-Farben",
+                    "default": {
+                        "sw-color-brand-primary": {
+                            "label": "Primärfarbe",
+                            "helpText": "Wähle die Primärfarbe für deinen Shop aus. <br><br>Die muss nicht zwangsläufig deine Corporate Color sein, wenn diese nicht ausreichend Kontrast bietet oder mit dem Design harmoniert."
+                        },
+                        "sw-color-brand-secondary": {
+                            "label": "Sekundärfarbe",
+                            "helpText": "Wähle die Sekundärfarbe für deinen Shop aus."
+                        },
+                        "sw-border-color": {
+                            "label": "Rahmenfarbe",
+                            "helpText": "Wähle die Rahmenfarbe für Elemente in deinem Shop aus."
+                        },
+                        "sw-background-color": {
+                            "label": "Hintergrundfarbe",
+                            "helpText": "Wähle die Hintergrundfarbe für deinen Shop aus."
+                        }
+                    },
+                    "sectionColorShades": {
+                        "label": "Farbnuancen",
+                        "ft-color-brand-primary-light": {
+                            "label": "Primärfarbe (hell)",
+                            "helpText": ""
+                        },
+                        "ft-color-brand-primary-dark": {
+                            "label": "Primärfarbe (dunkel)",
+                            "helpText": ""
+                        }
+                    },
+                    "sectionOtherColors": {
+                        "label": "Weitere Farben",
+                        "ft-background-color": {
+                            "label": "Hintergrundfarbe",
+                            "helpText": "Wähle die Hintergrundfarbe für Farbakzente in deinem Shop aus. <br><br><b>Tipp</b>: Dies sollte eine sehr helle Farbe sein um einen ausreichenden Kontrast zur Textfarbe zu gewährleisten."
+                        }
+                    }
+                },
+                "statusColors": {
+                    "label": "Status-Benachrichtigungen",
+                    "default": {
+                        "sw-color-success": {
+                            "label": "Erfolg",
+                            "helpText": ""
+                        },
+                        "sw-color-danger": {
+                            "label": "Fehler",
+                            "helpText": ""
+                        },
+                        "sw-color-warning": {
+                            "label": "Hinweis",
+                            "helpText": ""
+                        },
+                        "sw-color-info": {
+                            "label": "Information",
+                            "helpText": ""
+                        }
+                    }
+                },
+                "typography": {
+                    "label": "Typografie",
+                    "default": {
+                        "sw-font-family-base": {
+                            "label": "Text-Schriftart",
+                            "helpText": "Gebe die Schriftart für Fließtext ein. <br><br>Zur Auswahl stehen dir die 'Inter' und die 'Sen'."
+                        },
+                        "sw-text-color": {
+                            "label": "Textfarbe",
+                            "helpText": "Wähle die Farbe für Fließtext aus."
+                        },
+                        "sw-font-family-headline": {
+                            "label": "Überschrift-Schriftart",
+                            "helpText": "Gebe die Schriftart für Überschriften ein. <br><br>Zur Auswahl stehen dir die 'Inter' und die 'Sen'."
+                        },
+                        "sw-headline-color": {
+                            "label": "Überschriftfarbe",
+                            "helpText": "Wähle die Farbe für Überschriften aus."
+                        }
+                    },
+                    "sectionTypographyLinks": {
+                        "label": "Links",
+                        "ft-link-color": {
+                            "label": "Linkfarbe",
+                            "helpText": "Wähle die Farbe für Links in Fließtexten aus."
+                        },
+                        "ft-link-color-hover": {
+                            "label": "Linkfarbe (Hover)",
+                            "helpText": "Wähle die Farbe für Links in Fließtexten beim Darüberfahren (Hover) aus."
+                        }
+                    }
+                },
+                "blockFreeThemeIcons": {
+                    "label": "FreeTheme 'Icons'",
+                    "default": {
+                        "label": "Icons",
+                        "ft-icon-set": {
+                            "label": "Iconset",
+                            "helpText": "Wähle dein bevorzugtes Iconset aus. <br><br>Zur Auswahl stehen dir die 'Standard' und die 'Feather' Icons.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "Feather"
+                            }
+                        }
+                    }
+                },
+                "eCommerce": {
+                    "label": "E-Commerce",
+                    "default": {
+                        "sw-color-price": {
+                            "label": "Preis"
+                        },
+                        "ft-discounted-price-color": {
+                            "label": "Preis"
+                        },
+                        "ft-list-price-color": {
+                            "label": "Preis"
+                        }
+                    },
+                    "sectionBuyButton": {
+                        "label": "Kauf-Button",
+                        "sw-color-buy-button": {
+                            "label": "Farbe"
+                        },
+                        "sw-color-buy-button-text": {
+                            "label": "Textfarbe"
+                        }
+                    }
+                },
+                "media": {
+                    "label": "Medien",
+                    "default": {
+                        "sw-logo-desktop": {
+                            "label": "Desktop",
+                            "helpText": "Wird bei Viewports über 991px angezeigt und allen kleineren Viewports, falls für diese kein eigenes Logo verfügbar ist."
+                        },
+                        "sw-logo-tablet": {
+                            "label": "Tablet",
+                            "helpText": "Wird bei Viewports zwischen 767px und 991px angezeigt."
+                        },
+                        "sw-logo-mobile": {
+                            "label": "Mobile",
+                            "helpText": "Wird bei Viewports von bis zu 767px angezeigt."
+                        },
+                        "sw-logo-share": {
+                            "label": "App- & Share-Icon"
+                        },
+                        "sw-logo-favicon": {
+                            "label": "Favicon"
+                        }
+                    }
+                }
+            },
+            "tabHeader": {
+                "label": "Header",
+                "blockHeaderLayout": {
+                    "label": "Layout",
+                    "default": {
+                        "ft-header-layout-type": {
+                            "label": "Darstellungsart",
+                            "helpText": "Wähle deine bevorzugte Darstellungsart für den Header aus. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter wähle die 'Standard'-Darstellungsart.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Header'"
+                            }
+                        }
+                    }
+                },
+                "blockHeaderTopBar": {
+                    "label": "Top-Bar",
+                    "default": {
+                        "ft-top-bar-layout-type": {
+                            "label": "Darstellungsart",
+                            "helpText": "Wähle deine bevorzugte Darstellungsart der Top-Bar aus. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter wähle die 'Standard'-Darstellungsart.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Top-Bar'"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeTopBar": {
+                    "label": "FreeTheme 'Top-Bar'",
+                    "sectionColors": {
+                        "label": "Farben",
+                        "ft-top-bar-color": {
+                            "label": "Textfarbe",
+                            "helpText": "Wähle die Textfarbe der Top-Bar aus. <br><br><b>Tipp</b>: Stelle sicher, dass die Textfarbe einen ausreichenden Kontrast zur Hintergrundfarbe hat."
+                        },
+                        "ft-top-bar-background-color": {
+                            "label": "Hintergrundfarbe",
+                            "helpText": "Wähle die Hintergrundfarbe der Top-Bar aus."
+                        }
+                    },
+                    "sectionTopBarColumns": {
+                        "label": "Spalten",
+                        "ft-top-bar-column-1": {
+                            "label": "Spalte 1",
+                            "helpText": "Wähle den Inhalt von Spalte 1 aus. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf die \"FreeTheme 'Top-Bar'\".",
+                            "0": {
+                                "label": "Nicht anzeigen"
+                            },
+                            "1": {
+                                "label": "Claim anzeigen"
+                            },
+                            "2": {
+                                "label": "Service-Hotline anzeigen"
+                            },
+                            "3": {
+                                "label": "Service-E-Mail anzeigen"
+                            },
+                            "4": {
+                                "label": "Kontakt anzeigen (Telefon + E-Mail)"
+                            },
+                            "5": {
+                                "label": "Social-Icons anzeigen"
+                            }
+                        },
+                        "ft-top-bar-column-2": {
+                            "label": "Spalte 2",
+                            "helpText": "Wähle den Inhalt von Spalte 2 aus. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf die \"FreeTheme 'Top-Bar'\".",
+                            "0": {
+                                "label": "Nicht anzeigen"
+                            },
+                            "1": {
+                                "label": "Claim anzeigen"
+                            },
+                            "2": {
+                                "label": "Textnachricht anzeigen"
+                            },
+                            "3": {
+                                "label": "USPs anzeigen"
+                            },
+                            "4": {
+                                "label": "Service-Hotline anzeigen"
+                            },
+                            "5": {
+                                "label": "Service-E-Mail anzeigen"
+                            },
+                            "6": {
+                                "label": "Kontakt anzeigen (Telefon + E-Mail)"
+                            }
+                        },
+                        "ft-top-bar-column-3": {
+                            "label": "Spalte 3",
+                            "helpText": "Wähle den Inhalt von Spalte 3 aus. <br><br><b>Tipp</b>: Die Sprach-/Währungsauwahl wird angezeigt sofern du mehr als eine Sprache bzw. Währung in deinem Verkaufskanal konfiguriert hast. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf die \"FreeTheme 'Top-Bar'\".",
+                            "0": {
+                                "label": "Sprach-/Währungsauwahl anzeigen"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-claim": {
+                            "label": "Claim",
+                            "helpText": "Gebe deinen 'Claim' ein."
+                        },
+                        "ft-snippet-field-mail": {
+                            "label": "Kontakt: E-Mail",
+                            "helpText": "Gebe die E-Mail-Adresse für das Kontakt-Element an."
+                        },
+                        "ft-snippet-field-phone": {
+                            "label": "Kontakt: Telefon",
+                            "helpText": "Gebe die Telefonnummer für das Kontakt-Element an."
+                        },
+                        "ft-snippet-field-service-mail": {
+                            "label": "Service-E-Mail",
+                            "helpText": "Gebe die Service-E-Mail-Adresse an."
+                        },
+                        "ft-snippet-field-service-hotline": {
+                            "label": "Service-Hotline",
+                            "helpText": "Gebe die Service-Telefonnummer an."
+                        },
+                        "ft-snippet-field-message": {
+                            "label": "Textnachricht",
+                            "helpText": "Gebe deine Textnachricht ein."
+                        }
+                    }
+                }
+            },
+            "tabFooter": {
+                "label": "Footer",
+                "blockFooterLayout": {
+                    "label": "Layout",
+                    "default": {
+                        "ft-footer-layout-type": {
+                            "label": "Darstellungsart",
+                            "helpText": "Wähle deine bevorzugte Darstellungsart für den Footer aus. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter wähle die 'Standard'-Darstellungsart.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "FreeTheme 'Footer'"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeFooter": {
+                    "label": "FreeTheme 'Footer'",
+                    "sectionColors": {
+                        "label": "Farben",
+                        "ft-footer-color": {
+                            "label": "Textfarbe",
+                            "helpText": "Wähle die Textfarbe vom Footer aus. <br><br><b>Tipp</b>: Stelle sicher, dass die Textfarbe einen ausreichenden Kontrast zur Hintergrundfarbe hat."
+                        },
+                        "ft-footer-background-color": {
+                            "label": "Hintergrundfarbe",
+                            "helpText": "Wähle die Hintergrundfarbe vom Footer aus."
+                        },
+                        "ft-footer-link-color": {
+                            "label": "Linkfarbe",
+                            "helpText": "Wähle die die Farbe für Links im Footer aus. <br><br><b>Tipp</b>: Stelle sicher, dass die Linkfarbe einen ausreichenden Kontrast zur Hintergrundfarbe hat."
+                        },
+                        "ft-footer-link-color-hover": {
+                            "label": "Linkfarbe (Hover)",
+                            "helpText": "Wähle die Farbe für Links im Footer beim Darüberfahren (Hover) aus."
+                        }
+                    },
+                    "sectionFooterLogo": {
+                        "label": "Media",
+                        "ft-footer-logo": {
+                            "label": "Footer Logo",
+                            "helpText": "Wähle das Logo für den Footer aus. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf den \"FreeTheme 'Footer'\"."
+                        }
+                    },
+                    "sectionFooterSocialIcons": {
+                        "label": "Social-Icons",
+                        "ft-footer-social-icons-show": {
+                            "label": "Social-Icons anzeigen",
+                            "helpText": "Wähle aus, ob die Social-Icons im Footer 'Kontakt'-Bereich angezeigt werden sollen.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    },
+                    "sectionFooterNavigation": {
+                        "label": "Footer-Navigation",
+                        "ft-footer-navigation-columns": {
+                            "label": "Spaltenanzahl",
+                            "helpText": "Wähle die Anzahl der Spalten für die Footer-Navigation aus.",
+                            "0": {
+                                "label": "2 Spalten"
+                            },
+                            "1": {
+                                "label": "3 Spalten"
+                            },
+                            "2": {
+                                "label": "4 Spalten"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeFooterNewsletter": {
+                    "label": "FreeTheme 'Footer-Newsletter'",
+                    "default": {
+                        "ft-footer-newsletter-show": {
+                            "label": "Footer-Newsletter anzeigen",
+                            "helpText": "Wähle aus, ob die \"FreeTheme 'Footer-Newsletter'\"-Anmeldung über dem Footer angezeigt werden soll. <br><br><b>Hinweis</b>: Weise dein 'Layout für Newsletterseiten' in den Shopware Einstellungen (Einstellungen > Allgemein > Stammdaten) zu, damit die Anmeldung geöffnet werden kann.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    },
+                    "sectionColors": {
+                        "label": "Farben",
+                        "ft-footer-newsletter-color": {
+                            "label": "Textfarbe",
+                            "helpText": "Wähle die Textfarbe vom Footer-Newsletter aus. <br><br><b>Tipp</b>: Stelle sicher, dass die Textfarbe einen ausreichenden Kontrast zur Hintergrundfarbe hat. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf den \"FreeTheme 'Footer-Newsletter'\"."
+                        },
+                        "ft-footer-newsletter-background-color": {
+                            "label": "Hintergrundfarbe",
+                            "helpText": "Wähle die Hintergrundfarbe vom Footer-Newsletter aus. <br><br><b>Hinweis</b>: Diese Konfiguration bezieht sich auf den \"FreeTheme 'Footer-Newsletter'\"."
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-newsletter-headline": {
+                            "label": "Newsletter Überschrift",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-newsletter-text": {
+                            "label": "Newsletter Text",
+                            "helpText": ""
+                        }
+                    }
+                },
+                "blockFooterPaymentShipping": {
+                    "label": "Zahlungs- und Versandarten Logos",
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-payment-shipping-headline": {
+                            "label": "Zahlung und Versand Überschrift",
+                            "helpText": "Gebe die Überschrift für die Zahlungs- und Versandarten Logos im Footer ein."
+                        }
+                    }
+                },
+                "blockFooterCopyright": {
+                    "label": "Copyright Footer",
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-copyright": {
+                            "label": "Copyright",
+                            "helpText": "Gebe den Copyright-Text ein."
+                        }
+                    },
+                    "sectionBranding": {
+                        "label": "FreeTheme 'Branding'",
+                        "ft-branding-lizenzkey": {
+                            "label": "Lizenzkey zur Branding-Entfernung",
+                            "helpText": "Wenn du das FreeTheme-Branding entfernen möchtest, kannst du eine entsprechende Lizenz bei uns erwerben. Bei Interesse, kontaktiere uns gerne über: <a href=\"https://shopware-free-theme.de/\" class=\"sw-internal-link sw-internal-link--inline\" target=\"_blank\" rel=\"noopener\">https://shopware-free-theme.de/</a>"
+                        }
+                    }
+                }
+            },
+            "tabProductListing": {
+                "label": "Produktlisting",
+                "blockSidebar": {
+                    "label": "Sidebar",
+                    "sectionSidebarNavigation": {
+                        "label": "Sidebar-Navigation",
+                        "ft-sidebar-navigation-headline-show": {
+                            "label": "Überschrift anzeigen",
+                            "helpText": "Wähle aus, ob die Überschrift für die Sidebar-Navigation angezeigt werden soll.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    },
+                    "sectionSidebarFilter": {
+                        "label": "Sidebar-Filter",
+                        "ft-sidebar-filter-headline-show": {
+                            "label": "Überschrift anzeigen",
+                            "helpText": "Wähle aus, ob die Überschrift für die Sidebar-Filter angezeigt werden soll.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    }
+                }
+            },
+            "tabProductPage": {
+                "label": "Produktseite",
+                "blockProductPageLayout": {
+                    "label": "Layout",
+                    "sectionproductHeading": {
+                        "label": "Produktname + Hersteller-Logo",
+                        "ft-product-heading-position": {
+                            "label": "Position 'Produktname'",
+                            "helpText": "Wähle aus, ob der Produktname über der \"Galerie und Buybox\" (Standard) oder in der \"Buybox\" angezeigt werden soll. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter wähle die 'Standard'-Darstellungsart.",
+                            "0": {
+                                "label": "Standard (Shopware 6)"
+                            },
+                            "1": {
+                                "label": "Buybox"
+                            }
+                        },
+                        "ft-product-detail-manufacturer-logo-show": {
+                            "label": "Position 'Hersteller-Logo'",
+                            "helpText": "Wähle aus, ob das Hersteller-Logo angezeigt werden soll.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    },
+                    "sectionBuybox": {
+                        "label": "Buybox",
+                        "ft-product-detail-ordernumber-show": {
+                            "label": "Produktnummer anzeigen",
+                            "helpText": "Wähle aus, ob die Produktnummer angezeigt werden soll.",
+                            "0": {
+                                "label": "Nein"
+                            },
+                            "1": {
+                                "label": "Ja"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeProductSpecifications": {
+                    "label": "FreeTheme 'Produkt-Spezifikationen'",
+                    "default": {
+                        "ft-product-specifications": {
+                            "label": "Produkt-Spezifikationen",
+                            "helpText": "Wähle aus, welche Produkt-Spezifikationen in der Buybox angezeigt werden sollen.",
+                            "0": {
+                                "label": "Hersteller"
+                            },
+                            "1": {
+                                "label": "EAN"
+                            },
+                            "2": {
+                                "label": "Hersteller-Nr."
+                            },
+                            "3": {
+                                "label": "Gewicht"
+                            },
+                            "4": {
+                                "label": "Höhe"
+                            },
+                            "5": {
+                                "label": "Breite"
+                            },
+                            "6": {
+                                "label": "Länge"
+                            },
+                            "7": {
+                                "label": "Größe"
+                            },
+                            "8": {
+                                "label": "Lagerbestand"
+                            },
+                            "9": {
+                                "label": "Verfügbarer Bestand"
+                            },
+                            "10": {
+                                "label": "Lieferzeit"
+                            },
+                            "11": {
+                                "label": "Maximalabnahme"
+                            },
+                            "12": {
+                                "label": "Mindestabnahme"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-available-stock-label": {
+                            "label": "Verfügbarer Bestand",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-delivery-time-label": {
+                            "label": "Lieferzeit",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-ean-label": {
+                            "label": "EAN",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-height-label": {
+                            "label": "Höhe",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-length-label": {
+                            "label": "Länge",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-manufacturer-label": {
+                            "label": "Hersteller",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-manufacturer-number-label": {
+                            "label": "Hersteller-Nr.",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-maxpurchase-label": {
+                            "label": "Maximalabnahme",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-minpurchase-label": {
+                            "label": "Mindestabnahme",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-stock-label": {
+                            "label": "Lagerbestand",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-weight-label": {
+                            "label": "Gewicht",
+                            "helpText": ""
+                        },
+                        "ft-snippet-field-width-label": {
+                            "label": "Breite",
+                            "helpText": ""
+                        }
+                    }
+                }
+            },
+            "tabExtensions": {
+                "label": "Add-ons",
+                "blockExtensionsSocialIcons": {
+                    "label": "FreeTheme 'Social-Icons'",
+                    "default": {
+                        "ft-social-icons": {
+                            "label": "Social-Icons",
+                            "helpText": "Wähle aus, welche Social-Icons in deinem Shop angezeigt werden sollen.",
+                            "0": {
+                                "label": "Blogger"
+                            },
+                            "1": {
+                                "label": "Facebook"
+                            },
+                            "2": {
+                                "label": "Flickr"
+                            },
+                            "3": {
+                                "label": "Instagram"
+                            },
+                            "4": {
+                                "label": "LinkedIn"
+                            },
+                            "5": {
+                                "label": "Pinterest"
+                            },
+                            "6": {
+                                "label": "TikTok"
+                            },
+                            "7": {
+                                "label": "Twitch"
+                            },
+                            "8": {
+                                "label": "Vimeo"
+                            },
+                            "9": {
+                                "label": "WhatsApp"
+                            },
+                            "10": {
+                                "label": "WordPress"
+                            },
+                            "11": {
+                                "label": "X / Twitter"
+                            },
+                            "12": {
+                                "label": "Xing"
+                            },
+                            "13": {
+                                "label": "YouTube"
+                            }
+                        }
+                    },
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-blogger-link": {
+                            "label": "Blogger: Link",
+                            "helpText": "Gebe den URL zu deinem Blogger-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.blogger' suchst."
+                        },
+                        "ft-snippet-field-facebook-link": {
+                            "label": "Facebook: Link",
+                            "helpText": "Gebe den URL zu deinem Facebook-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.facebook' suchst."
+                        },
+                        "ft-snippet-field-flickr-link": {
+                            "label": "Flickr: Link",
+                            "helpText": "Gebe den URL zu deinem Flickr-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.flickr' suchst."
+                        },
+                        "ft-snippet-field-instagram-link": {
+                            "label": "Instagram: Link",
+                            "helpText": "Gebe den URL zu deinem Instagram-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.instagram' suchst."
+                        },
+                        "ft-snippet-field-linkedin-link": {
+                            "label": "LinkedIn: Link",
+                            "helpText": "Gebe den URL zu deinem LinkedIn-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.linkedin' suchst."
+                        },
+                        "ft-snippet-field-pinterest-link": {
+                            "label": "Pinterest: Link",
+                            "helpText": "Gebe den URL zu deinem Pinterest-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.pinterest' suchst."
+                        },
+                        "ft-snippet-field-tiktok-link": {
+                            "label": "TikTok: Link",
+                            "helpText": "Gebe den URL zu deinem TikTok-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.tiktok' suchst."
+                        },
+                        "ft-snippet-field-twitch-link": {
+                            "label": "Twitch: Link",
+                            "helpText": "Gebe den URL zu deinem Twitch-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.twitch' suchst."
+                        },
+                        "ft-snippet-field-vimeo-link": {
+                            "label": "Vimeo: Link",
+                            "helpText": "Gebe den URL zu deinem Vimeo-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.vimeo' suchst."
+                        },
+                        "ft-snippet-field-whatsapp-link": {
+                            "label": "WhatsApp: Link",
+                            "helpText": "Gebe den URL zu deinem WhatsApp-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.whatsapp' suchst."
+                        },
+                        "ft-snippet-field-wordpress-link": {
+                            "label": "WordPress: Link",
+                            "helpText": "Gebe den URL zu deinem WordPress-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.wordpress' suchst."
+                        },
+                        "ft-snippet-field-x-link": {
+                            "label": "X: Link",
+                            "helpText": "Gebe den URL zu deinem X-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.x' suchst."
+                        },
+                        "ft-snippet-field-xing-link": {
+                            "label": "Xing: Link",
+                            "helpText": "Gebe den URL zu deinem Xing-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.xing' suchst."
+                        },
+                        "ft-snippet-field-youtube-link": {
+                            "label": "YouTube: Link",
+                            "helpText": "Gebe den URL zu deinem YouTube-Profil ein. <br><br><b>Hinweis</b>: Den Titel vom Link kannst du in der Textbaustein-Verwaltung (Einstellungen > Regional > Textbausteine) bearbeiten, wenn du nach 'freeThemeOne.socialIcons.youtube' suchst."
+                        }
+                    }
+                },
+                "blockFreeThemeUsps": {
+                    "label": "FreeTheme 'USPs'",
+                    "sectionSnippets": {
+                        "label": "Textbausteine",
+                        "ft-snippet-field-usp1-label": {
+                            "label": "USP 1",
+                            "helpText": "Gebe den Text für USP 1 ein."
+                        },
+                        "ft-snippet-field-usp2-label": {
+                            "label": "USP 2",
+                            "helpText": "Gebe den Text für USP 2 ein."
+                        },
+                        "ft-snippet-field-usp3-label": {
+                            "label": "USP 3",
+                            "helpText": "Gebe den Text für USP 3 ein."
+                        },
+                        "ft-snippet-field-usp4-label": {
+                            "label": "USP 4",
+                            "helpText": "Gebe den Text für USP 4 ein."
+                        }
+                    }
+                }
+            },
+            "tabOthers": {
+                "label": "Weiteres",
+                "blockFreeThemeEssentials": {
+                    "label": "🎁 FreeTheme Essentials - Kostenlose Extras fuer mehr Design und Conversion",
+                    "default": {
+                        "ft-essentials-teaser": {
+                            "label": "Hol dir professionelle Erlebniswelten, Anleitungen und Tools - 100% kostenfrei!",
+                            "helpText": "Sichere dir exklusive Extras: Import-Plugin mit Storytelling-Elementen, Schritt-fuer-Schritt-Umsetzungsanleitungen, alle Grafiken als editierbare PSD-Dateien, 100+ pagespeed-optimierte Versand- und Zahlungs-Logos sowie Customizing-Plugins fuer individuelle Anpassungen (Self-hosted und Cloud). Perfekt fuer mehr Design-Qualitaet, schnellere Umsetzung und hoehere Conversion."
+                        }
+                    }
+                },
+                "blockFreeThemeAdvancedSettings": {
+                    "label": "Erweiterte-Einstellungen",
+                    "default": {
+                        "ft-cms-styling": {
+                            "label": "FreeTheme 'CMS-Styling'",
+                            "helpText": "Diese Konfiguration aktiviert/deaktiviert das \"CMS-Styling\". <br><br>Wenn diese Konfiguration aktiv ist, werden CMS-Sectionen und CMS-Blöcke in den Standard-CMS-Layouts von Shopware entsprechend gestaltet. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter deaktiviere diese Konfiguration.",
+                            "0": {
+                                "label": "deaktiviert"
+                            },
+                            "1": {
+                                "label": "aktiviert"
+                            }
+                        },
+                        "ft-responsive-gutter": {
+                            "label": "FreeTheme 'Responsive-Gutter'",
+                            "helpText": "Diese Konfiguration aktiviert/deaktiviert das \"Responsive-Gutter\". <br><br>Wenn diese Konfiguration aktiv ist, werden die Abstände in CMS-Sectionen/-Blöcken (--bs-gutter) in kleineren Viewports verringert. <br><br><b>Hinweis</b>: Bei Kompatibilitätsproblemen mit Erweiterungen Dritter deaktiviere diese Konfiguration.",
+                            "0": {
+                                "label": "deaktiviert"
+                            },
+                            "1": {
+                                "label": "aktiviert"
+                            }
+                        }
+                    },
+                    "sectionFreeThemeLandingpage": {
+                        "label": "FreeTheme 'Landingpage'",
+                        "ft-landingpage-styling": {
+                            "label": "FreeTheme 'Landingpage-Styling'",
+                            "helpText": "Diese Konfiguration aktiviert/deaktiviert CSS-Styles für die FreeTheme Landingpage. <br><br><b>Hinweis</b>: Du kannst diese Konfiguration deaktivieren, wenn du die FreeTheme Landingpage nicht nutzt.",
+                            "0": {
+                                "label": "deaktiviert"
+                            },
+                            "1": {
+                                "label": "aktiviert"
+                            }
+                        }
+                    }
+                },
+                "blockFreeThemeExpertSettings": {
+                    "label": "Experten-Einstellungen",
+                    "default": {
+                        "ft-expert-mode": {
+                            "label": "Experten-Modus",
+                            "helpText": "Diese Konfiguration aktiviert/deaktiviert den \"Experten-Modus\". <br><br><b>Tipp</b>: Deaktiviere den \"Experten-Modus\" um Fehler in deinem individuelle Code ausschließen zu können."
+                        }
+                    },
+                    "sectionExpertSettingsCode": {
+                        "label": "Individueller Code",
+                        "ft-custom-css-code": {
+                            "label": "Individueller CSS-Code",
+                            "helpText": "Dieser CSS-Code wird direkt im Head-Bereich geladen und sollte mit einem CSS-Minifier Tool minimiert werden. <br><br>Idealerweise fügst du CSS-Code über eine SCSS-Datei z.B. mit unserem 'Customising-Plugin' hinzu. <br><br><b>Achtung:</b> Dieses Konfigurationsfeld kann bei Fehleingaben zu Problemen führen! Nutze dies nur wenn du dir absolut sicher bist.",
+                            "placeholder": ".my-class { color: #000000; }"
+                        },
+                        "ft-custom-css-code-load": {
+                            "label": "CSS-Code laden",
+                            "helpText": "Diese Konfiguration aktiviert/deaktiviert das Laden deines individuellen CSS-Codes. <br><br>Deaktiviere diese Konfiguration, wenn du keinen CSS-Code einbinden möchtest bzw. damit dein CSS-Code nicht geladen wird."
+                        }
+                    }
+                }
+
+            }
+            
+        }
+    }
+}

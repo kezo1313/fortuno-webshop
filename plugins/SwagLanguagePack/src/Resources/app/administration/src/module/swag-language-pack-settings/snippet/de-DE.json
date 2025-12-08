@@ -1,0 +1,34 @@
+{
+    "swag-language-pack": {
+        "general": {
+            "mainMenuItemGeneral": "Sprachpaket",
+            "descriptionTextModule": "Sprachpaket-Einstellungen"
+        },
+        "settings": {
+            "header": "Sprachpaket",
+            "card": {
+                "messageSaveError": "Sprachpaket-Einstellungen konnten nicht gespeichert werden.",
+                "messageSalesChannelActiveError": "Sprachpaket-Einstellungen konnten nicht gespeichert werden, da folgende Sprachen noch mit Verkaufskanälen verknüpft sind: {languages}",
+                "administration": {
+                    "tabTitle": "Administration",
+                    "title": "Administrations-Sprachen",
+                    "description": "Aktivierte Sprachen stehen als {userInterfaceLanguageLink} für die Administration zur Auswahl.",
+                    "descriptionTargetLinkText": "Sprachen der Benutzeroberfläche"
+                },
+                "salesChannel": {
+                    "tabTitle": "Verkaufskanäle",
+                    "title": "Verkaufskanal-Sprachen",
+                    "description": "Aktivierte Sprachen stehen als Standard-/Sprachauswahl auf Verkaufskanal-Detailseiten zur Auswahl. Sprachen die bereits in einem Verkaufskanal ausgewählt wurden, können nicht deaktiviert werden."
+
+                }
+            },
+          "deprecationBanner": "Ab Shopware 6.8 wird das Language Pack Plugin nicht mehr unterstützt. Du kannst es bereits ab Version 6.7.3.0 durch die native Sprachverwaltung ersetzen. <a href=\"https://developer.shopware.com/docs/resources/references/upgrades/core/translation/language-pack-migration.html\" target=\"_blank\">Mehr Informationen findest Du in unserem Migrationsleitfaden.</a>"
+        },
+        "sw-settings-language-list": {
+            "deleteLanguagePackTooltip": "Das Löschen von Sprachen des Sprachpakets ist nicht möglich."
+        },
+        "sw-extension-uninstall-modal": {
+            "infoText": "Für Benutzer, welche eine Sprache des Sprachpakets eingestellt haben, wird durch die Deinstallation die Spracheinstellung zum Systemstandard geändert."
+        }
+    }
+}

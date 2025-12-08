@@ -1,0 +1,17 @@
+# Ignore everything in src/
+src/*
+# Ignore vendor directory
+vendor/
+# But don't ignore custom/plugins
+!src/custom/
+!src/custom/plugins/
+!src/custom/plugins/**
+plugins/DockwareSamplePlugin/
+plugins/SwagPlatformDemoData/
+theme/*
+thumbnail/*
+sitemap/*
+storefront
+files/*
+media/*
+storefront

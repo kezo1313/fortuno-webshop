@@ -1,0 +1,146 @@
+{
+    "freeThemeOne": {
+        "account": {
+            "loginMailLabel": "Email address",
+            "loginPasswordLabel": "Password",
+            "loginPasswordRecover": "Did you forget your password?"
+        },
+        "captcha": {
+            "basicCaptchaInputPlaceholder": "Enter characters here..."
+        },
+        "checkout": {
+            "addPromotionPlaceholder": "Enter discount code...",
+            "shippingCosts": "Configure shipping details",
+            "addressLoginToggleQuestion": "Do you have an account already?",
+            "addressLoginToggle": "Click here to log-in."
+        },
+        "claim": "ONE - Quality since 1980",
+        "copyright": "© %date% %shopname% – All Rights Reserved.",
+        "footer": {
+            "paymentShippingHeadline": "Our payment and shipping methods:",
+            "newsletterHeadline": "Our newsletter. <br>Subscribe now and don't miss anything anymore!",
+            "newsletterText": "Subscribe to the free newsletter and never miss any news or offers from %shopname%."
+        },
+        "mail": "<a href=\"mailto:info@example.com\">info@example.com</a>",
+        "message": "FREE OF CHARGE RETURNS from an order value of X euros",
+        "phone": "<a href=\"tel:+49180000000\">0180 - 000000</a>",
+        "productSpecifications": {
+            "availableStockLabel": "Available stock:",
+            "deliveryTimeLabel": "Delivery time:",
+            "eanLabel": "EAN:",
+            "heightLabel": "Height:",
+            "lengthLabel": "Length:",
+            "manufacturerLabel": "Manufacturer:",
+            "manufacturerNumberLabel": "Manufacturer product number:",
+            "maxpurchaseLabel": "Max. order quantity:",
+            "minpurchaseLabel": "Min. order quantity:",
+            "stockLabel": "Stock:",
+            "weightLabel": "Weight:",
+            "widthLabel": "Width:"
+        },
+        "usps": {
+            "usp1": {
+                "label": "Free Shipping over 50€",
+                "icon": "rocket"
+            },
+            "usp2": {
+                "label": "Shipping within 24h",
+                "icon": "clock"
+            },
+            "usp3": {
+                "label": "Money Back Guaranty",
+                "icon": "thumb-up"
+            },
+            "usp4": {
+                "label": "Secure payment methods",
+                "icon": "briefcase"
+            }
+        },
+        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm",
+        "serviceMail": "<a href=\"mailto:info@example.com\">info@example.com</a> Mon-Fri, 9 am - 5 pm",
+        "sidebarFilter": {
+            "headline": "Filters"
+        },
+        "sidebarNavigation": {
+            "headline": "Categories"
+        },
+        "socialIcons": {
+            "headline": "Our communities",
+            "text": "You will no longer miss any news on our social media platforms.",
+            "titleSuffix": "opens in a new browser tab (external link)",
+            "blogger": {
+                "name": "Blogger",
+                "link": "/#blogger",
+                "title": "Read our blog on Blogger"
+            },
+            "facebook": {
+                "name": "Facebook",
+                "link": "/#facebook",
+                "title": "Visit us on Facebook"
+            },
+            "flickr": {
+                "name": "Flickr",
+                "link": "/#flickr",
+                "title": "Explore our photos on Flickr"
+            },
+            "instagram": {
+                "name": "Instagram",
+                "link": "/#instagram",
+                "title": "Check us out on Instagram"
+            },
+            "linkedin": {
+                "name": "LinkedIn",
+                "link": "/#linkedin",
+                "title": "Connect with us on LinkedIn"
+            },
+            "pinterest": {
+                "name": "Pinterest",
+                "link": "/#pinterest",
+                "title": "Get inspired on Pinterest"
+            },
+            "tiktok": {
+                "name": "TikTok",
+                "link": "/#tiktok",
+                "title": "Watch our TikTok videos"
+            },
+            "twitch": {
+                "name": "Twitch",
+                "link": "/#twitch",
+                "title": "Join us live on Twitch"
+            },
+            "vimeo": {
+                "name": "Vimeo",
+                "link": "/#vimeo",
+                "title": "Watch our videos on Vimeo"
+            },
+            "whatsapp": {
+                "name": "WhatsApp",
+                "link": "/#whatsapp",
+                "title": "Message us on WhatsApp"
+            },
+            "wordpress": {
+                "name": "Wordpress",
+                "link": "/#blog",
+                "title": "Read our blog"
+            },
+            "x": {
+                "name": "X / Twitter",
+                "link": "/#x",
+                "title": "Follow us on X"
+            },
+            "xing": {
+                "name": "Xing",
+                "link": "/#xing",
+                "title": "Connect with us on Xing"
+            },
+            "youtube": {
+                "name": "YouTube",
+                "link": "/#youtube",
+                "title": "Watch our videos on YouTube"
+            }
+        },
+        "alert": {
+            "newsletterConfig": "No newsletter page selected in shop settings."
+        }
+    }
+}

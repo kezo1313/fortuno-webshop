@@ -1,0 +1,28 @@
+services:
+  shop:
+    build: .
+    container_name: shop
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3306:3306"
+      - "1025:1025"
+      - "9999:9999"
+      - "9998:9998"
+    volumes:
+      - "db_volume_guide:/var/lib/mysql"
+      # Keep live sync for your Shopware apps
+      - ./apps:/var/www/html/custom/apps
+      - ./files:/var/www/html/files
+      - ./theme:/var/www/html/public/theme
+      - ./media:/var/www/html/public/media
+      - ./thumbnail:/var/www/html/public/thumbnail
+      - ./sitemap:/var/www/html/public/sitemap
+    develop:
+      watch:
+        - action: sync
+          path: ./apps
+          target: /var/www/html/custom/apps
+volumes:
+  db_volume_guide:
+    driver: local

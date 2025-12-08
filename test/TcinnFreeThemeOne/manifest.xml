@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/app-system/0.1.0/src/Core/Content/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>TcinnFreeThemeOne</name>
+        <label>FreeTheme One | Free and reliable</label>
+        <label lang="de-DE">FreeTheme One | Kostenlos und zuverlässig</label>
+        <description>FreeTheme 'One' from TC-Innovations – the creators of ThemeWare® – makes the standard design fresh and light. It can be used in any branch, offers additional functions and can be extended by apps.</description>
+        <description lang="de-DE">FreeTheme 'One' von TC-Innovations – den Machern von ThemeWare® – lässt das Standard Design frisch und leicht aufleben. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
+        <author>TC-Innovations GmbH</author>
+        <copyright>(c) TC-Innovations GmbH</copyright>
+        <version>0.0.5</version>
+        <compatibility>~6.7.2</compatibility>
+        <icon>one-app-icon.png</icon>
+        <license>proprietary</license>
+    </meta>
+</manifest>
