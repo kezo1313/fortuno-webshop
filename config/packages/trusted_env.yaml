@@ -1,0 +1,5 @@
+parameters:
+    env(TRUSTED_PROXIES): '127.0.0.1,::1,192.168.0.1'
+
+framework:
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
