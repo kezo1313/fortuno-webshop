@@ -16,13 +16,13 @@ COPY --chown=www-data:www-data ./apps /var/www/html/custom/apps
 # Warning: Ensure your .env does not contain secrets if you push this image publicly!
 COPY --chown=www-data:www-data ./.env /var/www/html/.env
 
-# 5. Copy framework.yaml
-# We copy it specifically to the target location
-COPY --chown=www-data:www-data ./config/packages/framework.yaml /var/www/html/config/packages/framework.yaml
+# 5. Copy configuration files
+# We copy the whole packages directory to ensure all configs (like trusted_env.yaml) are present
+COPY --chown=www-data:www-data ./config/packages /var/www/html/config/packages
 
 # ---------------------------------------------------------------------
 # FINAL SETUP
 # ---------------------------------------------------------------------
 
-# 6. Switch back to www-data so the container runs safely
-USER www-data
+# Do NOT switch to www-data here. Dockware's entrypoint needs to run as root
+# to start services and set up the environment. It will handle permissions itself.
