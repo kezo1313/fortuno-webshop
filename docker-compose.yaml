@@ -12,6 +12,7 @@ services:
     volumes:
       # KEEP: Database persistence
       - "db_volume_guide:/var/lib/mysql"
+      - ./.env:/var/www/html/.env
       # Keep live sync for your Shopware apps
       - ./apps:/var/www/html/custom/apps
       - ./files:/var/www/html/files
