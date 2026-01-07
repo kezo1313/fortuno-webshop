@@ -1,0 +1,18 @@
+<!-- Ciljamo blok gumba SAVE i ubacujemo naš gumb PRIJE njega -->
+{% block sw_order_detail_actions_save %}
+    
+    <!-- Naš gumb -->
+    <!-- v-if provjerava postoji li JIR u custom fields. Ako postoji, skrivamo gumb. -->
+    <mt-button
+        v-if="order && (!order.customFields || !order.customFields.fortuno_fiscal_jir)"
+        variant="primary"
+        size="default"
+        class="sw-order-detail__smart-bar-fiscal-button"
+        style="margin-right: 10px;" 
+        @click="onFiscalizeCurrent">
+        Fiskaliziraj
+    </mt-button>
+
+    <!-- Originalni Save gumb (parent) -->
+    {% parent %}
+{% endblock %}

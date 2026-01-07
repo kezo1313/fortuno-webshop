@@ -3,3 +3,4 @@ parameters:
 
 framework:
     trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    trusted_headers: ['x-forwarded-for']

@@ -1,0 +1,21 @@
+{
+    "name": "fortuno/fiscalization",
+    "type": "shopware-platform-plugin",
+    "description": "Fiskalizacija za Hrvatsku (External API) - Shopware 6.7",
+    "version": "1.0.0",
+    "require": {
+        "shopware/core": "^6.7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fortuno\\Fiscalization\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Fortuno\\Fiscalization\\FortunoFiscalization",
+        "label": {
+            "de-DE": "Fiskalisierung Kroatien",
+            "en-GB": "Fiscalization Croatia"
+        }
+    }
+}

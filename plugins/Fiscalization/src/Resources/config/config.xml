@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Postavke Fiskalizacije</title>
+        
+        <input-field type="bool">
+            <name>enabled</name>
+            <label>Omogući fiskalizaciju</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>demoMode</name>
+            <label>Demo mod (Test okolina)</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="text">
+            <name>companyOib</name>
+            <label>OIB Firme</label>
+        </input-field>
+
+        <!-- NOVI POLJA -->
+        <input-field type="text">
+            <name>apiEndpoint</name>
+            <label>API Endpoint URL</label>
+            <placeholder>https://api.primjer.com</placeholder>
+        </input-field>
+
+        <input-field type="password">
+            <name>apiToken</name>
+            <label>API Token</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>businessPremise</name>
+            <label>Šifra poslovnice (Oznaka poslovnog prostora)</label>
+            <defaultValue>POSL1</defaultValue>
+        </input-field>
+
+        <input-field type="text">
+            <name>deviceLabel</name>
+            <label>Oznaka naplatnog uređaja (Broj kase)</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+        <!-- KRAJ NOVIH POLJA -->
+        
+        <!-- Stara polja za certifikat (ako ih još trebate za nešto, ostavite ih, 
+             ali ako koristite vanjski API obično certifikat ide na server, ne ovdje) -->
+        <component name="sw-entity-single-select">
+            <name>certificateId</name>
+            <entity>media</entity>
+            <label>Certifikat (PFX datoteka)</label>
+        </component>
+
+        <input-field type="password">
+            <name>certificatePassword</name>
+            <label>Lozinka certifikata</label>
+        </input-field>
+    </card>
+</config>

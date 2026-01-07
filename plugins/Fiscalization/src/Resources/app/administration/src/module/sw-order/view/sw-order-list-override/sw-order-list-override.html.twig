@@ -1,0 +1,10 @@
+<!-- Ciljamo blok za "View" akciju i dodajemo našu ODMAH NAKON njega -->
+{% block sw_order_list_grid_columns_actions_view %}
+    {% parent %}
+
+    <sw-context-menu-item 
+        @click="onFiscalize(item)"
+        :disabled="item.customFields && item.customFields.fortuno_fiscal_jir">
+        Fiskaliziraj
+    </sw-context-menu-item>
+{% endblock %}
