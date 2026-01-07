@@ -26,3 +26,5 @@ COPY --chown=www-data:www-data ./config/packages /var/www/html/config/packages
 
 # Do NOT switch to www-data here. Dockware's entrypoint needs to run as root
 # to start services and set up the environment. It will handle permissions itself.
+
+EXPOSE 80 443
