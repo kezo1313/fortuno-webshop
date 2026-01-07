@@ -1,8 +1,4 @@
 framework:
-    # Trust *all* "X-Forwarded-*" headers
-    # Ensure spelling is exactly 'x-forwarded-for'
-    trusted_headers: [ 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-fo', 'x-forwarded-port' ]
-
-    # Read the trusted proxies from the .env file
-    # This must be indented so it belongs to 'framework'
-    trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    # Proxy configuration moved to trusted_env.yaml to avoid duplication
+    # trusted_headers: [ 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-for', 'x-forwarded-port' ]
+    # trusted_proxies: '%env(TRUSTED_PROXIES)%'
