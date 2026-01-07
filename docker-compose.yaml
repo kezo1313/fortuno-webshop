@@ -1,26 +1,30 @@
 services:
   shop:
     build: .
-    container_name: shop
-    environment:
-      # You might need to adjust PHP settings for production
-      - PHP_MEMORY_LIMIT=512M
+    container_name: shop-guid
     ports:
-      - "80"
-      # You generally don't need to expose DB ports publicly in Coolify
-      # unless you connect externally.
+      - "80:80"
+      - "443:443"
+      - "3306:3306"
+      - "1025:1025"
+      - "9999:9999"
+      - "9998:9998"
     volumes:
       # KEEP: Database persistence
       - "db_volume_guide:/var/lib/mysql"
-
-      # KEEP: Media/Files persistence (User generated content)
-      - "shop_files:/var/www/html/files"
-      - "shop_media:/var/www/html/public/media"
-      - "shop_thumbnail:/var/www/html/public/thumbnail"
-      - "shop_sitemap:/var/www/html/public/sitemap"
-      # REMOVE: Do not mount ./apps or ./theme here. 
-      # We handled this in the Dockerfile via COPY.
-
+      # Keep live sync for your Shopware apps
+      - ./apps:/var/www/html/custom/apps
+      - ./files:/var/www/html/files
+      - ./theme:/var/www/html/public/theme
+      - ./media:/var/www/html/public/media
+      - ./thumbnail:/var/www/html/public/thumbnail
+      - ./sitemap:/var/www/html/public/sitemap
+      - ./config/packages:/var/www/html/config/packages
+    develop:
+      watch:
+        - action: sync
+          path: ./apps
+          target: /var/www/html/custom/apps
 volumes:
   db_volume_guide:
     driver: local
