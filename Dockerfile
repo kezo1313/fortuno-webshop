@@ -23,6 +23,7 @@ COPY --from=build --chown=82:82 /var/www/html /var/www/html
 # Copy local project files (apps, config, etc.)
 COPY --chown=82:82 ./apps /var/www/html/custom/apps
 COPY --chown=82:82 ./.env /var/www/html/.env
+COPY --chown=82:82 ./plugins /var/www/html/custom/plugins
 COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 
 # Ensure final permissions
