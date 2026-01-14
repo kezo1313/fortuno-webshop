@@ -1,35 +1,34 @@
-# 1. Use your preferred Dockware image
-FROM dockware/shopware:6.7.3.1
+# Stage 1: Build Stage
+FROM ghcr.io/shopware/shopware-cli:latest-php-8.3 AS build
 
+WORKDIR /var/www/html
 
-# 2. Switch to root to ensure we have permission to write anywhere
+# Create the project with the latest stable production template
+RUN composer create-project shopware/production . --no-interaction --no-scripts --no-install && \
+    composer config -g allow-plugins true && \
+    composer require shopware/docker --no-update && \
+    composer install --no-interaction --no-scripts --no-progress --no-dev
+
+# Stage 2: Final Production Stage
+FROM ghcr.io/shopware/docker-base:8.3-nginx
+
+# Standard Shopware Docker user is 82 (www-data)
 USER root
 
-# ---------------------------------------------------------------------
-# EXTRACT SHOPWARE (Build-time)
-# ---------------------------------------------------------------------
+WORKDIR /var/www/html
 
-# We extract the core files now and delete the archive so Dockware skips runtime decompression.
-RUN tar -I zstd -xf /var/www/html/shopware.tar.zst -C /var/www/html && \
-    rm /var/www/html/shopware.tar.zst && \
-    chown -R www-data:www-data /var/www/html
+# Copy core from build stage
+COPY --from=build --chown=82:82 /var/www/html /var/www/html
 
-# ---------------------------------------------------------------------
-# COPY APPLICATION CODE & CONFIG
-# ---------------------------------------------------------------------
+# Copy local project files (apps, config, etc.)
+COPY --chown=82:82 ./apps /var/www/html/custom/apps
+COPY --chown=82:82 ./.env /var/www/html/.env
+COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 
-# 3. Copy Custom Apps
-COPY --chown=www-data:www-data ./apps /var/www/html/custom/apps
+# Ensure final permissions
+RUN chown -R 82:82 /var/www/html
 
-# 4. Copy the .env file
-COPY --chown=www-data:www-data ./.env /var/www/html/.env
+# Switch to official user 82 (www-data)
+USER 82
 
-# 5. Copy configuration files
-COPY --chown=www-data:www-data ./config/packages /var/www/html/config/packages
-
-# ---------------------------------------------------------------------
-# FINAL SETUP
-# ---------------------------------------------------------------------
-
-# Do NOT switch to www-data here. Dockware's entrypoint needs to run as root.
-EXPOSE 80 443
+EXPOSE 80

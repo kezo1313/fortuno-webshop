@@ -1,17 +1,27 @@
 services:
+  database:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopware
+    volumes:
+      - "db_volume_guide:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+
   shop:
     build: .
     container_name: shop-guid
+    depends_on:
+      - database
+
     ports:
-      - "80"
+      - "80:8000"
       - "443"
-      - "3306:3306"
       - "1025:1025"
       - "9999:9999"
       - "9998:9998"
     volumes:
-      # KEEP: Database persistence
-      - "db_volume_guide:/var/lib/mysql"
       - ./.env:/var/www/html/.env
       # Keep live sync for your Shopware apps
       - ./apps:/var/www/html/custom/apps
@@ -26,6 +36,7 @@ services:
         - action: sync
           path: ./apps
           target: /var/www/html/custom/apps
+
 volumes:
   db_volume_guide:
     driver: local

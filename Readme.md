@@ -42,3 +42,14 @@ APP_ENV=dev
 APP_URL=https://guide4youshop.vendorasuite.com
 DATABASE_URL=mysql://root:root@127.0.0.1:3306/shopware
 MAILER_DSN=smtp://127.0.0.1:1025
+
+# Deployment on Coolify
+
+When deploying to Coolify, ensure you set the following environment variables in your project settings:
+
+*   **APP_URL**: `https://guide4youshop.vendorasuite.com`
+*   **APP_ENV**: `prod`
+*   **APP_SECRET**: `b348599f51d293616add811f655d458f` (or generate a new one)
+*   **DATABASE_URL**: `mysql://root:root@database:3306/shopware` (If using the included database service)
+    *   *Note: If you use a managed database provided by Coolify, replace this connection string with the one provided by Coolify.*
+*   **INSTANCE_ID**: `844d726c515dce9883438a194bb107f9` (Recommended to keep finding logs/sessions easier)
