@@ -14,14 +14,11 @@ services:
       - database
 
     volumes:
-      - ./.env:/var/www/html/.env
-      # Keep live sync for your Shopware apps
-      - ./apps:/var/www/html/custom/apps
-      - ./files:/var/www/html/files
-      - ./theme:/var/www/html/public/theme
-      - ./media:/var/www/html/public/media
-      - ./thumbnail:/var/www/html/public/thumbnail
-      - ./sitemap:/var/www/html/public/sitemap
+      # Use named volumes for persistent data
+      - shop_files:/var/www/html/files
+      - shop_media:/var/www/html/public/media
+      - shop_thumbnail:/var/www/html/public/thumbnail
+      - shop_sitemap:/var/www/html/public/sitemap
 
     develop:
       watch:
