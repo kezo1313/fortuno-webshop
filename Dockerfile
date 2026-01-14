@@ -26,7 +26,7 @@ COPY --chown=82:82 ./.env /var/www/html/.env
 COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 
 # Ensure final permissions
-RUN chown -R 82:82 /var/www/html
+
 
 # Switch to official user 82 (www-data)
 USER 82
