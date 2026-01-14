@@ -31,4 +31,4 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 # Switch to official user 82 (www-data)
 USER 82
 
-EXPOSE 80
+EXPOSE 8000
