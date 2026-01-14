@@ -5,7 +5,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: shopware
     volumes:
-      - "db_volume_guide:/var/lib/mysql"
+      - "db_volume_guide_coolify:/var/lib/mysql"
 
   shop:
     build: .
@@ -30,7 +30,7 @@ services:
           target: /var/www/html/custom/apps
 
 volumes:
-  db_volume_guide:
+  db_volume_guide_coolify:
     driver: local
   # Define the named volumes for files
   shop_files:
