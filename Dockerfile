@@ -29,6 +29,9 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 # Ensure final permissions
 
 
+# Install assets during build to prevent 404s
+RUN php bin/console assets:install
+
 # Switch to official user 82 (www-data)
 USER 82
 
