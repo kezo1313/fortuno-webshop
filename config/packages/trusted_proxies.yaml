@@ -1,0 +1,7 @@
+parameters:
+    env(TRUSTED_PROXIES): '127.0.0.1,REMOTE_ADDR'
+
+framework:
+    trusted_proxies: '%env(TRUSTED_PROXIES)%'
+    # Optional: explicitly trust headers if needed, though usually automatic with trusted_proxies
+    # trusted_headers: ['x-forwarded-for', 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port', 'x-forwarded-prefix']
