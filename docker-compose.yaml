@@ -6,8 +6,6 @@ services:
       MYSQL_DATABASE: shopware
     volumes:
       - "db_volume_guide:/var/lib/mysql"
-    ports:
-      - "3306:3306"
 
   shop:
     build: .
@@ -15,12 +13,6 @@ services:
     depends_on:
       - database
 
-    ports:
-      - "80:8000"
-      - "443"
-      - "1025:1025"
-      - "9999:9999"
-      - "9998:9998"
     volumes:
       - ./.env:/var/www/html/.env
       # Keep live sync for your Shopware apps
