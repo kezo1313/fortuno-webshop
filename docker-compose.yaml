@@ -22,7 +22,7 @@ services:
       - ./media:/var/www/html/public/media
       - ./thumbnail:/var/www/html/public/thumbnail
       - ./sitemap:/var/www/html/public/sitemap
-      - ./config/packages:/var/www/html/config/packages
+
     develop:
       watch:
         - action: sync
