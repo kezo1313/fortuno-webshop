@@ -33,7 +33,13 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 RUN php bin/console assets:install
 
 # Fix permissions for cache and public folders (since asset install ran as root)
-RUN chown -R 82:82 /var/www/html/var /var/www/html/public
+# Also ensure volume mount points exist with correct usage
+RUN mkdir -p /var/www/html/public/media \
+    /var/www/html/public/thumbnail \
+    /var/www/html/public/theme \
+    /var/www/html/public/sitemap \
+    /var/www/html/files && \
+    chown -R 82:82 /var/www/html/var /var/www/html/public /var/www/html/files
 
 # Switch to official user 82 (www-data)
 USER 82
