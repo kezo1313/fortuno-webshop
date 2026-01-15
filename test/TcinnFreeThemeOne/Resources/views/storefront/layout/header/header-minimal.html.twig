@@ -1,0 +1,23 @@
+{% sw_extends '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+
+{# FreeThemeOne 'block/cms-block-product-heading.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust grid #}
+{% block layout_header_minimal_logo %}
+    {# previously 'col-6 col-md-4 header-minimal-logo' #}
+    <div class="col-6 col-md-3 header-minimal-logo">
+        {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+    </div>
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust grid and snippet #}
+{% block layout_header_minimal_contact %}
+    {# previously 'col-md-4 header-minimal-contact' #}
+    <div class="col-auto header-minimal-contact">
+        {{ 'header.supportInfo'|trans|sw_sanitize }}
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/cart-widget.html.twig' %}
+
+{# FreeThemeOne 'layout/header/actions/account-widget.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon and adjust price presentation #}
+{% block layout_header_actions_cart_widget %}
+    {# FreeThemeOne: Adjust icon #}
+    <span class="header-cart-icon">
+        {% if iconPack == "feather" %}
+            {% sw_icon 'shopping-bag' style { pack: iconPack } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'bag' %}
+        {% endif %}
+    </span>
+    {% if page.cart.lineItems|length > 0 %}
+        <span class="badge bg-primary header-cart-badge">{{ page.cart.lineItems|length }}</span>
+    {% endif %}
+
+    {# FreeThemeOne: Remove price if cart is empty #}
+    {% if page.cart.lineItems|length > 0 %}
+        <span class="header-cart-total d-none d-sm-inline-block ms-sm-2">
+            {{ page.cart.price.positionPrice|currency }}
+        </span>
+    {% endif %}
+
+    {# Live updates of the cart will be shown by the offcanvas #}
+    <span
+        class="visually-hidden"
+        id="cart-widget-aria-label"
+    >
+        {{ 'checkout.cartScreenReaderUpdate'|trans({
+                '%count%': page.cart.lineItems|length,
+                '%total%': page.cart.price.positionPrice|currency,
+            })|sw_sanitize }}
+    </span>
+{% endblock %}

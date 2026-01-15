@@ -1,0 +1,58 @@
+{% sw_extends '@Storefront/storefront/layout/header.html.twig' %}
+
+{# FreeThemeOne 'layout/header.html.twig #}
+
+{# @TODO: Add HC configuration... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftHeaderLayoutType = theme_config('ft-header-layout-type') %}
+{% set ftTopBarLayoutType = theme_config('ft-top-bar-layout-type') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block base_header %}
+    {% sw_include '@Storefront/storefront/utilities/staging-info.html.twig' %}
+
+    {# @TODO: Add 'USP bar' #}
+
+    {# FreeThemeOne: Add 'Top bar' above the header (previously in 'layout/header/header.html.twig') #}
+    {% if ftTopBarLayoutType == 'one' %}
+        {% sw_include '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+    {% endif %}
+
+    <header class="header-main">
+        {{ block('base_header_inner') }}
+    </header>
+{% endblock %}
+
+
+{% block base_header_inner %}
+    {% if ftHeaderLayoutType == 'one' %}
+        <div class="container">
+            {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+
+            {# FreeThemeOne: Add 'Search' to header (previously in 'layout/header/header.html.twig') #}
+            {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Move 'Navbar' #}
+{% block base_navigation %}
+    {% if ftHeaderLayoutType == 'one' %}
+        {# FreeThemeOne: Remove 'Navbar' as we add it above the header in 'layout/header/header.html.twig' #}
+
+    {% else %}
+	    {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}

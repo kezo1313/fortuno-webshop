@@ -1,0 +1,21 @@
+{% sw_extends '@Storefront/storefront/component/product/card/badges.html.twig' %}
+
+{# FreeThemeOne 'component/product/card/badges.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# @TODO: Adjust thumbnail size #}
+{% block component_product_badges %}
+    <div class="product-badges">
+        {{ block('component_product_badges_discount') }}
+
+        {% if product.shippingFree %}
+            <span class="badge bg-info badge-shipping-free">{{ 'general.deliveryShippingFree'|trans|sw_sanitize }}</span>
+        {% endif %}
+        
+        {{ block('component_product_badges_topseller') }}
+
+        {{ block('component_product_badges_new') }}
+    </div>
+{% endblock %}

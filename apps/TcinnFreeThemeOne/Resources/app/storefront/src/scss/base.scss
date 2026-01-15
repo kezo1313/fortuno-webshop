@@ -1,0 +1,897 @@
+/*
+FreeTheme 'One' styles
+==================================================
+Contains the imports to all theme styles.
+
+The file organization follows the 7-1 pattern architecture
+https://sass-guidelin.es/#the-7-1-pattern
+*/
+
+/*
+ * Variables, Mixins, Functions
+ * ---------------------------- */
+@import 'abstract/variables/custom';
+
+/*
+ * Base stuff
+ * ---------- */
+@import 'base/dev';
+@import 'base/font';
+@import 'base/typography';
+@import 'base/icons';
+
+/*
+ * Components
+ * ---------- */
+// @import 'component/alert';
+@import 'component/card';
+@import 'component/category-navigation';
+@import 'component/backdrop';
+@import 'component/base-slider';
+@import 'component/image-slider';
+@import 'component/product-slider';
+@import 'component/gallery-slider';
+// @import 'component/magnifier';
+// @import 'component/zoom-modal';
+@import 'component/offcanvas';
+@import 'component/product-box';
+// @import 'component/loader';
+@import 'component/modal';
+// @import 'component/flags';
+// @import 'component/icon';
+@import 'component/pagination';
+@import 'component/cms-sections';
+@import 'component/cms-block';
+@import 'component/cms-element';
+@import 'component/cms-form-confirmation';
+@import 'component/forms';
+// @import 'component/address-manager';
+@import 'component/sorting';
+// @import 'component/delivery-status';
+// @import 'component/quickview-modal';
+@import 'component/payment-method';
+@import 'component/shipping-method';
+@import 'component/filter-panel';
+@import 'component/filter-multi-select';
+@import 'component/filter-property-select';
+@import 'component/filter-boolean';
+// @import 'component/filter-range';
+// @import 'component/filter-rating-select';
+// @import 'component/product-feature';
+// @import 'component/notification-dot';
+@import 'component/product-wishlist';
+@import 'component/quantity-selector';
+@import 'component/basic-captcha';
+@import 'component/line-item';
+// @import 'component/visibility';
+// @import 'component/ar-overlay';
+// @import 'component/ar-splash-screen';
+// @import 'component/ar-qr-modal';
+@import 'component/dropdown';
+
+@import 'component/badge';
+@import 'component/breadcrumb';
+@import 'component/button';
+@import 'component/custom-select';
+// @import 'component/icon';
+@import 'component/tab-menu';
+
+@import 'misc/component/custom-control';
+@import 'misc/component/input-group';
+@import 'misc/component/paypal-express-button'; // @TODO: Check if this is still needed
+@import 'misc/component/privacy-notice';
+@import 'misc/component/subscription-product-box';
+
+/*
+ * Layout-related sections
+ * ----------------------- */
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/header-minimal';
+@import 'layout/footer';
+@import 'layout/navigation-offcanvas';
+@import 'layout/offcanvas-cart';
+@import 'layout/account-menu';
+@import 'layout/search-suggest';
+// @import 'layout/cookie-permission';
+// @import 'layout/cookie-configuration';
+@import 'layout/scroll-up';
+// @import 'layout/recaptcha';
+
+@import 'layout/main-navigation';
+@import 'layout/navigation-flyout';
+@import 'layout/top-bar';
+
+/*
+ * Page-specific styles
+ * -------------------- */
+@import 'page/product-detail/product-detail';
+@import 'page/product-detail/configurator';
+@import 'page/product-detail/tabs';
+@import 'page/product-detail/review';
+
+@import 'page/account/account';
+@import 'page/account/address';
+@import 'page/account/overview';
+@import 'page/account/register';
+// @import 'page/account/order';
+@import 'page/account/edit-order';
+// @import 'page/account/order-detail';
+
+@import 'page/account/aside';
+@import 'page/account/profile';
+
+@import 'misc/page/account/login';
+
+@import 'page/checkout/checkout';
+@import 'page/checkout/aside';
+@import 'page/checkout/cart';
+@import 'page/checkout/register';
+@import 'page/checkout/confirm';
+@import 'page/checkout/finish';
+
+@import 'page/search/search';
+
+@import 'page/wishlist/wishlist';
+
+@import 'misc/page/error/404';
+@import 'misc/page/error/maintenance';
+
+/*
+ * Theme-specific stuff
+ * ----------- */
+@import 'theme/theme';
+
+@import 'theme/component/buttons';
+@import 'theme/component/icon';
+@import 'theme/component/table';
+
+@import 'theme/layout/top-bar';
+@import 'theme/layout/header';
+@import 'theme/layout/navigation-offcanvas';
+@import 'theme/layout/cms-styling';
+@import 'theme/layout/compact-product-boxes';
+@import 'theme/layout/footer';
+
+@import 'theme/extensions/ft-footer-newsletter';
+@import 'theme/extensions/ft-product-specifications';
+@import 'theme/extensions/ft-social-icons';
+@import 'theme/extensions/ft-usp-bar';
+
+@import 'theme/page/ft-landingpage-styling';
+@import 'theme/page/error/404';
+@import 'theme/page/error/maintenance';
+@import 'theme/page/product-detail/product-detail';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.hero-section .hero-content h1 {
+    font-size: 3.8rem;
+}
+
+.hero-section .hero-content p {
+    font-size: 1.2rem;
+    padding: 0 15px;
+    width: 70%;
+    margin: auto;
+}
+
+.hero-section {
+    min-height: 70vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-custom-orange{
+    background-color: #F58220 !important;
+    border-color: #F58220 !important;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 32px !important;
+    transition: background-color 0.3s ease;
+    border-radius: 20px !important;
+}
+.btn-primary{
+    color: #ffffff; 
+    padding: 6px 14px;
+}
+.btn-primary .icon{
+    color: #ffffff;
+}
+.btn-light{
+    padding: 6px 14px;
+}
+
+.btn-buy, .btn-detail{
+    padding: 6px 14px;
+}
+
+.btn-custom-orange:hover, .begin-checkout-btn:hover, .btn-buy:hover, .btn-primary:hover {
+    background-color: #E5750E !important;
+    border-color: #E5750E !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 767px) {
+    .hero-section .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-section .hero-content p {
+        font-size: 1rem;   
+        width: 100%;
+    }
+}
+
+.ovo_je_test {
+    color: blue;
+}
+.row {
+    --bs-gutter-y:30px;
+}
+
+.container, .cms-section .boxed{
+    max-width: 1300px;
+}
+
+@media (max-width: 767px) {
+    /* "is-act-home" ensures this ONLY happens on the start page */
+    body.is-act-home .cms-section .boxed,
+    body.is-ctl-product .cms-section .boxed {
+        padding: 0 20px !important;
+    }  
+}
+
+.product-box {
+    border-color: #f4f4f4;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-box:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.product-name{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.product-description{
+    margin-top: 0px;
+}
+
+.product-price{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btn{
+    border-radius: 10px;
+}
+
+.badge{
+    font-size:1rem;
+    border-radius:0 10px 10px 0
+}
+
+.container-main{
+    padding: 0px;
+    min-height: 0px;
+}
+
+.d-md-block{
+    display: none !important;
+}
+
+.header-main, .header-minimal {
+    /* 1. Stick to the top */
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+
+    /* 2. Ensure it sits on top of all other content (Hero images, etc.) */
+    z-index: 1050; 
+
+    background-color: #ffffff;
+    
+    /* 4. Optional: Add a shadow to separate header from content */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    
+    /* 5. Ensure full width */
+    width: 100%;
+}
+
+.header-logo-main-img {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backface-visibility: hidden; 
+}
+
+.header-logo-main-img:hover {
+    transform: scale(1.05); 
+}
+
+.header-actions-btn{
+    border-radius: 0 !important;
+    overflow: visible; 
+}
+.header-cart-badge{
+    border-radius: 30px;
+}
+
+.header-logo-picture .img-fluid{
+    max-width: 50%;
+}
+
+.navbar-expand-lg .navbar-collapse{
+    justify-content: center;
+}
+
+// Mobile Header Fixes
+.header-row {
+    padding: 0.5rem 0;
+    
+    @media (max-width: 1199px) {
+        // Mobile layout
+        gap: 0.25rem !important;
+    }
+}
+
+// Menu button styling
+.header-menu-col {
+    .nav-main-toggle-btn {
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// Logo styling
+.header-logo-col {
+    @media (max-width: 1199px) {
+        // Mobile: Logo centered and flexible
+        flex: 1;
+        min-width: 0; // Prevents overflow
+        padding: 0 0.5rem;
+    }
+    
+    .header-logo-main {
+        display: flex;
+        align-items: flex-start;
+        
+        img {
+            max-height: 40px;
+            width: auto;
+            
+            @media (min-width: 768px) {
+                max-height: 50px;
+            }
+            
+            @media (min-width: 1200px) {
+                max-height: 70px;
+            }
+        }
+    }
+}
+
+// Action buttons
+.header-actions-col {
+    .row {
+        @media (max-width: 576px) {
+            gap: 0.25rem !important;
+        }
+    }
+    
+    .header-actions-btn {
+        padding: 0.5rem;
+        min-width: 40px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        @media (min-width: 768px) {
+            min-width: 44px;
+            min-height: 44px;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+// Cart badge positioning
+.header-cart {
+    position: relative;
+    
+    .header-cart-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(25%, -25%);
+        min-width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+        padding: 0.125rem 0.25rem;
+    }
+}
+
+// Navigation (desktop only)
+.header-navigation-col {
+    @media (min-width: 1200px) {
+        padding: 0 1rem;
+    }
+}
+
+// Ensure proper spacing on very small screens
+@media (max-width: 375px) {
+    .header-logo-col {
+        padding: 0 0.25rem;
+        
+        .header-logo-main img {
+            max-height: 32px;
+        }
+    }
+    
+    .header-actions-btn {
+        min-width: 36px;
+        min-height: 36px;
+        padding: 0.375rem;
+        
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+/********header minimal************/
+.header-minimal-logo .img-fluid{
+    max-width: 35%;
+}
+
+.btn-back-minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between arrow and text */
+    
+    color: #666666; /* Neutral Grey by default */
+    font-weight: 600;
+    text-decoration: none; /* Removes underline */
+    border: none;
+    background: transparent;
+    padding: 0;
+    
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.btn-back-minimal:hover {
+    color: #F58220; /* Your Brand Orange */
+    text-decoration: none;
+    transform: translateX(-5px); /* Slides slightly left for a "Back" feeling */
+}
+
+/* Ensure the icon changes color too */
+.btn-back-minimal svg {
+    transition: stroke 0.3s ease;
+}
+
+.heading-section h1{
+    font-size: 48px;
+}
+
+.heading-section p{
+    font-size: 20px;
+}
+
+.four-icon-box{
+    padding-bottom: 80px;
+}
+
+.four-icon-box .cms-section-default{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px; /* Adjust the spacing between items as needed */
+}
+
+.icon-box{
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.icon-box h2{
+    font-size: 24px;
+}
+
+.icon-box p{
+    margin-bottom: 0;
+    color: #6B6B6B;
+    font-size: 18px;
+}
+
+.icon-box .cms-image-container{
+    background-color:#ff9142;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.product-section-default{
+    padding: 20px 0;
+}
+.product-section{
+    padding: 0 20px;
+}
+@media (max-width: 767px) {
+    .heading-section h1{
+        font-size: 32px;
+    }
+
+    .heading-section p{
+        font-size: 16px;
+    }
+    .four-icon-box .cms-section-default{    
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .col-md-2{
+        margin-bottom: 0px !important;
+    }
+    .product-section{
+        padding: 0 !important;
+    }
+}
+
+
+/*******************FOOTER*******************************/
+.footer-main {
+    font-size: 16px;
+    color: #D1D5DB;
+    border-top: 0;
+    padding: 3.8rem 0;
+    
+    /* --- YOUR ANIMATION HERE --- */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #000000,
+        #0d0d0d,
+        #1a1a1a,
+        #000000
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Headings */
+.footer-column-headline {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    margin:30px 0 20px;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+/* Links */
+.footer-link {
+    color: #D1D5DB;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+.footer-link:hover {
+    color: #F58220; /* Orange hover */
+    text-decoration: none;
+}
+
+/* Logo Column */
+.footer-logo-img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+.footer-social-icon {
+    width: 24px;
+    height: 24px;
+    fill: #D1D5DB;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backface-visibility: hidden; 
+}
+.footer-social-icon:hover {
+    fill: #F58220;
+    transform: scale(1.1);
+}
+
+/* Contact Column */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+.footer-contact-icon {
+    width: 24px;
+    height: 24px;
+    fill: #F58220; /* Orange Icon */
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.footer-contact-text {
+    color: #D1D5DB;
+    margin: 0;
+}
+.footer-contact-link {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: fill 0.3s;
+}
+
+.footer-contact-link:hover {
+    color:#6B6B6B;
+    text-decoration: none;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background-color: transparent;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding: 30px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-legal-links a {
+    color: #D1D5DB;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+@media (max-width: 767px) {
+    .footer-column-headline {
+        margin:0 0 20px;
+    }
+}
+
+
+/**************checkout**********/
+.checkout-main, .checkout-aside{
+    margin-left: 0 !important;
+}
+
+// .form-check{
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;        
+// }
+
+.checkout, .account, .account-register{
+    padding: 50px 0;
+    padding-top:50px !important;
+}
+.checkout-aside-products{
+    background-color:#FFF7ED;
+    margin-top: 20px;
+}
+
+.checkout-aside-summary, .checkout-aside-products{
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    /* Orange Border */
+    border: 1px solid #F58220;
+    
+    /* Remove default outline */
+    outline: 0;
+    
+    /* Orange Glow */
+    box-shadow: 0 0 0 0.25rem rgba(245, 130, 32, 0.25) !important;
+}
+
+/* Optional: If you have checkboxes/radios using your orange */
+.form-check-input:checked {
+    background-color: #F58220;
+    border-color: #F58220;
+}
+
+/**************CHECKOUT FOOTER**********/
+/* Minimal Footer Wrapper */
+.footer-minimal-main {
+    /* Use the same background animation as your main footer for consistency */
+    background: linear-gradient(
+        120deg,
+        #000000,
+        #0d0d0d,
+        #1a1a1a,
+        #000000
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease-in-out infinite;
+    
+    /* Smaller padding for checkout focus */
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    color: #D1D5DB;
+    font-size: 14px;
+}
+
+/* Copyright Text */
+.footer-minimal-main .copyright-text {
+    color: #666;
+}
+
+/* Legal Links */
+.footer-minimal-main .minimal-legal-links a {
+    color: #D1D5DB;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+/* Link Hover Effect */
+.footer-minimal-main .minimal-legal-links a:hover {
+    color: #F58220; /* Your Brand Orange */
+    text-decoration: none;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 767px) {
+    .footer-minimal-main .minimal-legal-links a {
+        display: inline-block;
+        margin: 5px 10px;
+        margin-left: 0;
+    }
+}
+
+
+/**************LAST SECTION***********/
+.last-section {
+    position: relative;
+    background-color: #f58220; 
+    color: #ffffff;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1; 
+    padding: 0 20px;
+}
+
+/* 2. The White Dots Pattern */
+.last-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* White Dots */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.8) 2px, transparent 2px);
+    background-size: 40px 40px; /* Distance between dots */
+    
+    opacity: 0.5; /* Transparency of dots */
+    
+    /* Animation */
+    animation: backgroundMove 60s linear infinite;
+    
+    /* IMPORTANT FIX FOR BUTTONS: */
+    z-index: -1; /* Puts background behind content */
+    pointer-events: none; /* Allows clicks to pass through to buttons */
+}
+
+/* 3. Optional: Subtle Vignette (Darkens edges slightly) */
+.last-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fades from transparent center to slightly darker orange edges */
+    background: radial-gradient(circle, rgba(245, 130, 32, 0) 20%, rgba(200, 80, 0, 0.4) 100%);
+    
+    z-index: -1; /* Behind content */
+    pointer-events: none;
+}
+
+/* 4. Ensures Buttons are Clickable */
+.last-section > * {
+    position: relative;
+    z-index: 10; /* Lifts your HTML content above the background */
+}
+
+.last-section .hero-content h2 {
+    font-size: 2.6rem;
+}
+
+@media (max-width: 767px) {
+    .last-section .hero-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Animation Movement */
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+}
+
+.btn-first{
+    background-color: #ffffff;
+    color: #f58220;
+    border-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+.btn-first:hover{
+    background-color:#f4f4f4 !important;
+    color: #f58220 !important;
+    border-color: #ffffff !important;
+}
+
+.btn-second{
+    background-color: black;
+    color: white;
+    border-color: black;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+.btn-second:hover{
+    background-color:#1a1a1a;
+}
+
+
+/**LISTING PAGE**/
+.breadcrumb {
+    margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/item-link.html.twig' %}
+
+{# FreeThemeOne 'layout/navigation/offcanvas/item-link.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block layout_navigation_offcanvas_navigation_categories_list_category_item_link_icon %}
+    <span
+        class="navigation-offcanvas-link-icon js-navigation-offcanvas-loading-icon">
+        {% if iconPack == "feather" %}
+            {% sw_icon 'chevron-right' style { pack: iconPack, size: 'xs' } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'arrow-medium-right' style { pack:'solid', size: 'sm' } %}
+        {% endif %}
+    </span>
+{% endblock %}

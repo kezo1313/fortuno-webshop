@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_inner_container %}
+    {# We use a specific class 'footer-minimal-main' to apply specific CSS #}
+    <div class="footer-minimal-main">
+        <div class="container">
+            <div class="row align-items-center">
+                
+                {# LEFT SIDE: Copyright #}
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="copyright-text mb-0">
+                        &copy; {{ "now"|date("Y") }} GUIDE for YOU. All rights reserved.
+                    </p>
+                </div>
+
+                {# RIGHT SIDE: Legal Links #}
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="minimal-legal-links">
+                        <a href="{{ path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') }) }}">Privacy Policy</a>
+                        <a href="{{ path('frontend.cms.page', { id: config('core.basicInformation.tosPage') }) }}">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

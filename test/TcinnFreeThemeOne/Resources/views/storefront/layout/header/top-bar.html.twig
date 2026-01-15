@@ -1,0 +1,313 @@
+{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{# FreeThemeOne 'Top bar'
+   @Storefront/storefront/layout/header/top-bar.html.twig
+#}
+
+{# @TODO:
+    - Bugfix: Leeren Slot 3 berücksichtigen, wenn keine Sprach-/Währungsauswahl vorhanden ist!
+    - Add 'default' icons as configured
+    - Add 'Social icons' option for slot 1
+#}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftTopBarLayoutType = theme_config('ft-top-bar-layout-type') %} {# Default | FreeThemeOne #}
+{% set ftTopBarColumn1 = theme_config('ft-top-bar-column-1') %} {# Non | Show claim | Show contact | Show hotline | Show phone | Show mail #}
+{% set ftTopBarColumn2 = theme_config('ft-top-bar-column-2') %} {# Non | Show message | Show USPs #}
+{% set ftTopBarColumn3 = theme_config('ft-top-bar-column-3') %} {# Show language and currency selection #}
+
+{% set ftTopBarRotateUSPs = '0' %} {# Rotate USPs #}
+
+{# FreeThemeOne: Set template variables #}
+
+{# Slot 1 #}
+{% if ftTopBarColumn1 == 'non' %}
+    {% set ftTopBarColumn1Index = '0' %}
+{% else %}
+    {% set ftTopBarColumn1Index = '1' %}
+{% endif %}
+
+{# Slot 2 #}
+{% if ftTopBarColumn2 == 'non' %}
+    {% set ftTopBarColumn2Index = '0' %}
+{% elseif ftTopBarColumn2 == 'message' %}
+    {% set ftTopBarColumn2Index = '1' %}
+{% else %}
+    {% set ftTopBarColumn2Index = '2' %}
+{% endif %}
+
+{# Slot 3 #}
+{% set ftTopBarColumn3Index = '1' %}
+
+
+{# Config string #}
+{% set config = ftTopBarColumn1Index ~ ftTopBarColumn2Index ~ ftTopBarColumn3Index %}
+
+{# Arrays initiieren #}
+{% set slotClasses = {} %}
+{% set rowClasses = ['row'] %}
+
+{# Bedingungen, hier mit `in` #}
+{% if config == '100' %}
+    {# nur Slot 1 aktiv → linksbündig #}
+    {% set slotClasses = slotClasses|merge({
+        '1':'col d-flex align-items-center justify-content-left',
+        '2':'',
+        '3':''
+    }) %}
+
+{% elseif config in ['010','020'] %}
+    {# nur Slot 2 aktiv → zentriert #}
+    {% set slotClasses = slotClasses|merge({
+        '1':'',
+        '2':'col d-flex align-items-center justify-content-center',
+        '3':''
+    }) %}
+    {% set rowClasses = ['justify-content-xl-center']|merge(rowClasses) %}
+
+{% elseif config == '001' %}
+    {# nur Slot 3 aktiv → rechtsbündig #}
+    {% set slotClasses = slotClasses|merge({
+        '1':'',
+        '2':'',
+        '3':'col d-flex justify-content-end'
+    }) %}
+
+{% elseif config in ['110','120'] %}
+    {# Slot 1 + 2 aktiv → links & rechts #}
+    {% set slotClasses = slotClasses|merge({
+       '1':'col-auto d-none d-lg-flex align-items-center justify-content-start',
+       '2':'col d-flex align-items-center justify-content-center justify-content-lg-end',
+       '3':''
+    }) %}
+    {% set rowClasses = ['justify-content-center']|merge(rowClasses) %}
+
+{% elseif config == '101' %}
+    {# Slot 1 + 3 aktiv → links & rechts #}
+    {% set slotClasses = slotClasses|merge({
+       '1':'col d-flex align-items-center justify-content-start',
+       '2':'',
+       '3':'col-auto d-flex justify-content-end'
+    }) %}
+
+{% elseif config in ['011','021'] %}
+    {# Slot 2 + 3 aktiv → links & rechts #}
+    {% set slotClasses = slotClasses|merge({
+       '1':'',
+       '2':'col d-flex align-items-center justify-content-start',
+       '3':'col-auto d-flex justify-content-end'
+    }) %}
+
+{% elseif config in ['111','121'] %}
+    {# alle drei aktiv → feste Grid-Größen #}
+    {% set slotClasses = slotClasses|merge({
+    '1':'col-3 d-none d-xl-flex align-items-center',
+    '2':'col d-flex align-items-center justify-content-xl-center',
+    '3':'col-auto col-lg-2 d-flex align-items-center justify-content-end'
+    }) %}
+{% endif %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust default 'Top bar' to add certain wrappers #}
+{% block layout_header_top_bar %}
+    {% if ftTopBarLayoutType == 'one' %}
+        {% if ftTopBarColumn1Index != '0' or ftTopBarColumn2Index != '0' or ftTopBarColumn3Index != '0' %}
+            <div class="ft-top-bar top-bar d-none d-md-block" 
+                data-ft-top-bar="{{ config }}"
+                {# @TODO: Make rotator and speed configurable #}
+                {% if ftTopBarRotateUSPs == '1' %}
+                data-ft-usp-rotator="true"
+                {% endif %}
+            >
+            
+                {# @TODO: Add aria-label "Shop settings" #}
+                <div class="top-bar-container container">
+                    <div class="row">
+
+                        {{ block('layout_header_top_bar_inner') }}
+
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Add content to 'Top bar' #}
+{% block layout_header_top_bar_inner %}
+    {% if ftTopBarLayoutType == 'one' %}
+
+        {# FreeThemeOne: Slot 1 ------------------------------------------------------------------------------------------------------------------ #}
+
+        {# FreeThemeOne: 'Top bar' content > Slot 1 #}
+        {% if ftTopBarColumn1 != 'none' %}
+            {% block layout_header_top_bar_slot_1 %}
+
+                <div class="ft-top-bar-{{ftTopBarColumn1}} {{ slotClasses['0'] }}">
+                    <div class="top-bar-{{ftTopBarColumn1}} d-flex">
+
+                        {# FreeThemeOne: Add 'Claim' to 'Top bar' in slot 1 #}
+                        {% if ftTopBarColumn1 == 'claim' %}
+                            {{ 'freeThemeOne.claim'|trans|raw }}
+                        {% endif %}
+
+                        {# FreeThemeOne: Add 'Social icons' to 'Top bar' in slot 1 #}
+                        {% if ftTopBarColumn1 == 'social-icons' %}
+                            {% sw_include '@Storefront/storefront/theme/ft-social-icons.html.twig' ignore missing %}
+                        {% endif %}
+
+                        {# FreeThemeOne: Add 'Hotline' to 'Top bar' in slot 1 #}
+                        {% if ftTopBarColumn1 == 'hotline' %}
+                            {% sw_icon 'phone' style { pack:'feather' } %}
+                            {{ 'freeThemeOne.serviceHotline'|trans|raw }}
+                        {% endif %}
+
+                        {# FreeThemeOne: Add 'Ticket' to 'Top bar' in slot 1 #}
+                        {% if ftTopBarColumn1 == 'ticket' %}
+                            {% sw_icon 'mail' style { pack:'feather' } %}
+                            {{ 'freeThemeOne.serviceMail'|trans|raw }}
+                        {% endif %}
+
+                        {# FreeThemeOne: Add 'Contact' to 'Top bar' in slot 1 #}
+                        {% if ftTopBarColumn1 == 'contact' %}
+                            <div class="top-bar-phone d-flex">
+                                {% sw_icon 'phone' style { pack:'feather' } %}
+                                {{ 'freeThemeOne.phone'|trans|raw }}
+                            </div>
+
+                            <div class="top-bar-mail d-flex">
+                                {% sw_icon 'mail' style { pack:'feather' } %}
+                                {{ 'freeThemeOne.mail'|trans|raw }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                
+            {% endblock %}
+        {% endif %}
+
+        {# FreeThemeOne: Slot 2 ------------------------------------------------------------------------------------------------------------------ #}
+
+        {# FreeThemeOne: 'Top bar' content > Slot 2 #}
+        {% if ftTopBarColumn2 != 'none' %}
+            {% block layout_header_top_bar_slot_2 %}
+
+                <div class="ft-top-bar-{{ftTopBarColumn2}} {{ slotClasses['1'] }}">
+
+                    {% if ftTopBarColumn2 == 'claim' %}
+                        {# FreeThemeOne: Add 'Claim' to 'Top bar' in slot 2 #}
+                        <div class="top-bar-{{ftTopBarColumn2}} d-flex align-items-center{% if ftTopBarColumn1Index != '0' %} text-xl-center{% endif %}">
+                            {{ 'freeThemeOne.claim'|trans|raw }}
+                        </div>
+                    
+                    {% elseif ftTopBarColumn2 == 'message' %}
+                        {# FreeThemeOne: Add 'Message' to 'Top bar' in slot 2 #}
+                        <div class="top-bar-{{ftTopBarColumn2}} d-flex align-items-center{% if ftTopBarColumn1Index != '0' %} text-xl-center{% endif %}">
+                            {{ 'freeThemeOne.message'|trans|raw }}
+                        </div>
+
+                    {% elseif ftTopBarColumn2 == 'usps' %}
+                        {# FreeThemeOne: Add 'USPs' to 'Top bar' in slot 2 #}
+                        <div class="ft-top-bar-{{ftTopBarColumn2}} {{ slotClasses['1'] }}">
+                            <div class="{{ rowClasses|sort|join(' ') }}">
+
+                                {# @TODO: Make rotator configurable - Add a11y support #}
+                                {% if ftTopBarRotateUSPs == '1' %}
+                                <div class="usp-rotator">
+                                    <div class="usp-inner">
+                                {% endif %}
+
+                                <div class="top-bar-usp usp-item col-auto d-flex align-items-center">
+                                    {% sw_icon 'check' style { pack:'feather' } %}
+                                    {{ 'freeThemeOne.usps.usp1.label'|trans|raw }}
+                                </div>
+                                <div class="top-bar-usp usp-item col-auto d-flex align-items-center">
+                                    {% sw_icon 'check' style { pack:'feather' } %}
+                                    {{ 'freeThemeOne.usps.usp2.label'|trans|raw }}
+                                </div>
+                                <div class="top-bar-usp usp-item col-auto d-flex align-items-center">
+                                    {% sw_icon 'check' style { pack:'feather' } %}
+                                    {{ 'freeThemeOne.usps.usp3.label'|trans|raw }}
+                                </div>
+
+                                {% if ftTopBarRotateUSPs == '1' %}
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+
+                    {% elseif ftTopBarColumn2 == 'hotline' %}
+                        {# FreeThemeOne: Add 'Hotline' to 'Top bar' in slot 2 #}
+                        <div class="top-bar-{{ftTopBarColumn2}} d-flex align-items-center{% if ftTopBarColumn1Index != '0' %} text-xl-center{% endif %}">
+                            {% sw_icon 'phone' style { pack:'feather' } %}
+                            {{ 'freeThemeOne.serviceHotline'|trans|raw }}
+                        </div>
+
+                    {% elseif ftTopBarColumn2 == 'ticket' %}
+                        {# FreeThemeOne: Add 'Ticket' to 'Top bar' in slot 2 #}
+                        <div class="top-bar-{{ftTopBarColumn2}} d-flex align-items-center{% if ftTopBarColumn1Index != '0' %} text-xl-center{% endif %}">
+                            {% sw_icon 'mail' style { pack:'feather' } %}
+                            {{ 'freeThemeOne.serviceMail'|trans|raw }}
+                        </div>
+
+                    {% elseif ftTopBarColumn2 == 'contact' %}
+                        {# FreeThemeOne: Add 'Contact' to 'Top bar' in slot 2 #}
+                        <div class="top-bar-{{ftTopBarColumn2}} d-flex align-items-center{% if ftTopBarColumn1Index != '0' %} text-xl-center{% endif %}">
+                            <div class="top-bar-phone d-flex">
+                                {% sw_icon 'phone' style { pack:'feather' } %}
+                                {{ 'freeThemeOne.phone'|trans|raw }}
+                            </div>
+
+                            <div class="top-bar-mail d-flex">
+                                {% sw_icon 'mail' style { pack:'feather' } %}
+                                {{ 'freeThemeOne.mail'|trans|raw }}
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                </div>
+                
+            {% endblock %}
+        {% endif %}
+
+        {# FreeThemeOne: Slot 3 ------------------------------------------------------------------------------------------------------------------ #}
+
+        {# Default 'Top bar' content > Slot 3 #}
+        {% if ftTopBarColumn3 != 'none' %}
+            <div class="{{ slotClasses['2'] }}">
+                <nav class="top-bar-nav">
+                    {# FreeThemeOne: Add 'Currency widget' to 'Top bar' in slot 3 #}
+                    {% block layout_header_top_bar_currency %}
+                        {% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+                        {# block 'layout_header_top_bar_currency' #}
+                    {% endblock %}
+
+                    {# FreeThemeOne: Add 'Language widget' to 'Top bar' in slot 3 #}
+                    {% block layout_header_top_bar_language %}
+                        {% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+                        {# block 'layout_header_top_bar_language' #}
+                    {% endblock %}
+                </nav>
+            </div>
+        {% endif %}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}

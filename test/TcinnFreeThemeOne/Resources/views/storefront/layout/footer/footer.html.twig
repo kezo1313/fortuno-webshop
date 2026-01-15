@@ -1,0 +1,329 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{# FreeThemeOne 'layout/footer/footer.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftFooterLayoutType = theme_config('ft-footer-layout-type') %}
+{% set ftFooterNavigationColumns = theme_config('ft-footer-navigation-columns') %}
+{% set ftFooterNewsletterShow = theme_config('ft-footer-newsletter-show') %}
+{% set ftFooterSocialIconsShow = theme_config('ft-footer-social-icons-show') %}
+{% set ftLicensekey = theme_config('ft-branding-lizenzkey') %}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{% set tcinn = true %}
+
+{% if ftLicensekey %}
+    {% set ftLicensekeyValues = {} %}
+    {% for letter in 0..9 %}
+        {% set ftLicensekeyValues = ftLicensekeyValues|merge({
+            (letter): (loop.index + 47)
+        }) %}
+    {% endfor %}
+    {% for letter in 'A'..'Z' %}
+        {% set ftLicensekeyValues = ftLicensekeyValues|merge({
+            (letter): (loop.index + 64)
+        }) %}
+    {% endfor %}
+    {% for letter in 'a'..'z' %}
+        {% set ftLicensekeyValues = ftLicensekeyValues|merge({
+            (letter): (loop.index + 96)
+        }) %}
+    {% endfor %}
+    {% set ftLicensekeySum = 0 %}
+    {% for char in ftLicensekey|replace({'-': ''})|split('') %}
+        {% set ftLicensekeySum = (ftLicensekeySum + (ftLicensekeyValues[char] * (loop.index-1))) %}
+    {% endfor %}
+    {% if ftLicensekeySum == 11000 or (ftLicensekey starts with 'TL' and ftLicensekey|length == 16) %}
+        {% set tcinn = false %}
+    {% endif %}
+{% endif %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne Footer #}
+{% block layout_footer_inner_container %}
+    {% if ftFooterLayoutType == 'one' %}
+        {# <div class="container"> #}
+        <div class="container-main">
+            {# block 'layout_footer_navigation' #}
+
+            {% block ft_footer_newsletter %}
+                {% if ftFooterNewsletterShow == 'yes' %}
+                    {% sw_include '@Storefront/storefront/theme/ft-footer-newsletter.html.twig' ignore missing %}
+                {% endif %}
+            {% endblock %}
+
+            {% block ft_layout_footer_middle %}
+                <div class="footer-middle">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-hotline ft-footer-hotline col-md-4 col-xl-3">
+                                {% block ft_footer_logo %}
+                                    <div class="footer-logo ft-footer-logo">
+                                        <a class="footer-logo-main-link"
+                                            href="{{ path('frontend.home.page') }}"
+                                            title="{{ 'header.logoLink'|trans|striptags }}">
+                                            {% block ft_footer_logo_image %}
+                                                {% if theme_config('ft-footer-logo') %}
+                                                    {# @TODO: Add height/width #}
+                                                    <img src="{{ theme_config('ft-footer-logo')|sw_encode_url }}"
+                                                            alt="{{ 'header.logoLink'|trans|striptags }}"
+                                                            class="img-fluid footer-logo-main-img"/>
+                                                {% endif %}
+                                            {% endblock %}
+                                        </a>
+                                    </div>
+                                    
+                                    {% set cmsPath = 'frontend.cms.page.full' %}
+
+                                    {# removed 'div class="footer-column-content-inner"' #}
+                                    <p class="footer-contact-hotline">
+                                        {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                    </p>
+
+                                    <div class="footer-contact-form">
+                                        {% set contactSnippetKey = 'footer.serviceContactTextPage' %}
+
+                                        {{ contactSnippetKey|trans({
+                                            '%url%': path(cmsPath, { id: config('core.basicInformation.contactPage') })
+                                        })|raw }}
+                                    </div>
+
+                                    {# @TODO: Add social icons option #}
+                                    {% if ftFooterSocialIconsShow == 'yes' %}
+                                        <div class="footer-contact-social-icons ft-social-icons">
+                                            {% sw_include '@Storefront/storefront/theme/ft-social-icons.html.twig' ignore missing %}
+                                        </div>
+                                    {% endif %}
+
+                                {% endblock %}
+                            </div>
+
+                            <div class="footer-navigation col-md-8 col-xl-9">
+                                {{ block('layout_footer_navigation') }}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {{ block('layout_footer_payment_shipping_logos') }}
+                </div>
+            {% endblock %}
+
+            {{ block('layout_footer_bottom') }}
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Clear block #}
+{% block layout_footer_navigation_hotline %}
+    {% if ftFooterLayoutType == 'one' %}
+        {# Clear block #}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Icon austauschen #}
+{% block layout_footer_navigation_hotline_icons %}
+    <button class="footer-column-toggle btn btn-link btn-link-inline js-collapse-footer-column-trigger"
+            data-bs-target="#collapseFooterHotline"
+            data-bs-toggle="collapse"
+            aria-controls="collapseFooterHotline"
+            aria-labelledby="collapseFooterHotlineTitle"
+            aria-expanded="true">
+
+        {% if iconPack == "feather" %}
+            {% sw_icon 'chevron-down' style {
+                pack: iconPack,
+                class: 'footer-plus'
+            } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'plus' style {
+                class: 'footer-plus'
+            } %}
+        {% endif %}
+
+        {% if iconPack == "feather" %}
+            {% sw_icon 'chevron-up' style {
+                pack: iconPack,
+                class: 'footer-minus'
+            } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'minus' style {
+                class: 'footer-minus'
+            } %}
+        {% endif %}
+    </button>
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust grid #}
+{% block layout_footer_navigation_column %}
+    {% if ftFooterLayoutType == 'one' %}
+        <div class="col-md-6 col-xl-{{ ftFooterNavigationColumns }} footer-column js-footer-column">
+            {{ block('layout_footer_navigation_information_headline') }}
+
+            {{ block('layout_footer_navigation_information_content') }}
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Icon austauschen #}
+{% block layout_footer_navigation_information_icons %}
+    {% if root.children|length > 0 %}
+        <button class="footer-column-toggle btn btn-link btn-link-inline js-collapse-footer-column-trigger"
+                data-bs-target="#collapseFooter{{ loop.index }}"
+                data-bs-toggle="collapse"
+                aria-controls="collapseFooter{{ loop.index }}"
+                aria-labelledby="collapseFooterTitle{{ loop.index }}"
+                aria-expanded="true">
+
+            {% if iconPack == "feather" %}
+                {% sw_icon 'chevron-down' style {
+                    pack: iconPack,
+                    class: 'footer-plus'
+                } %}
+            {% else %}
+                {# Default icon #}
+                {% sw_icon 'plus' style {
+                    class: 'footer-plus'
+                } %}
+            {% endif %}
+
+            {% if iconPack == "feather" %}
+                {% sw_icon 'chevron-up' style {
+                    pack: iconPack,
+                    class: 'footer-minus'
+                } %}
+            {% else %}
+                {# Default icon #}
+                {% sw_icon 'minus' style {
+                    class: 'footer-minus'
+                } %}
+            {% endif %}
+        </button>
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Add width for propper sizing #}
+{% block layout_footer_payment_shipping_logos %}
+
+    {% if ftFooterLayoutType == 'one' %}
+        {% set hasMedia = false %}
+
+        {# FreeThemeOne: Check payment methods for logos #}
+        {% for paymentMethod in footer.paymentMethods %}
+            {% if paymentMethod.media is defined and paymentMethod.media %}
+                {% set hasMedia = true %}
+            {% endif %}
+        {% endfor %}
+
+        {# FreeThemeOne: Check shipping methods for logos #}
+        {% for shippingMethod in footer.shippingMethods %}
+            {% if shippingMethod.media is defined and shippingMethod.media %}
+                {% set hasMedia = true %}
+            {% endif %}
+        {% endfor %}
+
+        {# FreeThemeOne: Add headline if logos are available #}
+        {% if hasMedia %}
+            <div class="footer-payment-shipping">
+                <p class="footer-payment-shipping-title text-center mb-0">
+                    {{ 'freeThemeOne.footer.paymentShippingHeadline'|trans|sw_sanitize }}
+                </p>
+
+                {# Default block #}
+                {{ parent() }}
+            </div>
+        {% endif %}
+        
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Add width for propper sizing #}
+{% block layout_footer_payment_logos %}
+    {% for paymentMethod in footer.paymentMethods %}
+        {% block layout_footer_payment_logo %}
+            {% if paymentMethod.media %}
+                <div class="footer-logo is-payment">
+                    {# @TODO: Add height/width #}
+                    {% sw_thumbnails 'footer-payment-image-thumbnails' with {
+                        media: paymentMethod.media,
+                        sizes: {
+                            default: '80px'
+                        },
+                        attributes: {
+                            class: 'img-fluid footer-logo-image',
+                            alt: (paymentMethod.media.translated.alt ?: paymentMethod.translated.name),
+                            title: (paymentMethod.media.translated.title ?: paymentMethod.translated.name),
+                            width: '80'
+                        }
+                    } %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endfor %}
+{% endblock %}
+
+
+{# FreeThemeOne: Add width for propper sizing #}
+{% block layout_footer_shipping_logos %}
+    {% for shippingMethod in footer.shippingMethods %}
+        {% block layout_footer_shipping_logo %}
+            {% if shippingMethod.media %}
+                <div class="footer-logo is-shipping">
+                    {# @TODO: Add height/width #}
+                    {% sw_thumbnails 'footer-shipping-image-thumbnails' with {
+                        media: shippingMethod.media,
+                        sizes: {
+                            default: '80px'
+                        },
+                        attributes: {
+                            class: 'img-fluid footer-logo-image',
+                            alt: (shippingMethod.media.translated.alt ?: shippingMethod.translated.name),
+                            title: (shippingMethod.media.translated.title ?: shippingMethod.translated.name),
+                            width: '80'
+                        }
+                    } %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endfor %}
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust copyright information #}
+{% block layout_footer_copyright %}
+    <div class="footer-copyright">
+		{% sw_include '@Storefront/storefront/theme/tcinn.html.twig' with {hint:tcinn} %}
+	</div>
+{% endblock %}

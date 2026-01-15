@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-wishlist.html.twig' %}
+
+{# FreeThemeOne 'component/product/card/box-wishlist.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_product_wishlist_remove_submit %}
+    <button type="submit" class="btn btn-light product-wishlist-btn product-wishlist-btn-remove" aria-label="{{ 'wishlist.remove'|trans({ '%product_name%': product.translated.name })|striptags }}" title="{{ 'listing.removeFromWishlist'|trans|sw_sanitize }}">
+        {% if iconPack == "feather" %}
+            {% sw_icon 'x' style { class: 'icon-wishlist icon-wishlist-remove', size: size, pack: iconPack } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'x' style { class: 'icon-wishlist icon-wishlist-remove', size: size, pack: 'solid' } %}
+        {% endif %}
+    </button>
+{% endblock %}

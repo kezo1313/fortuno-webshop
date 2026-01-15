@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' %}
+
+{# FreeThemeOne 'layout/navigation/offcanvas/navigation.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Order switched > Corresponding to 'Top bar' #}
+{% block layout_navigation_offcanvas_navigation_actions %}
+    <nav class="nav navigation-offcanvas-actions">
+        {{ block('layout_navigation_offcanvas_navigation_action_currency') }}
+
+        {{ block('layout_navigation_offcanvas_navigation_action_language') }}
+    </nav>
+{% endblock %}

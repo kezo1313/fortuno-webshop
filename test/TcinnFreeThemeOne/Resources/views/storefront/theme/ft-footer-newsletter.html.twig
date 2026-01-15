@@ -1,0 +1,48 @@
+{# FreeThemeOne 'Footer newsletter'
+   @Storefront/storefront/theme/ft-footer-newsletter.html.twig
+#}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block ft_footer_newsletter %}
+    <div class="footer-top ft-footer-newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-newsletter-header">
+                    {% block ft_footer_newsletter_header %}
+                        <h1>{{ 'freeThemeOne.footer.newsletterHeadline'|trans|sw_sanitize }}</h1>
+                    {% endblock %}
+                </div>
+
+                <div class="col-md-7 offset-md-1 footer-newsletter-content">
+                    {% block ft_footer_newsletter_subtitle %}
+                        <div class="h5">{{ 'freeThemeOne.footer.newsletterText'|trans({'%shopname%': config('core.basicInformation.shopName')})|sw_sanitize }}</div>
+                    {% endblock %}
+
+                    {% if config('core.basicInformation.newsletterPage') %}
+                        <a
+                            href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
+                            data-ajax-modal="true"
+                            data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
+                            class="btn btn-lg"
+                            role="button"
+                            title="{{ 'newsletter.headline'|trans|striptags }}"
+                            id="footerNewsletterBtnAddon"
+                        >
+                            {{ 'newsletter.formSubmit'|trans|striptags }}
+                        </a>
+
+                    {% else %}
+                        {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                            type: 'warning',
+                            content: 'freeThemeOne.alert.newsletterConfig'|trans|sw_sanitize
+                        } %}
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

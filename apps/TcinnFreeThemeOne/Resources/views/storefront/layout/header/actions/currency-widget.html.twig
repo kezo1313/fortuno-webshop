@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+
+{# FreeThemeOne 'layout/header/actions/currency-widget.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftTopBarLayoutType = theme_config('ft-top-bar-layout-type') %}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Use 'shortName' and adjust icon #}
+{% block layout_header_actions_currency_widget_dropdown_toggle_name %}
+    {% if ftTopBarLayoutType == "one" %}
+        <span aria-hidden="true">{{ context.currency.symbol }}</span>
+        {# FreeThemeOne: Use 'shortName' instead of 'context.currency.translated.name' #}
+        <span class="top-bar-nav-text">{{ context.currency.shortName }}</span>
+
+        {# FreeThemeOne: Adjust icon #}
+        {% if iconPack == "feather" %}
+            {% sw_icon 'chevron-down' style { pack: iconPack, size: 'xs' } %}
+        {% else %}
+            {# Shopware icon #}
+            {% sw_icon 'arrow-medium-down' style { pack: 'solid', size: 'xs' } %}
+        {% endif %}
+        
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}

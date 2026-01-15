@@ -1,0 +1,91 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{# FreeThemeOne 'component/buy-widget/buy-widget.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftProductHeadingPosition = theme_config('ft-product-heading-position') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Add 'Product heading' to 'Buy widget' #}
+{% block buy_widget_rich_snippets %}
+    {% if ftProductHeadingPosition == 'buybox' %}
+        <div class="ft-product-detail-heading">
+            <div class="row align-items-center">
+                {# FreeTheme: Add product name #}
+                {% block buy_widget_product_name_container %}
+                    <div class="col product-detail-name-container">
+                        {% block buy_widget_product_name %}
+                            <h1 class="product-detail-name"
+                                itemprop="name">
+                                {{ page.product.translated.name }}
+                            </h1>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {# FreeTheme: Add product manufacturer logo #}
+                {% block buy_widget_product_manufacturer_logo_container %}
+                    {% if page.product.manufacturer %}
+                        <div class="col-md-auto product-detail-manufacturer-logo-container product-detail-manufacturer">
+
+                            {% block buy_widget_product_manufacturer_logo_inner %}
+                                {% block buy_widget_product_manufacturer_logo_link %}
+                                    <a href="{{ page.product.manufacturer.link }}"
+                                       class="product-detail-manufacturer-link"
+                                       target="_blank"
+                                       rel="noreferrer noopener"
+                                       title="{{ page.product.manufacturer.translated.name }}">
+                                        {% if page.product.manufacturer.media %}
+                                            {% block buy_widget_product_manufacturer_logo_image %}
+                                                {% set attributes = {
+                                                    class: 'product-detail-manufacturer-logo',
+                                                    alt: page.product.manufacturer.translated.name,
+                                                    title: page.product.manufacturer.translated.name
+                                                } %}
+
+                                                {% sw_thumbnails 'product-detail-manufacturer-image-thumbnails' with {
+                                                    media: page.product.manufacturer.media,
+                                                    sizes: {
+                                                        default: '200px'
+                                                    }
+                                                } %}
+                                            {% endblock %}
+                                        {% else %}
+                                            {% block buy_widget_product_manufacturer_logo_text %}
+                                                {{ page.product.manufacturer.translated.name }}
+                                            {% endblock %}
+                                        {% endif %}
+                                    </a>
+                                {% endblock %}
+                            {% endblock %}
+
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+
+        {# Default block #}
+        {{ parent() }}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}
+
+
+{# FreeTheme: Adjustment of the ordernumber container #}
+{% block buy_widget_ordernumber_container %}
+    {# Default block #}
+    {{ parent() }}
+
+    {# FreeTheme: Add product specifications #}
+    {% sw_include '@Storefront/storefront/theme/ft-product-specifications.html.twig' ignore missing with {
+        type: 'buy-box'
+    } %}
+{% endblock %}

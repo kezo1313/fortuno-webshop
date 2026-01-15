@@ -1,0 +1,25 @@
+{% block block_text_on_image %}
+    {% set element = block.slots.getSlot('content') %}
+
+    <div class="col-12 {{ block.cssClass }}" data-cms-element-id="{{ element.id }}">
+        
+        <div class="hero-content">
+            {% block block_text_on_image_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+
+            {% if 'hero-section' in block.cssClass %}
+                <div class="hero-action-button mt-4 text-center">   
+                    
+                    {# BUTTON LINK #}
+                    {# Replace '#' with the URL you want (e.g., path('frontend.cms.page', { id: '...' })) #}
+                    <a href="#" class="btn btn-primary btn-custom-orange">
+                        Zatraži prezentaciju
+                    </a>
+
+                </div>
+            {% endif %}
+        </div>
+        
+    </div>
+{% endblock %}

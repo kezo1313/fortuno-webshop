@@ -1,0 +1,13 @@
+{% block component_product_box_detail_inner %}
+    {% set id = product.id %}
+    <div class="product-detail">
+        <div class="d-grid">
+            <a href="{{ seoUrl('frontend.detail.page', {productId: id}) }}"
+               class="btn btn-light btn-detail">
+                {% block component_product_box_action_detail_label %}
+                    {{ 'listing.boxProductDetails'|trans|sw_sanitize }}
+                {% endblock %}
+            </a>
+        </div>
+    </div>
+{% endblock %}

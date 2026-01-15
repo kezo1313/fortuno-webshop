@@ -1,0 +1,27 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
+
+{# FreeThemeOne 'component/buy-widget/buy-widget-form.html.twig' #}
+
+{# @TODO: Add HC configuration... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust 'quantity container' grid #}
+{% block buy_widget_buy_quantity_container %}
+    {% if showQuantitySelect %}
+        {# previously col-4 d-flex justify-content-end' #}
+        <fieldset class="col-12 col-md-auto">
+            {{ block('buy_widget_buy_quantity_input_group') }}
+        </fieldset>
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust 'buy button' grid #}
+{% block buy_widget_buy_button_container %}
+    {# previously 'col-8 else col-12' #}
+    <div class="{% if showQuantitySelect %}col-12 col-md-4 col-lg{% else %}col-12{% endif %} btn-buy-col">
+        {{ block('buy_widget_buy_button') }}
+    </div>
+{% endblock %}

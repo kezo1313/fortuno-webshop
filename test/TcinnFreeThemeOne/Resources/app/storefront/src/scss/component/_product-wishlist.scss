@@ -1,0 +1,79 @@
+/*
+Product box for wishlist
+==============================================
+Styling for productbox component.
+*/
+
+
+// Whishlist page
+//.is-ctl-wishlist .product-box.box-wishlist .product-wishlist
+
+// Listing page
+//.is-ctl-navigation .product-box.box-standard .product-wishlist
+//.is-ctl-navigation .product-box.box-minimal .product-wishlist
+//.is-ctl-navigation .product-box.box-image .product-wishlist
+
+// Adjust wishlisht component
+.product-wishlist {
+    &-added {
+        .icon-wishlist-added {
+            color: $primary;
+        }
+    }
+
+    // Product listing page
+    &-action-circle {
+    }
+
+    // Product detail and account pages
+    &-action {
+    }
+
+    // Listing and wishlist pages
+    // &-btn {
+    button.product-wishlist-btn {
+        border-radius: 50%;
+
+        .icon, .icon-feather {
+            width: 21px;
+            height: 21px;
+        }
+    }
+
+    // Wishlist page
+    &-btn-remove {
+        top: 8px;
+        right: 8px;
+    }
+
+}
+
+// Product detail page
+.product-detail-buy {
+    .product-wishlist-action {
+        // Button style
+        @extend .btn;
+        @extend .btn-light;
+
+        // Overwrite default theme
+        background-color: var(--bs-btn-bg);
+        color: var(--bs-btn-color);
+        border-style: solid;
+        border-width: var(--bs-btn-border-width, 1px);
+        border-color: var(--bs-btn-border-color);
+        padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+        .product-wishlist-btn-content {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-normal;
+            text-decoration: none;
+        }
+    }
+}
+
+// Account pages
+.line-item-product {
+    .product-wishlist-action {
+        font-size: $font-size-sm;
+    }
+}

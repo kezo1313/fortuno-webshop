@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/layout/header/search-suggest.html.twig' %}
+
+{# FreeThemeOne 'layout/header/search-suggest.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block layout_search_suggest_result_total_link %}
+    <div class="col">
+        <a href="{{ path('frontend.search.page') }}?search={{ page.searchTerm }}"
+           title="{{ 'header.searchAllResults'|trans|striptags }}"
+           aria-label="{{ 'header.searchAllResults'|trans|striptags }}"
+           class="search-suggest-total-link">
+            {# FreeThemeOne: Adjust icon #}
+            {% if iconPack == "feather" %}
+                {% sw_icon 'chevron-right' style { pack: iconPack, size: 'sm' } %}
+            {% else %}
+                {# Default icon #}
+                 {% sw_icon 'arrow-head-right' style { size: 'sm' } %}
+            {% endif %}
+            {{ 'header.searchAllResults'|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}

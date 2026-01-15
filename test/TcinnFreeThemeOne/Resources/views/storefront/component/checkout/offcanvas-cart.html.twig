@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
+
+{# FreeThemeOne 'component/checkout/offcanvas-cart.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block utilities_offcanvas_close_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevron-left' style { pack: iconPack } %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-head-left' style { size: 'sm' } %}
+    {% endif %}
+{% endblock %}

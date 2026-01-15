@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/account/address.html.twig' %}
+
+{# FreeThemeOne 'page/account/address.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block page_account_overview_billing_address_actions %}
+    <div class="card-actions">
+        {# @TODO: ?? #}
+        {% set addressEditorOptions = {
+            changeBilling: true,
+        } %}
+
+        {% block page_account_overview_billing_address_actions_content %}{% endblock %}
+    </div>
+{% endblock %}

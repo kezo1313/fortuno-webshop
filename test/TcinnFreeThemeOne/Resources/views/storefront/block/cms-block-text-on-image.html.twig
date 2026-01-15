@@ -1,0 +1,17 @@
+{% block block_text_on_image %}
+    {% set element = block.slots.getSlot('content') %}
+    {% set columns = 1 %}
+    <div class="col-12 hero-section2" data-cms-element-id="{{ element.id }}">
+        {# <div class="hero-overlay"></div> #}
+        <div class="hero-content">
+            {% block block_text_on_image_inner %}
+                {% sw_include '@Storefront/storefront/element/cms-element-' ~ element.type ~ '.html.twig' ignore missing %}
+            {% endblock %}
+        </div>
+    </div>
+    <style>
+    </style>
+{% endblock %}
+{% if block.name == "block_down" %}
+    
+{% endif %}

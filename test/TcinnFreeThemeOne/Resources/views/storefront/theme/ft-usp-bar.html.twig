@@ -1,0 +1,35 @@
+{# FreeThemeOne 'USP bar'
+   @Storefront/storefront/theme/ft-usp-bar.html.twig
+#}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+    
+{# FreeThemeOne: Add content to 'Top bar' #}
+{% block ft_usp_bar %}
+    {# FreeThemeOne: Add 'USPs' to 'Top bar' in slot 2 #}
+    <div class="ft-usp-bar">
+        <div class="ft-usp-bar-container container">
+            <div class="row justify-content-evenly">
+
+                <div class="ft-usp-bar-item usp-item col-auto d-flex align-items-center">
+                    {% sw_icon 'check' style { pack:'feather' } %}
+                    {{ 'freeThemeOne.usps.usp1.label'|trans|raw }}
+                </div>
+                <div class="ft-usp-bar-item usp-item col-auto d-flex align-items-center">
+                    {% sw_icon 'check' style { pack:'feather' } %}
+                    {{ 'freeThemeOne.usps.usp2.label'|trans|raw }}
+                </div>
+                <div class="ft-usp-bar-item usp-item col-auto d-flex align-items-center">
+                    {% sw_icon 'check' style { pack:'feather' } %}
+                    {{ 'freeThemeOne.usps.usp3.label'|trans|raw }}
+                </div>
+                <div class="ft-usp-bar-item usp-item col-auto d-flex align-items-center">
+                    {% sw_icon 'check' style { pack:'feather' } %}
+                    {{ 'freeThemeOne.usps.usp4.label'|trans|raw }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

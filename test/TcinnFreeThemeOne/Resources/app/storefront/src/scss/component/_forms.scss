@@ -1,0 +1,47 @@
+/*
+Form
+==============================================
+Custom (skin) styling for bootstrap forms.
+
+https://getbootstrap.com/docs/5.2/forms/overview
+*/
+
+// @TODO: #check styling...
+
+.form-group {
+    .form-text {
+        color: $gray-700;
+    }
+}
+
+.form-label {
+    margin-bottom: 2px;
+}
+
+.form-control {
+    &:disabled,
+    &[readonly] {
+        border-color: $gray-200;
+        color: $gray-500;
+    }
+
+    &::placeholder {
+        color: $gray-500;
+    }
+}
+
+input[type='text'].form-control,
+input[type='password'].form-control,
+input[type='email'].form-control {
+    padding: 9px 16px;
+}
+
+.form-check-input[type='radio'] {
+    margin-top: 2px;
+}
+
+.form-select {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    line-height: 1.5;
+}

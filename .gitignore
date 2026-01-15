@@ -11,8 +11,6 @@ plugins/SwagPlatformDemoData/
 theme/*
 thumbnail/*
 sitemap/*
-storefront
 files/*
 media/*
-storefront
 docker-compose.override.yaml

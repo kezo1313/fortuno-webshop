@@ -1,0 +1,30 @@
+{# FreeTheme 'Social icons'
+   @Storefront/storefront/theme/ft-social-icons.html.twig
+#}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftSocialIcons = theme_config('ft-social-icons')|sort %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Add 'Social icons' #}
+{% block ft_social_icons %}
+    {% for item in ftSocialIcons %}
+        <a href="{{ ('freeThemeOne.socialIcons.' ~ item ~ '.link')|trans|sw_sanitize }}"
+           class="ft-social-icon-link link-{{ item }}"
+           target="_blank"
+           rel="noopener noreferrer"
+        >
+            {% sw_include '@Storefront/storefront/utilities/social-icon.html.twig' ignore missing with {
+                name: item,
+                style: 'mono'
+            } %}
+
+            <span class="ft-social-icon-label visually-hidden">
+                {{ ('freeThemeOne.socialIcons.' ~ item ~ '.title')|trans|sw_sanitize }} – {{ ('freeThemeOne.socialIcons.titleSuffix')|trans|sw_sanitize }}
+            </span>
+        </a>
+    {% endfor %}
+{% endblock %}

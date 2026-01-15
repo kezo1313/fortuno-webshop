@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/page/account/sidebar.html.twig' %}
+
+{# FreeThemeOne 'page/account/sidebar.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Text reduced #}
+{% block page_account_sidebar_header %}
+    {% if not headerWidget %}
+        {# previously 'card-header account-aside-header' #}
+        <div class="card-header account-aside-header h4">
+            {{ 'account.greetings'|trans|sw_sanitize }} 
+            {# removed 'context.customer.title' #}
+            {{ context.customer.firstName }}
+            {# remnoved 'context.customer.lastName' #}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{# FreeThemeOne: Icon removed #}
+{% block page_account_sidebar_logout %}
+    {# previously 'btn btn-link account-aside-btn' #}
+    <a href="{{ path('frontend.account.logout.page') }}" 
+       class="btn btn-light">
+        {# removed sw-icon 'log-out' #}
+        {{ 'account.logout'|trans|sw_sanitize }}
+    </a>
+{% endblock %}

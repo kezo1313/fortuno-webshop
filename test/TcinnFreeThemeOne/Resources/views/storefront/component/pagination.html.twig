@@ -1,0 +1,53 @@
+{% sw_extends '@Storefront/storefront/component/pagination.html.twig' %}
+
+{# FreeThemeOne 'component/pagination.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_pagination_first_link_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevrons-left' style { size: 'xs', pack: iconPack} %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-medium-double-left' style { size: 'fluid', pack: 'solid' } %}
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_pagination_prev_link_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevron-left' style { size: 'xs', pack: iconPack} %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-medium-left' style { size: 'fluid', pack: 'solid' } %}
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_pagination_next_link_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevron-right' style { size: 'xs', pack: iconPack} %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-medium-right' style { size: 'fluid', pack: 'solid' } %}
+    {% endif %}
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_pagination_last_link_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevrons-right' style { size: 'xs', pack: iconPack} %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-medium-double-right' style { size: 'fluid', pack: 'solid' } %}
+    {% endif %}
+{% endblock %}

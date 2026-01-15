@@ -1,0 +1,452 @@
+{# FreeTheme 'Product specifications' on product pages
+
+   Create container and add product specifications
+   type: buy-box
+
+   @Storefront/storefront/theme/product-detail/ft-product-specifications.html.twig
+#}
+
+{# @TODO: Add some blocks... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeTheme: Set theme variables #}
+{% set ftProductSpecifications = theme_config('ft-product-specifications') %}
+
+{% if 'availablestock' in ftProductSpecifications %}
+    {% set ftProductDetailAvailablestockShow = true %}
+{% endif %}
+{% if 'deliverytime' in ftProductSpecifications %}
+    {% set ftProductDetailDeliverytimeShow = true %}
+{% endif %}
+{% if 'ean' in ftProductSpecifications %}
+    {% set ftProductDetailEanShow = true %}
+{% endif %}
+{% if 'height' in ftProductSpecifications %}
+    {% set ftProductDetailHeightShow = true %}
+{% endif %}
+{% if 'length' in ftProductSpecifications %}
+    {% set ftProductDetailLengthShow = true %}
+{% endif %}
+{% if 'manufacturernumber' in ftProductSpecifications %}
+    {% set ftProductDetailManufacturernumberShow = true %}
+{% endif %}
+{% if 'maxpurchase' in ftProductSpecifications %}
+    {% set ftProductDetailMaxpurchaseShow = true %}
+{% endif %}
+{% if 'minpurchase' in ftProductSpecifications %}
+    {% set ftProductDetailMinpurchaseShow = true %}
+{% endif %}
+{% if 'manufacturer' in ftProductSpecifications %}
+    {% set ftProductDetailManufacturerShow = true %}
+{% endif %}
+{% if 'stock' in ftProductSpecifications %}
+    {% set ftProductDetailStockShow = true %}
+{% endif %}
+{% if 'weight' in ftProductSpecifications %}
+    {% set ftProductDetailWeightShow = true %}
+{% endif %}
+{% if 'width' in ftProductSpecifications %}
+    {% set ftProductDetailWidthShow = true %}
+{% endif %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# ---------------- START: SET VARS ---------------- #}
+
+{# Get ISO code for the number format #}
+{% set isoCode = context.saleschannel.languages.first.translationCode.code|split('-') %}
+{% set language = isoCode[0] %}
+{% set country = isoCode[1] %}
+
+{# Countries that (according to Wikipedia) use a comma (,) as a decimal separator (Komma-Länder) #}
+{% set decimalComma = ['AL', 'AD', 'AM', 'AO', 'AR', 'AT', 'AZ', 'BA', 'BE', 'BG', 'BO', 'BR', 'BY', 'CL', 'CM', 'CO',
+    'CR', 'CU', 'CY', 'CZ', 'DE', 'DK', 'DZ', 'EC', 'EE', 'ES', 'FI', 'FO', 'FR', 'GE', 'GL', 'GR', 'HR', 'HT', 'HU',
+    'ID', 'IS', 'IT', 'KZ', 'LT', 'LU', 'LV', 'MA', 'MD', 'MK', 'MN', 'NA', 'NI', 'NL', 'NO', 'PE', 'PL', 'PT', 'PY',
+    'RO', 'RS', 'RU', 'SE', 'SI', 'SK', 'SM,TR', 'UA', 'UY', 'VE', 'VN', 'XK', 'ZA', 'ZW'] %}
+
+{# ---------------- END: SET VARS ---------------- #}
+
+{# FreeTheme: Product specifications in buy-box #}
+{% block ft_product_specifications %}
+    {# FreeTheme: Product specifications => "General information" / "Allgemeine Informationen" ---------------------- #}
+
+    {# Check if specifications should be shown #}
+    {% if page.product.manufacturer and ftProductDetailManufacturerShow == true %}
+        {% set showManufacturer = true %}
+    {% endif %}
+
+    {# Check if section is empty #}
+    {% set generalIsEmpty = true %}
+    {% if showManufacturer %}
+        {% set generalIsEmpty = false %}
+    {% endif %}
+
+    {# Product number @SW #}
+
+    <div class="ft-product-detail-specifications ft-product-specifications">
+    {# @TODO: isEmpty wrapper ausblenden?! #}
+
+        <div class="ft-product-detail-general-section ft-product-specifications-section general{% if generalIsEmpty %} is-empty{% endif %}">
+            {# FreeTheme: Add manufacturer (itemprop "brand") #}
+            {% if showManufacturer %}
+                <div class="ft-product-detail-manufacturer-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_manufacturer_label %}
+                        <span class="ft-product-detail-manufacturer-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.manufacturerLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_manufacturer %}
+                        <span class="ft-product-detail-manufacturer">
+                            {{ page.product.manufacturer.translated.name }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+        </div>
+
+        {# FreeTheme: Product specifications => "Labelling" / "Auszeichnung" --------- #}
+
+        {# Check if specifications should be shown #}
+        {% if page.product.ean and ftProductDetailEanShow == true %}
+            {% set showEan = true %}
+        {% endif %}
+        {% if page.product.manufacturerNumber and ftProductDetailManufacturernumberShow == true %}
+            {% set showManufacturerNumber = true %}
+        {% endif %}
+
+        {# Check if section is empty #}
+        {% set labellingIsEmpty = true %}
+        {% if showEan or showManufacturerNumber %}
+            {% set labellingIsEmpty = false %}
+        {% endif %}
+
+        <div class="ft-product-detail-labelling-section ft-product-specifications-section labelling{% if labellingIsEmpty %} is-empty{% endif %}">
+            {# Release date #}
+
+            {# FreeTheme: Add GTIN/EAN (itemprop "gtin13") #}
+            {% if showEan %}
+                <div class="ft-product-detail-ean-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_ean_label %}
+                        <span class="ft-product-detail-ean-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.eanLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_ean %}
+                        <span class="ft-product-detail-ean">
+                            {{ page.product.ean }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# FreeTheme: Add manufacturerNumber (itemprop "mpn") #}
+            {% if showManufacturerNumber %}
+                <div class="ft-product-detail-manufacturernumber-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_manufacturernumber_label %}
+                        <span class="ft-product-detail-manufacturernumber-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.manufacturerNumberLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_manufacturernumber %}
+                        <span class="ft-product-detail-manufacturernumber">
+                            {{ page.product.manufacturerNumber }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+        </div>
+
+        {# FreeTheme: Product specifications => "Measures" / "Maße" ----------------------------------------------------- #}
+
+        {# Get measurements by type #}
+        {% if page.product.measurements.type('weight') %}
+            {% set weightUnit = page.product.measurements.type('weight').unit %}
+            {% set weightValue = page.product.measurements.type('weight').value %}
+        {% else %}
+            {% set weightUnit = 'kg' %}
+            {% set weightValue = page.product.weight %}
+        {% endif %}
+
+        {% if page.product.measurements.type('height') %}
+            {% set heightUnit = page.product.measurements.type('height').unit %}
+            {% set heightValue = page.product.measurements.type('height').value %}
+        {% else %}
+            {% set heightUnit = 'mm' %}
+            {% set heightValue = page.product.height %}
+        {% endif %}
+
+        {% if page.product.measurements.type('width') %}
+            {% set widthUnit = page.product.measurements.type('width').unit %}
+            {% set widthValue = page.product.measurements.type('width').value %}
+        {% else %}
+            {% set widthUnit = 'mm' %}
+            {% set widthValue = page.product.width %}
+        {% endif %}
+
+        {% if page.product.measurements.type('length') %}
+            {% set lengthUnit = page.product.measurements.type('length').unit %}
+            {% set lengthValue = page.product.measurements.type('length').value %}
+        {% else %}
+            {% set lengthUnit = 'mm' %}
+            {% set lengthValue = page.product.length %}
+        {% endif %}
+
+
+        {# Check if specifications should be shown #}
+        {% if weightValue and weightValue > 0 and ftProductDetailWeightShow == true %}
+            {% set showWeight = true %}
+        {% endif %}
+        {% if lengthValue and lengthValue > 0 and ftProductDetailLengthShow == true %}
+            {% set showLength = true %}
+        {% endif %}
+        {% if widthValue and widthValue > 0 and ftProductDetailWidthShow == true %}
+            {% set showWidth = true %}
+        {% endif %}
+        {% if heightValue and heightValue > 0 and ftProductDetailHeightShow == true %}
+            {% set showHeight = true %}
+        {% endif %}
+
+        {# Check if section is empty #}
+        {% set measuresIsEmpty = true %}
+        {% if showWeight or showLength or showWidth or showHeight or showCustomField2 %}
+            {% set measuresIsEmpty = false %}
+        {% endif %}
+
+        <div class="ft-product-detail-measures-section ft-product-specifications-section measures{% if measuresIsEmpty %} is-empty{% endif %}">
+            {# FreeTheme: Add length (itemprop "depth") | number format (input): e.g. '1840.5' #}
+            {% if showLength %}
+                <div class="ft-product-detail-length-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_length_label %}
+                        <span class="ft-product-detail-length-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.lengthLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_length %}
+                        <span class="ft-product-detail-length">
+                            {% set decimals = lengthValue|split('.') %}
+                            {% set decimals = decimals[1]|length %}
+
+                            {% if country in decimalComma %}
+                                {{ lengthValue|number_format(decimals, ',', '.') }} {{ lengthUnit }}
+                            {% else %}
+                                {{ lengthValue|number_format(decimals, '.', ',') }} {{ lengthUnit }}
+                            {% endif %}
+
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# FreeTheme: Add width (itemprop "width") | number format (input): e.g. '1840.5' #}
+            {% if showWidth %}
+                <div class="ft-product-detail-width-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_width_label %}
+                        <span class="ft-product-detail-width-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.widthLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_width %}
+                        <span class="ft-product-detail-width">
+                            {% set decimals = widthValue|split('.') %}
+                            {% set decimals = decimals[1]|length %}
+
+                            {% if country in decimalComma %}
+                                {{ widthValue|number_format(decimals, ',', '.') }} {{ widthUnit }}
+                            {% else %}
+                                {{ widthValue|number_format(decimals, '.', ',') }} {{ widthUnit }}
+                            {% endif %}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# FreeTheme: Add height (itemprop "height") | number format (input): e.g. '1840.5' #}
+            {% if showHeight %}
+                <div class="ft-product-detail-height-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_height_label %}
+                        <span class="ft-product-detail-height-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.heightLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_height %}
+                        <span class="ft-product-detail-height">
+                            {% set decimals = heightValue|split('.') %}
+                            {% set decimals = decimals[1]|length %}
+
+                            {% if country in decimalComma %}
+                                {{ heightValue|number_format(decimals, ',', '.') }} {{ heightUnit }}
+                            {% else %}
+                                {{ heightValue|number_format(decimals, '.', ',') }} {{ heightUnit }}
+                            {% endif %}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# @TODO: Add 'length x width x height' | number format (input): e.g. '1840.5' (see playground) #}
+
+            {# FreeTheme: Add weight (itemprop "weight") | number format (input): e.g. '1840.5' #}
+            {% if showWeight %}
+                <div class="ft-product-detail-weight-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_weight_label %}
+                        <span class="ft-product-detail-weight-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.weightLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_weight %}
+                        <span class="ft-product-detail-weight">
+                            {% set decimals = weightValue|split('.') %}
+                            {% set decimals = decimals[1]|length %}
+
+                            {% if country in decimalComma %}
+                                {{ weightValue|number_format(decimals, ',', '.') }} {{ weightUnit }}
+                            {% else %}
+                                {{ weightValue|number_format(decimals, '.', ',') }} {{ weightUnit }}
+                            {% endif %}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+        </div>
+
+        {# FreeTheme: Product specifications => "Packaging" / "Verpackung" --------- #}
+
+        {# Selling unit #}
+        {# Scale unit #}
+        {# Packaging unit #}
+        {# Packaging unit plural #}
+        {# Basic unit #}
+
+        {# FreeTheme: Product specifications => "Deliverability" / "Lieferbarkeit" -------------------------------------- #}
+
+        {# Check if specifications should be shown #}
+        {% if page.product.stock > 0 and ftProductDetailStockShow == true %}
+            {% set showStock = true %}
+        {% endif %}
+        {% if page.product.availableStock > 0 and ftProductDetailAvailablestockShow == true %}
+            {% set showAvailablestock = true %}
+        {% endif %}
+        {% if page.product.deliveryTime.translation('name') and ftProductDetailDeliverytimeShow == true %}
+            {% set showDeliverytime = true %}
+        {% endif %}
+        {% if page.product.minPurchase and ftProductDetailMinpurchaseShow == true %}
+            {% set showMinpurchase = true %}
+        {% endif %}
+        {% if page.product.maxPurchase and ftProductDetailMaxpurchaseShow == true %}
+            {% set showMaxpurchase = true %}
+        {% endif %}
+
+        {# Check if section is empty #}
+        {% set deliverabilityIsEmpty = true %}
+        {% if showStock or showAvailablestock or showDeliverytime or showMinpurchase or showMaxpurchase or showCustomField3 %}
+            {% set deliverabilityIsEmpty = false %}
+        {% endif %}
+
+        <div class="ft-product-detail-deliverability-section ft-product-specifications-section deliverability{% if deliverabilityIsEmpty %} is-empty{% endif %}">
+            {# Stock #}
+
+            {# FreeTheme: Add Stock (itemprop "..") #}
+            {# @TODO: handle isCloseout?! #}
+            {% if showStock %}
+                <div class="ft-product-detail-stock-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_stock_label %}
+                        <span class="ft-product-detail-stock-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.stockLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_stock %}
+                        <span class="ft-product-detail-stock">
+                            {{ page.product.stock }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# FreeTheme: Add availableStock (itemprop "..") #}
+            {# @TODO: handle isCloseout?! #}
+            {% if showAvailablestock %}
+                <div class="ft-product-detail-availablestock-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_availablestock_label %}
+                        <span class="ft-product-detail-availablestock-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.availableStockLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_availablestock %}
+                        <span class="ft-product-detail-availablestock">
+                            {{ page.product.availableStock }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# Clearance sale #}
+
+            {# FreeTheme: Add deliveryTime #}
+            {% if showDeliverytime %}
+                <div class="ft-product-detail-deliverytime-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_deliverytime_label %}
+                        <span class="ft-product-detail-deliverytime-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.deliveryTimeLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_deliveryTime %}
+                        <span class="ft-product-detail-deliveryTime">
+                            {{ page.product.deliveryTime.translation('name') }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# Restock time in days #}
+
+            {# Free shipping #}
+
+            {# FreeTheme: Add minPurchase (itemprop "..") #}
+            {% if showMinpurchase %}
+                <div class="ft-product-detail-minpurchase-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_minpurchase_label %}
+                        <span class="ft-product-detail-minpurchase-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.minpurchaseLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_minpurchase %}
+                        <span class="ft-product-detail-minpurchase">
+                            {{ page.product.minPurchase }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# Purchase steps #}
+
+            {# FreeTheme: Add maxPurchase (itemprop "..") #}
+            {% if showMaxpurchase %}
+                <div class="ft-product-detail-maxpurchase-container ft-product-specifications-container">
+                    {% block ft_page_product_detail_maxpurchase_label %}
+                        <span class="ft-product-detail-maxpurchase-label ft-product-specifications-label">
+                            {{ 'freeThemeOne.productSpecifications.maxpurchaseLabel'|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block ft_page_product_detail_maxpurchase %}
+                        <span class="ft-product-detail-maxpurchase">
+                            {{ page.product.maxPurchase }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

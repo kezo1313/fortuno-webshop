@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/component/listing/filter/filter-rating-select-item.html.twig' %}
+
+{# FreeThemeOne 'component/listing/filter/filter-rating-select-item.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block component_filter_rating_select_list_item_checkmark_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'check' style {pack: iconPack, size: 'xs'} %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'checkmark' style {pack: 'solid', size: 'xs'} %}
+    {% endif %}
+{% endblock %}

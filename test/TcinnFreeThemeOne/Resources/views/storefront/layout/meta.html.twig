@@ -1,0 +1,27 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{# FreeThemeOne 'layout/meta.html.twig' #}
+
+{# @TODO: Add HC configuration... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftExpertMode = theme_config('ft-expert-mode') %}
+{% set ftCustomCssCode = theme_config('ft-custom-css-code') %}
+{% set ftCustomCssCodeLoad = theme_config('ft-custom-css-code-load') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Add styles and stylesheets to <head> #}
+{% block layout_head_stylesheet %}
+	{# Default block #}
+	{{ parent() }}
+
+    {# FreeThemeOne: Add CSS code via theme configuration #}
+    {# INFO: Styles können über eine Textarea ergänzt werden. #}
+    {% if ftExpertMode and ftCustomCssCodeLoad and ftCustomCssCode is not empty %}
+        <!-- Custom css code -->
+        <style>{% apply spaceless %}{{ ftCustomCssCode|raw }}{% endapply %}</style>
+    {% endif %}
+{% endblock %}

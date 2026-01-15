@@ -1,0 +1,49 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+
+{# FreeThemeOne 'layout/header/actions/language-widget.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftTopBarLayoutType = theme_config('ft-top-bar-layout-type') %}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Add icon #}
+{% block layout_header_actions_language_widget_content %}
+    {% if ftTopBarLayoutType == "one" %}
+        {% set isoCode = context.languageInfo.localeCode|lower|split('-') %}
+        {% set language = isoCode[0] %}
+        {% set country = isoCode[1] %}
+
+        <div class="languages-menu dropdown">
+            <button class="btn dropdown-toggle top-bar-nav-btn"
+                    type="button"
+                    id="languagesDropdown-{{ position }}"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-label="{{ 'header.languageTrigger'|trans({ '%lang%': context.languageInfo.name })|striptags }}">
+                <span aria-hidden="true" class="top-bar-list-icon language-flag country-{{ country }} language-{{ language }}"></span>
+                <span class="top-bar-nav-text d-none d-md-inline">{{ language|upper }}</span> {# Note: Currently hidden via CSS #}
+
+                {# FreeThemeOne: Add icon #}
+                {% if iconPack == "feather" %}
+                    {% sw_icon 'chevron-down' style { pack: iconPack, size: 'xs' } %}
+                {% else %}
+                    {# Shopware icon #}
+                    {% sw_icon 'arrow-medium-down' style { pack: 'solid', size: 'xs' } %}
+                {% endif %}
+            </button>
+
+            {# Default block #}
+            {{ block ('layout_header_actions_languages_widget_form_items') }}
+        </div>
+        
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}

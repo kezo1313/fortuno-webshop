@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/error/error-maintenance.html.twig' %}
+
+{# FreeThemeOne 'page/error/error-maintenance.html.twig' #}
+
+{# @TODO: Add custom image... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeTheme: Add class to maintenance image #}
+{% block error_maintenance_main_fallback %}
+    <div class="container mt-5">
+        <img src="{{ asset('assets/illustration/maintenance_mode.svg', 'theme') }}"
+                alt="{{ "general.maintenanceModeHeader"|trans|striptags }}"
+                class="ft-maintenance-image rounded mx-auto d-block w-75">
+
+        <h1 class="mt-5 text-center">{{ "general.maintenanceModeHeader"|trans }}</h1>
+        <p class="text-center">{{ "general.maintenanceModeDescription"|trans }}</p>
+    </div>
+{% endblock %}

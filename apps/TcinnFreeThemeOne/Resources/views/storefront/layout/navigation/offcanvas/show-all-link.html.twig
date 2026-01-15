@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/show-all-link.html.twig' %}
+
+{# FreeThemeOne 'layout/navigation/offcanvas/show-all-link.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust classes #}
+{% block layout_navigation_offcanvas_navigation_home_link %}
+    <a class="nav-item{#nav-link#} is-home-link btn btn-outline-primary navigation-offcanvas-link js-navigation-offcanvas-link"
+       href="{{ path('frontend.menu.offcanvas') }}"
+       itemprop="url"
+       title="{{ 'general.mainMenu'|trans|striptags }}">
+        {{ block('layout_navigation_offcanvas_navigation_home_link_text') }}
+    </a>
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust icon #}
+{% block layout_navigation_offcanvas_navigation_home_link_text %}
+    <span class="navigation-offcanvas-link-icon js-navigation-offcanvas-loading-icon">
+        {% if iconPack == "feather" %}
+            {% sw_icon 'menu' style { pack: iconPack, size: 'sm' } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'stack' %}
+        {% endif %}
+    </span>
+    <span itemprop="name">
+        {{ 'general.mainMenu'|trans|sw_sanitize }}
+    </span>
+{% endblock %}

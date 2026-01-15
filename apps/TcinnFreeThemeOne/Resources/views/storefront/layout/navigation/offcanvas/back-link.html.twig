@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/back-link.html.twig' %}
+
+{# FreeThemeOne 'layout/navigation/offcanvas/back-link.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust classes #}
+{% block layout_navigation_offcanvas_navigation_category_back_link %}
+    <a class="nav-item{#nav-link#} is-back-link btn btn-light navigation-offcanvas-link js-navigation-offcanvas-link"
+       href="{{ url }}"
+       itemprop="url"
+       title="{{ 'general.back'|trans|striptags }}">
+        {{ block('layout_navigation_offcanvas_navigation_category_back_link_text') }}
+    </a>
+{% endblock %}
+
+
+{# FreeThemeOne: Adjust icon #}
+{% block layout_utilities_offcanvas_close_icon %}
+    {% if iconPack == "feather" %}
+        {% sw_icon 'chevron-left' style { pack: iconPack, size: 'xs' } %}
+    {% else %}
+        {# Default icon #}
+        {% sw_icon 'arrow-medium-left' style { pack:'solid', size: 'sm' } %}
+    {% endif %}
+{% endblock %}

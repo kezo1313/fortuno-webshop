@@ -1,0 +1,69 @@
+{% sw_extends '@Storefront/storefront/layout/header/search.html.twig' %}
+
+{# FreeThemeOne 'layout/header/search.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftHeaderLayoutType = theme_config('ft-header-layout-type') %}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust search #}
+{% block layout_header_search %}
+    {% if ftHeaderLayoutType == 'one' %}
+        <div class="collapse"
+            id="searchCollapse">
+            {# FreeThemeOne: Adjust classes #}
+            {# previously 'header-search my-2 m-sm-auto' #}
+            <div class="header-search">
+                   {% block layout_header_search_form %}
+                    <form action="{{ path('frontend.search.page') }}"
+                          method="get"
+                          data-search-widget="true"
+                          data-search-widget-options="{{ searchWidgetOptions|json_encode }}"
+                          data-url="{{ path('frontend.search.suggest') }}?search="
+                          class="header-search-form js-search-form">
+                        {% block layout_header_search_input_group %}
+                            {# FreeThemeOne: Adjust classes #}
+                            {# previously 'input-group' #}
+                            <div class="input-group input-group-lg">
+                                {{ block('layout_header_search_input') }}
+
+                                {# FreeThemeOne: Adjust icon #}
+                                {% block layout_header_search_button %}
+                                    <button type="submit"
+                                            class="btn header-search-btn"
+                                            aria-label="{{ 'header.searchButton'|trans|striptags }}">
+                                        <span class="header-search-icon">
+                                            {# @TODO: Adjust icon... #}
+                                            {% sw_icon 'search' %}
+                                        </span>
+                                    </button>
+                                {% endblock %}
+
+                                {# FreeThemeOne: Adjust icon #}
+                                {% block layout_header_close_button %}
+                                    <button class="btn header-close-btn js-search-close-btn d-none"
+                                            type="button"
+                                            aria-label="{{ 'header.searchCloseButton'|trans|striptags }}">
+                                        <span class="header-close-icon">
+                                            {# @TODO: Adjust icon... #}
+                                            {% sw_icon 'x' %}
+                                        </span>
+                                    </button>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </form>
+                {% endblock %}
+            </div>
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+<g class="color2" fill="#fff">
+<polygon points="22.29 24.43 18.29 28.43 18.29 24.43 13.14 24.43 13.14 7.29 31.43 7.29 31.43 19.86 26.86 24.43"/>
+</g>
+<g class="color1" fill="#9146ff">
+<path d="m12 5-5.71 5.71v20.58h6.85v5.71l5.72-5.71h4.57l10.28-10.29v-16zm19.43 14.86-4.57 4.57h-4.57l-4 4v-4h-5.15v-17.14h18.29z"/>
+<rect x="25.71" y="11.29" width="2.29" height="6.86"/>
+<rect x="19.43" y="11.29" width="2.29" height="6.86"/>
+</g>
+</svg>

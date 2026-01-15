@@ -1,0 +1,16 @@
+/*
+CMS blocks
+==============================================
+General (Skin) styling for cms blocks and
+specific (skin) styling for elements dependent on their parent block
+*/
+
+// @TODO: #check styling...
+
+// Define a color variable (optional, good practice)
+$pink-bg:green; 
+
+// Basic pink background class
+.bg-pink {
+    background-color: $pink-bg;
+}

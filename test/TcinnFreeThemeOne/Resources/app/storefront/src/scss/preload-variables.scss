@@ -1,0 +1,167 @@
+/*
+   ____                      ______  __                                   
+  /\  _`\                   /\__  _\/\ \                                  
+  \ \ \L\_\_ __    __     __\/_/\ \/\ \ \___      __    ___ ___      __   
+   \ \  _\/\`'__\/'__`\ /'__`\ \ \ \ \ \  _ `\  /'__`\/' __` __`\  /'__`\ 
+    \ \ \/\ \ \//\  __//\  __/  \ \ \ \ \ \ \ \/\  __//\ \/\ \/\ \/\  __/ 
+     \ \_\ \ \_\\ \____\ \____\  \ \_\ \ \_\ \_\ \____\ \_\ \_\ \_\ \____\
+      \/_/  \/_/ \/____/\/____/   \/_/  \/_/\/_/\/____/\/_/\/_/\/_/\/____/
+                                                                        
+    Copyright (c) TC-Innovations GmbH
+
+    preload-variables.scss
+    ==============================================
+    Set theme default variables for "storefront:hot-proxy".
+
+    Info: Loaded via theme.json
+
+*/
+
+// Brand Colors
+// $sw-color-brand-primary: #6919e1 !default;
+// $sw-color-brand-secondary: #222222 !default;
+// $sw-border-color: #ced4da !default;
+// $sw-background-color: #ffffff !default;
+$ft-color-brand-primary-light: #b288f2 !default;
+$ft-color-brand-primary-dark: #2b1e3e !default;
+$ft-background-color: #f8f9fa !default;
+
+// State Colors
+// $sw-color-success: #00663f !default;
+// $sw-color-info: #005b99 !default;
+// $sw-color-warning: #924000 !default;
+// $sw-color-danger: #b40015 !default;
+
+// Typography
+// $sw-font-family-base: 'Sen', sans-serif !default;
+// $sw-text-color: #161616 !default;
+// $sw-font-family-headline: 'Sen', sans-serif !default;
+// $sw-headline-color: #161616 !default;
+$ft-link-color: #6919e1 !default;
+$ft-link-color-hover: #161616 !default;
+
+// Icons
+$ft-icon-set: feather !default;
+
+// E-Commerce
+// $sw-color-price: #161616 !default;
+$ft-discounted-price-color: #b40015 !default;
+$ft-list-price-color: #555555 !default;
+// $sw-color-buy-button: #00663f !default;
+// $sw-color-buy-button-text: #ffffff !default;
+
+// Logos
+// $sw-logo-desktop: app/storefront/src/assets/logo/one-logo.svg !default;
+// $sw-logo-tablet: app/storefront/src/assets/logo/one-logo.svg !default;
+// $sw-logo-mobile: app/storefront/src/assets/logo/one-logo-mobile.svg !default;
+// $sw-logo-share: app/storefront/src/assets/logo/one-share-icon.png !default;
+// $sw-logo-favicon: app/storefront/src/assets/logo/one-favicon.png !default;
+
+// Header Layout
+$ft-header-layout-type: one !default;
+
+// Top Bar
+$ft-top-bar-layout-type: one !default;
+$ft-top-bar-color: #fdfdfd !default;
+$ft-top-bar-background-color: #161616 !default;
+$ft-top-bar-column-1: claim !default;
+$ft-top-bar-column-2: usps !default;
+$ft-top-bar-column-3: selects !default;
+
+// Top Bar Snippets (scss: false)
+// $ft-snippet-field-claim
+// $ft-snippet-field-mail
+// $ft-snippet-field-phone
+// $ft-snippet-field-service-mail
+// $ft-snippet-field-service-hotline
+// $ft-snippet-field-message
+
+// Footer
+$ft-footer-layout-type: one !default;
+$ft-footer-color: #ffffff !default;
+$ft-footer-background-color: #161616 !default;
+$ft-footer-link-color: #fdfdfd !default;
+$ft-footer-link-color-hover: #af7aff !default;
+// $ft-footer-logo (scss: false)
+$ft-footer-social-icons-show: yes !default;
+$ft-footer-navigation-columns: 3 !default;
+
+// Footer Newsletter
+$ft-footer-newsletter-show: yes !default;
+$ft-footer-newsletter-color: #fdfdfd !default;
+$ft-footer-newsletter-background-color: #2b1e3e !default;
+
+// Footer Newsletter Snippets (scss: false)
+// $ft-snippet-field-newsletter-headline
+// $ft-snippet-field-newsletter-text
+
+// Footer Snippets (scss: false)
+// $ft-snippet-field-payment-shipping-headline
+// $ft-snippet-field-copyright
+
+// Branding (scss: false)
+// $ft-branding-lizenzkey
+
+// Sidebar
+$ft-sidebar-navigation-headline-show: yes !default;
+$ft-sidebar-filter-headline-show: yes !default;
+
+// Product Page
+$ft-product-heading-position: buybox !default;
+$ft-product-detail-manufacturer-logo-show: yes !default;
+$ft-product-detail-ordernumber-show: yes !default;
+
+// Product Specifications (scss: false)
+// $ft-product-specifications
+
+// Product Specifications Snippets (scss: false)
+// $ft-snippet-field-available-stock-label
+// $ft-snippet-field-delivery-time-label
+// $ft-snippet-field-ean-label
+// $ft-snippet-field-height-label
+// $ft-snippet-field-length-label
+// $ft-snippet-field-manufacturer-label
+// $ft-snippet-field-manufacturer-number-label
+// $ft-snippet-field-maxpurchase-label
+// $ft-snippet-field-minpurchase-label
+// $ft-snippet-field-stock-label
+// $ft-snippet-field-weight-label
+// $ft-snippet-field-width-label
+
+// Social Icons (scss: false)
+// $ft-social-icons
+
+// Social Icons Links (scss: false)
+// $ft-snippet-field-blogger-link
+// $ft-snippet-field-facebook-link
+// $ft-snippet-field-flickr-link
+// $ft-snippet-field-instagram-link
+// $ft-snippet-field-linkedin-link
+// $ft-snippet-field-pinterest-link
+// $ft-snippet-field-tiktok-link
+// $ft-snippet-field-twitch-link
+// $ft-snippet-field-vimeo-link
+// $ft-snippet-field-whatsapp-link
+// $ft-snippet-field-wordpress-link
+// $ft-snippet-field-x-link
+// $ft-snippet-field-xing-link
+// $ft-snippet-field-youtube-link
+
+// USPs Snippets (scss: false)
+// $ft-snippet-field-usp1-label
+// $ft-snippet-field-usp2-label
+// $ft-snippet-field-usp3-label
+// $ft-snippet-field-usp4-label
+
+// Advanced Settings (scss: false)
+// $ft-essentials-teaser
+
+// Advanced Settings
+$ft-cms-styling: enabled !default;
+$ft-responsive-gutter: enabled !default;
+$ft-landingpage-styling: enabled !default;
+
+// Expert Mode
+$ft-expert-mode: false !default;
+// $ft-custom-css-code (scss: false)
+$ft-custom-css-code-load: false !default;

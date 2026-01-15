@@ -1,0 +1,44 @@
+{% sw_extends '@Storefront/storefront/layout/navbar/content.html.twig' %}
+
+{# FreeThemeOne 'layout/navbar/content.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftHeaderLayoutType = theme_config('ft-header-layout-type') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust column layout in the flyout as our navbar is narrower #}
+{% block layout_navbar_content_row_content_categories %}
+    {% if ftHeaderLayoutType == 'one' %}
+        <div class="{% if category.media %}col-8{% else %}col{% endif %}">
+            <div class="">
+                {{ block('layout_navbar_content_row_content_categories_recoursion') }}
+            </div>
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}
+
+
+{% block layout_navbar_content_row_content_teaser %}
+    {% if ftHeaderLayoutType == 'one' %}
+        {% if category.media %}
+            <div class="col-4">
+                <div class="navigation-flyout-teaser">
+                    {{ block('layout_navbar_content_row_content_teaser_image') }}
+                </div>
+            </div>
+        {% endif %}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}

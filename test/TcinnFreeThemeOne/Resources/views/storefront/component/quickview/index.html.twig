@@ -1,0 +1,26 @@
+{% sw_extends '@Storefront/storefront/component/quickview/index.html.twig' %}
+
+{# FreeThemeOne 'component/quickview/index.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block swag_cms_extensions_component_quickview_close_button %}
+    <div class="swag-cms-extensions-quickview-close-button">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+            {% if iconPack == "feather" %}
+                {% sw_icon 'x' style { pack: iconPack } %}
+            {% else %}
+                {# Default icon #}
+                {% sw_icon 'x' %}
+            {% endif %}
+        </button>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-item.html.twig' %}
+
+{# FreeThemeOne 'page/account/order-history/order-item.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust classes #}
+{% block page_account_order_item_order_number %}
+    {# previously 'col-12 order-table-header-order-number' #}
+    <div class="order-table-header-order-number">
+        <strong class="order-table-header-label">{{ 'account.orderNumber'|trans|sw_sanitize }}</strong>
+        <span class="order-table-body-value">{{ order.orderNumber|sw_sanitize }}</span>
+    </div>
+{% endblock %}

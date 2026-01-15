@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/account-widget.html.twig' %}
+
+{# FreeThemeOne 'layout/header/actions/account-widget.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust icon #}
+{% block layout_header_actions_account_widget_dropdown_button %}
+    <button class="btn account-menu-btn header-actions-btn"
+            type="button"
+            id="accountWidget"
+            data-account-menu="true"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="{{ 'account.myAccount'|trans|striptags }}"
+            title="{{ 'account.myAccount'|trans|striptags }}">
+        {% if iconPack == "feather" %}
+            {% sw_icon 'user' style { pack: iconPack } %}
+        {% else %}
+            {# Default icon #}
+            {% sw_icon 'avatar' %}
+        {% endif %}
+    </button>
+{% endblock %}

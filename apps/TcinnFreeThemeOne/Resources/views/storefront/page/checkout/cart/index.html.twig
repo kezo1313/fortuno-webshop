@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
+
+{# FreeThemeOne 'page/checkout/cart/index.html.twig' #}
+
+{# @TODO: #check and #refactore template... #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set iconPack = theme_config('ft-icon-set') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block page_checkout_cart_add_product_submit %}
+    <button class="btn btn-secondary btn-square"
+            type="submit"
+            aria-labelledby="addProductInput"
+            id="addProductButton">
+        {% sw_icon 'check' style {pack: iconPack} %}
+    </button>
+{% endblock %}
+
+
+{% block page_checkout_cart_shipping_costs_trigger %}
+    <a class="btn btn-light cart-shipping-costs-btn"
+       data-bs-toggle="collapse"
+       href="#collapseShippingCost"
+       role="button"
+       aria-expanded="false"
+       aria-controls="collapseExample">
+        {{ 'freeThemeOne.checkout.shippingCosts'|trans|sw_sanitize }}
+        {% block page_checkout_cart_shipping_costs_trigger_icon %}
+            {# Removed the icon #}
+        {% endblock %}
+    </a>
+{% endblock %}
+
+
+{% block page_checkout_cart_add_promotion_submit %}
+    <button class="btn btn-secondary btn-square"
+            type="submit"
+            aria-labelledby="addPromotionInput"
+            id="addPromotion">
+        {% sw_icon 'check' style {pack: iconPack} %}
+    </button>
+{% endblock %}

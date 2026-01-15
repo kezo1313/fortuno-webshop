@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/block/cms-block-product-heading.html.twig' %}
+
+{# FreeThemeOne 'block/cms-block-product-heading.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftProductHeadingPosition = theme_config('ft-product-heading-position') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Move 'Product heading' to 'component/buy-widget/buy-widget.html.twig' #}
+{% block block_product_heading %}
+    {% if ftProductHeadingPosition == 'buybox' %}
+        {# Clear block #}
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+        
+    {% endif %}
+{% endblock %}

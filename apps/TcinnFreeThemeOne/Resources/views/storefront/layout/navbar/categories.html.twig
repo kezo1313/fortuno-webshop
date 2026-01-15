@@ -1,0 +1,26 @@
+{% sw_extends '@Storefront/storefront/layout/navbar/categories.html.twig' %}
+
+{# FreeThemeOne 'layout/navbar/categories.html.twig' #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Set theme variables #}
+{% set ftHeaderLayoutType = theme_config('ft-header-layout-type') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# FreeThemeOne: Adjust column layout in the flyout as our navbar is narrower #}
+{% block layout_navbar_categories_item %}
+    {% if ftHeaderLayoutType == 'one' %}
+        <div class="{% if level == 0 %}{% if navigationMedia %}col-6 {% else %}col-4 {% endif %}{% endif %}{% if level == 0 %}navigation-flyout-col{% endif %}">
+            {{ block('layout_navbar_categories_item_link') }}
+
+            {{ block('layout_navbar_categories_recoursion') }}
+        </div>
+
+    {% else %}
+        {# Default block #}
+        {{ parent() }}
+
+    {% endif %}
+{% endblock %}
