@@ -62,4 +62,4 @@ RUN chmod +x /var/www/html/start.sh
 
 EXPOSE 8000
 
-CMD ["/var/www/html/start.sh"]
+ENTRYPOINT ["/var/www/html/start.sh"]
