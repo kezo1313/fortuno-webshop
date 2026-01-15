@@ -37,9 +37,6 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 RUN php bin/console assets:install
 
 
-# Compile Theme/Storefront (Automated - DB Free Mode)
-# 1. Remove '--active-only' from build script so it doesn't try to connect to DB
-RUN ./bin/build-storefront.sh
 
 # Fix permissions for cache and public folders (since asset install ran as root)
 # Fix permissions:
@@ -59,4 +56,10 @@ RUN chown -R 82:82 /var/www/html/public /var/www/html/files /var/www/html/var
 # Switch to official user 82 (www-data)
 USER 82
 
+# Copy and setup startup script
+COPY --chown=82:82 start.sh /var/www/html/start.sh
+RUN chmod +x /var/www/html/start.sh
+
 EXPOSE 8000
+
+CMD ["/var/www/html/start.sh"]
