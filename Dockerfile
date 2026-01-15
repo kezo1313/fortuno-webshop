@@ -32,6 +32,9 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 # Install assets during build to prevent 404s
 RUN php bin/console assets:install
 
+# Fix permissions for cache and public folders (since asset install ran as root)
+RUN chown -R 82:82 /var/www/html/var /var/www/html/public
+
 # Switch to official user 82 (www-data)
 USER 82
 
