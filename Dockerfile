@@ -36,6 +36,12 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 # Install assets during build to prevent 404s
 RUN php bin/console assets:install
 
+# Compile Theme/Storefront (Automated)
+# We set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true to speed up if used, and CI=1 to avoid interactive prompts
+RUN export CI=1 && \
+    export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true && \
+    ./bin/build-storefront.sh
+
 # Fix permissions for cache and public folders (since asset install ran as root)
 # Fix permissions:
 # 1. Delete build-time cache (it's owned by root from assets:install, and we don't need it)
