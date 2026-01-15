@@ -18,7 +18,8 @@ USER root
 WORKDIR /var/www/html
 
 # Install Bash (requested by user) and Node.js/NPM (required for theme compilation)
-RUN apk add --no-cache bash nodejs npm
+# We also upgrade npm to latest to fix the "ruleset" bug present in some Alpine versions
+RUN apk add --no-cache bash nodejs npm && npm install -g npm@latest
 
 # Copy core from build stage
 COPY --from=build --chown=82:82 /var/www/html /var/www/html
