@@ -44,8 +44,8 @@ RUN mkdir -p /var/www/html/public/media \
     /var/www/html/public/sitemap \
     /var/www/html/files
 
-# 3. Set ownership for public and files (runtime needs to write here)
-RUN chown -R 82:82 /var/www/html/public /var/www/html/files
+# 3. Set ownership for public, files, AND var (so cache can be created)
+RUN chown -R 82:82 /var/www/html/public /var/www/html/files /var/www/html/var
 
 # Switch to official user 82 (www-data)
 USER 82
