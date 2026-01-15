@@ -39,12 +39,7 @@ RUN php bin/console assets:install
 
 # Compile Theme/Storefront (Automated - DB Free Mode)
 # 1. Remove '--active-only' from build script so it doesn't try to connect to DB
-RUN sed -i 's/--active-only//g' bin/build-storefront.sh
-
-# 2. Run build script with SHOPWARE_SKIP_BUNDLE_DUMP=1 to avoid DB connection for bundle dump
-RUN export CI=1 && \
-    export SHOPWARE_SKIP_BUNDLE_DUMP=1 && \
-    ./bin/build-storefront.sh
+RUN ./bin/build-storefront.sh
 
 # Fix permissions for cache and public folders (since asset install ran as root)
 # Fix permissions:
