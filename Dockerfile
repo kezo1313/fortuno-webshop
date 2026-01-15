@@ -29,6 +29,7 @@ COPY --chown=82:82 ./apps /var/www/html/custom/apps
 COPY --chown=82:82 ./.env /var/www/html/.env
 COPY --chown=82:82 ./plugins /var/www/html/custom/plugins
 COPY --chown=82:82 ./config/packages /var/www/html/config/packages
+COPY --chown=82:82 ./sw-domain-hash.html /var/www/html/public/sw-domain-hash.html
 
 # Ensure final permissions
 
