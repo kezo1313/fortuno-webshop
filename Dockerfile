@@ -33,13 +33,19 @@ COPY --chown=82:82 ./config/packages /var/www/html/config/packages
 RUN php bin/console assets:install
 
 # Fix permissions for cache and public folders (since asset install ran as root)
-# Also ensure volume mount points exist with correct usage
+# Fix permissions:
+# 1. Delete build-time cache (it's owned by root from assets:install, and we don't need it)
+RUN rm -rf /var/www/html/var/cache/*
+
+# 2. Create required folders
 RUN mkdir -p /var/www/html/public/media \
     /var/www/html/public/thumbnail \
     /var/www/html/public/theme \
     /var/www/html/public/sitemap \
-    /var/www/html/files && \
-    chown -R 82:82 /var/www/html/var /var/www/html/public /var/www/html/files
+    /var/www/html/files
+
+# 3. Set ownership for public and files (runtime needs to write here)
+RUN chown -R 82:82 /var/www/html/public /var/www/html/files
 
 # Switch to official user 82 (www-data)
 USER 82
