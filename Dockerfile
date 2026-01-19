@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 RUN composer create-project shopware/production . 6.7.3.1 --no-interaction --no-scripts --no-install && \
     composer config -g allow-plugins true && \
     composer require shopware/docker --no-update && \
-    composer update --no-interaction --no-scripts --no-progress --no-dev
+    composer update --no-interaction --no-scripts --no-progress --no-dev -W
 
 # Stage 2: Final Production Stage
 FROM ghcr.io/shopware/docker-base:8.3-nginx
